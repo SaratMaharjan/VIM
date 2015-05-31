@@ -1,0 +1,10 @@
+#ignore files except following
+!.vim
+!.gitignore
+!.snippets
+!.md
+!.in
+GREP/
+bundle/
+
+
