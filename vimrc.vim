@@ -63,7 +63,7 @@
 			" The following are examples of different formats supported. Keep Plugin commands between vundle#begin/end.
 			
 			" plugin on GitHub repo
-			Plugin 'tpope/vim-fugitive'
+			"Plugin 'tpope/vim-fugitive'
 			
 			" plugin from http://vim-scripts.org/vim/scripts.html
 			Plugin 'L9'
@@ -71,12 +71,13 @@
 			 "Git plugin not hosted on GitHub
 			"Plugin 'git://git.wincent.com/command-t.git'
 			"Plugin 'https://github.com/scrooloose/nerdtree.git'
-			"Plugin 'https://github.com/amix/vimrc.git'
-			"Plugin 'https://github.com/tpope/vim-pathogen.git'
+			""Plugin 'https://github.com/amix/vimrc.git'
+			""Plugin 'https://github.com/tpope/vim-pathogen.git'
 			Plugin 'https://github.com/vim-scripts/peaksea.git'
 			Plugin 'https://github.com/sjl/badwolf.git'
 			Plugin 'https://github.com/sjl/gundo.vim.git'
-			Plugin 'https://github.com/ggreer/the_silver_searcher.git'
+			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
+			Plugin 'https://github.com/rking/ag.vim.git'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
 			"Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 			"Plugin 'https://github.com/scrooloose/syntastic.git'
@@ -86,13 +87,14 @@
 			Plugin 'https://github.com/jeffkreeftmeijer/vim-numbertoggle.git'
 			Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
 			Plugin 'https://github.com/tpope/vim-abolish.git'
-			Plugin 'https://github.com/mkitt/tabline.vim.git'
+			"Plugin 'https://github.com/mkitt/tabline.vim.git'
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
 			Plugin 'https://github.com/SirVer/ultisnips.git'
 			Plugin 'https://github.com/bling/vim-airline.git'
 			"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 			Plugin 'https://github.com/yegappan/grep.git'
+			"Plugin 'https://github.com/vim-scripts/TabLineSet.vim.git'
 
 			"git repos on your local machine (i.e. when working on your own plugin)
 			"Plugin 'file:///home/gmarik/path/to/plugin'
@@ -723,7 +725,7 @@
 		let g:ctrlp_match_window = 'bottom,order:ttb'
 		let g:ctrlp_switch_buffer = 0
 		let g:ctrlp_working_path_mode = 0
-		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+		"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 	"create language-specific settings for certain filetypes/file extensions
 		augroup configgroup
