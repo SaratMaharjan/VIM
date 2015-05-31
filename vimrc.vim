@@ -1,4 +1,14 @@
 "{{{ OTHER SOURCES
+
+	let user = substitute(system('whoami'),'\n','','')
+	if user == "sm\\sarat"
+		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
+	elseif user == "anakon\\smaharjan"
+		source C:/Users/Sarat/Dropbox/VIM/pathANDfontAnakon.vim
+	else
+		echo "Invalid user"
+	endif
+	
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	behave mswin
