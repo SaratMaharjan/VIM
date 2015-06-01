@@ -487,8 +487,8 @@
 	set foldlevelstart=0   " open most folds by default
 	set foldnestmax=10      " 10 nested fold max
 	"set foldmethod=indent   " fold based on indent level	
-	"set foldmethod=marker
-	set foldmethod=syntax
+	set foldmethod=marker
+	"set foldmethod=syntax
 	"set foldmethod=expr
 	"foldlevel=0
 	set foldlevel=0
@@ -496,8 +496,8 @@
 	    
 	autocmd FileType vim setlocal foldmethod=marker
 	"autocmd FileType vim setlocal foldmethod=indent
+	"autocmd FileType apdl setlocal foldmethod=syntax
 	autocmd FileType apdl setlocal foldmethod=marker    	
-	"autocmd FileType apdl setlocal foldmethod=marker    	
 	autocmd FileType apdl setlocal foldmarker=!anfang,!ende	
 	autocmd FileType dosbatch setlocal foldmethod=marker    	
 	autocmd FileType dosbatch setlocal foldmarker=anfang,ende	
@@ -511,6 +511,7 @@
 	" Section Name {{{  ---3 brackets are markers
 			"set number "This will be folded
 	" }}}
+	
 "}}} FOLD Settings
 
 "{{{ FUNCTIONS
@@ -852,6 +853,9 @@ let g:NERDCustomDelimiters = {
 	au BufNewFile,BufRead *.inp	setf apdl
 	au BufReadPost *.mac set syntax=apdl	
 	au BufReadPost *.mac setf apdl	
+	au BufReadPost *.in setf apdl	
+	au BufReadPost *.out setf apdl	
+	au BufReadPost *.inp setf apdl	
 	
 "}}}
 
@@ -957,8 +961,22 @@ let g:NERDCustomDelimiters = {
 " 9.  byw - yank word under cursor
 " 10. viw - select word under cursor
 " 11. :ve - to see version Information
+" 12. :argdo %s/file:\/\/\/.\\/file: /gc  - Replace in all buffers....
 
+":arg *.cpp	All *.cpp files in current directory.
+":argadd *.h	And all *.h files.
+":arg	Optional: Display the current arglist.
+":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist.
 
+":%s#\($\n\s*\)\+\%$##
+"Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty" lines, remove the \s* from the above command.
+	"Explanation:
+	"\( ..... Start a match group
+	"$\n ... Match a new line (end-of-line character followed by a carriage return).
+	"\s* ... Allow any amount of whitespace on this new line
+	"\) ..... End the match group
+	"\+ ..... Allow any number of occurrences of this group (one or more).
+	"\%$ ... Match the end of the file
 
 " SEARCH AND REPLACE
 	":%s/foo/bar/g

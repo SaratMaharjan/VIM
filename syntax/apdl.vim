@@ -1831,7 +1831,7 @@ syn match	apdlRepeat	display "\*repeat\>" contained
 syn match	apdlRepeat	display "\*go\>" contained
 
 " exceptional commands:
-syn match	apdlSpecial	display "/eof\>" contained
+syn match	apdlUnused	display "/eof\>" contained
 syn match	apdlSpecial	display "/show\>" contained
 syn match	apdlSpecial	display "/exit\>" contained
 syn match	apdlSpecial	display "/quit\>" contained
@@ -1858,14 +1858,14 @@ syn match	apdlSpecial	display "\*end\>" contained
 syn keyword	apdlWarning	contained edited 
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif 
 syn match   apdlSpecial2    display "<--.*-->" contained
-"syn match   apdlUnused    display "/eof.*\$" contained
+"syn match   apdlUnused    display "\(eoff.*\Z\)" contained
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
 syn match apdlSpecial3 display "!ende" contained
 
 " commands must be the first entry in a line or behind an $
-syn cluster	apdlToken contains=apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel
+syn cluster	apdlToken contains=apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused
 
 syn match	apdlStart1	"\$" nextgroup=@apdlToken skipwhite transparent
 syn match	apdlStart2	"^" nextgroup=@apdlToken skipwhite transparent
@@ -1884,6 +1884,7 @@ syn cluster vimEmbeddedScript contains=vimMyFold
 syn cluster vimIn contains=potionOperator,apdlString,apdlStringLine,apdlBeforeLine,apdlAnything
 
 				"My own FOLD marker
+				"syn region vimMyFold start="!anfang" end="!ende" transparent fold
 				syn region vimMyFold
 					\ start="\<anf\%[ang]\>"
 					\ end="\<end\%[e]\>"
@@ -1892,63 +1893,64 @@ syn cluster vimIn contains=potionOperator,apdlString,apdlStringLine,apdlBeforeLi
 					\ containedin=apdlComment,apdlLineComment
 					\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
 
-				""EOF FOLD marker
-				"syn region vimEofFold
-					"\ start="\<eof\%[f]\>"
-					"\ end="\<endeof\%[f]\>"
-					"\ fold transparent contains=apdlComment
-					"\ keepend extend 
-					"\ containedin=ALLBUT,apdlComment,apdlLineComment
-					"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+				"EOF fold
+				syn region vimEofFold
+					\ start="\<eof\%[f]\>"
+					\ end="\(\%$\)"
+					\ fold contains=NONE
+					\ keepend extend transparent
+					\ containedin=ALLBUT,apdlComment,apdlLineComment
+					\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
 
-" fold do loops
-syn region vimFoldDoLoop
-      \ start="\<d\%[o]\>"
-      \ end="\<end\%[do]\>"
-      \ fold
-      \ keepend extend
-      \ containedin=ALLBUT,@vimNoFold
-	  \ contains=TOP,@vimIn
-      \ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+"fold do loops
+	"syn region vimFoldDoLoop
+		"\ start="\<d\%[o]\>"
+		"\ end="\<end\%[do]\>"
+		"\ fold
+		"\ keepend extend
+		"\ containedin=ALLBUT,@vimNoFold,vimEofFold
+		"\ contains=TOP,@vimIn
+		"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
  
 " fold if...else...endif constructs
 "
 " note that 'endif' has a shorthand which can also match many other end patterns
 " if we did not include the word boundary \> pattern, and also it may match
 " syntax end=/pattern/ elements, so we must explicitly exclude these
-syn region vimFoldIfContainer
-      \ start="\<if\>"
-	  \ end="\<end\%[if]\>=\@!"
-      \ keepend extend
-      \ containedin=ALLBUT,@vimNoFold
-      \ contains=NONE
-      \ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-syn region vimFoldIf
-      \ start="\<if\>"
-      \ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-      \ fold 
-      \ keepend
-      \ contained containedin=vimFoldIfContainer
-      \ nextgroup=vimFoldElseIf,vimFoldElse
-      \ contains=TOP,@vimIn
-      \ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-syn region vimFoldElseIf
-      \ start="\<else\%[if]\>"
-      \ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-      \ fold
-      \ keepend
-      \ contained containedin=vimFoldIfContainer
-      \ nextgroup=vimFoldElseIf,vimFoldElse
-      \ contains=TOP,@vimIn
-      \ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-syn region vimFoldElse
-      \ start="\<el\%[se]\>"
-	  \ end="\<end\%[if]\>=\@!"
-      \ fold
-      \ keepend
-      \ contained containedin=vimFoldIfContainer
-      \ contains=TOP,@vimIn
-      \ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+	"syn region vimFoldIfContainer
+		  "\ start="\<if\>"
+		  "\ end="\<end\%[if]\>=\@!"
+		  "\ keepend extend
+		  "\ containedin=ALLBUT,@vimNoFold,vimEofFold
+		  "\ contains=NONE
+		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+	"syn region vimFoldIf
+		  "\ start="\<if\>"
+		  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+		  "\ fold 
+		  "\ keepend
+		  "\ contained containedin=vimFoldIfContainer
+		  "\ nextgroup=vimFoldElseIf,vimFoldElse
+		  "\ contains=TOP,@vimIn
+		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+	"syn region vimFoldElseIf
+		  "\ start="\<else\%[if]\>"
+		  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+		  "\ fold
+		  "\ keepend
+		  "\ contained containedin=vimFoldIfContainer
+		  "\ nextgroup=vimFoldElseIf,vimFoldElse
+		  "\ contains=TOP,@vimIn
+		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+	"syn region vimFoldElse
+		  "\ start="\<el\%[se]\>"
+		  "\ end="\<end\%[if]\>=\@!"
+		  "\ fold
+		  "\ keepend
+		  "\ contained containedin=vimFoldIfContainer
+		  "\ contains=TOP,@vimIn
+		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+
 "}}}ende Syntax Folding
 
 syn match apdlStringLine ".*$" contained
@@ -1984,13 +1986,13 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlString	Normal
 	HiLink apdlSpecial2	Question
 	HiLink apdlSpecial3	Type
-	HiLink apdlUnused	Unused
+	HiLink apdlUnused	NotImp
 	"HiLink vimFoldIfContainer Conditional	
 	"HiLink vimFoldIf Conditional	
 	"HiLink vimFoldElseIf Conditional	
 	"HiLink vimFoldElse Conditional	
 	"HiLink vimFoldDoLoop Repeat	
-	HiLink vimEofFold Unused	
+	HiLink vimEofFold NotImp	
 
 	HiLink apdlAnything Normal	
 
