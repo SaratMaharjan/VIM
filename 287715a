@@ -1,0 +1,249 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd E:\Cloud\Dropbox\VIM
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 R:\Maharjan\287715a\s.in
+badd +1 R:\Maharjan\287715a\s1.in
+badd +54 R:\Maharjan\287715a\s2.in
+badd +1 R:\Maharjan\287715a\s3.in
+badd +1 R:\Maharjan\287715a\s6.in
+badd +1 R:\Maharjan\287715a\s66-kurz.in
+badd +1 R:\Maharjan\287715a\symmGen.in
+badd +14 R:\Maharjan\287715a\vpl.in
+badd +1 R:\Maharjan\287715a\vpl1.in
+badd +1 R:\Maharjan\287715a\vpl2.in
+badd +1 R:\Maharjan\287715a\vpl3.in
+badd +1 R:\Maharjan\287715a\vpl4.in
+badd +1 R:\Maharjan\287715a\beulsolv.in
+badd +1 R:\Maharjan\287715a\lf2-1.in
+badd +1 R:\Maharjan\287715a\lf2-2.in
+badd +1 R:\Maharjan\287715a\lf2-3.in
+args R:\Maharjan\287715a\lf2-3.in
+edit R:\Maharjan\287715a\lf2-3.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\s.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\s1.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\s2.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 54 - ((53 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+54
+normal! 0
+tabedit R:\Maharjan\287715a\s3.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\s6.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\s66-kurz.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\symmGen.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\vpl.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 14 - ((13 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+14
+normal! 0
+tabedit R:\Maharjan\287715a\vpl1.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\vpl2.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\vpl3.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\vpl4.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\beulsolv.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\lf2-1.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabedit R:\Maharjan\287715a\lf2-2.in
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+tabnext 16
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

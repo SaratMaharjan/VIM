@@ -3,8 +3,8 @@
 	let user = substitute(system('whoami'),'\n','','')
 	if user == "sm\\sarat"
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
-	elseif user == "anakon\\smaharjan"
-		source C:/Users/Sarat/Dropbox/VIM/pathANDfontAnakon.vim
+	elseif user == "anakon\\maharjan"
+		source E:/Cloud/Dropbox/VIM/pathANDfontAnakon.vim
 	else
 		echo "Invalid user"
 	endif
