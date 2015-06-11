@@ -70,7 +70,7 @@
 			
 			 "Git plugin not hosted on GitHub
 			"Plugin 'git://git.wincent.com/command-t.git'
-			"Plugin 'https://github.com/scrooloose/nerdtree.git'
+			Plugin 'https://github.com/scrooloose/nerdtree.git'
 			""Plugin 'https://github.com/amix/vimrc.git'
 			""Plugin 'https://github.com/tpope/vim-pathogen.git'
 			Plugin 'https://github.com/vim-scripts/peaksea.git'
@@ -766,9 +766,6 @@
 	"noremap <C-y> :!%:p<CR>
 	noremap <leader>run :!%:p<CR>
 
-	"Alternative to intent-guides Plugin
-	":set list lcs=tab:\|\ 
-
 "}}} Other Settings
 
 "{{{ Intent-Guide Plugin Settings
@@ -851,11 +848,17 @@ let g:NERDCustomDelimiters = {
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
 	au BufNewFile,BufRead *.inp	setf apdl
+	au BufNewFile,BufRead *.s01	setf apdl
+	au BufNewFile,BufRead *.s02	setf apdl
+	au BufNewFile,BufRead *.s03	setf apdl
 	au BufReadPost *.mac set syntax=apdl	
 	au BufReadPost *.mac setf apdl	
 	au BufReadPost *.in setf apdl	
 	au BufReadPost *.out setf apdl	
 	au BufReadPost *.inp setf apdl	
+	au BufReadPost *.s01 setf apdl	
+	au BufReadPost *.s02 setf apdl	
+	au BufReadPost *.s03 setf apdl	
 	
 "}}}
 
@@ -1070,10 +1073,12 @@ nnoremap <F6> :GundoToggle<CR>
 "set list
 "set listchars=tab:»·,trail:·
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
+"set list listchars=tab:>-,eol:¶
+"Alternative to intent-guides Plugin
+	":set list lcs=tab:\|\ 
 
 "Open File under cursor in new TAB
 noremap <F11> <c-w>gf<CR>
-
 
 
 

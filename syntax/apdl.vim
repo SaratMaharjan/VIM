@@ -108,7 +108,7 @@ syn match apdlFunction display "ainp\>" contained
 syn match apdlFunction display "ainv\>" contained
 syn match apdlFunction display "al\>" contained
 syn match apdlFunction display "alist\>" contained
-syn match apdlFunction display "allsel\>" contained
+syn match apdlFunction display "alls\(el\)\?\>" contained
 syn match apdlFunction display "alpfill\>" contained
 syn match apdlFunction display "alphad\>" contained
 syn match apdlFunction display "amap\>" contained
@@ -1210,8 +1210,8 @@ syn match apdlFunction display "ssln\>" contained
 syn match apdlFunction display "sstif\>" contained
 syn match apdlFunction display "ssum\>" contained
 syn match apdlFunction display "stat\>" contained
-syn match apdlFunction display "/status\>" contained
-syn match apdlFunction display "\*status\>" contained
+syn match apdlFunction display "/stat\(us\)\?\>" contained
+syn match apdlFunction display "\*stat\(us\)\?\>" contained
 syn match apdlFunction display "stef\>" contained
 syn match apdlFunction display "/stitle\>" contained
 syn match apdlFunction display "store\>" contained
@@ -1863,6 +1863,7 @@ syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
 syn match apdlSpecial3 display "!ende" contained
+"syn match ExtraWhitespace /\s\+\%#\@<!$/
 
 " commands must be the first entry in a line or behind an $
 syn cluster	apdlToken contains=apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused

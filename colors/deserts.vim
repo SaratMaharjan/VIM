@@ -69,6 +69,7 @@ hi Ignore	guifg=grey40
 "hi Error
 hi Todo		guifg=orangered guibg=yellow2
 hi PreProc	guifg=darkgrey
+"hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
 " color terminal definitions
 hi SpecialKey	ctermfg=darkgreen
