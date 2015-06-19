@@ -38,7 +38,8 @@ hi IncSearch	guifg=slategrey guibg=khaki
 hi ModeMsg	guifg=goldenrod
 hi MoreMsg	guifg=SeaGreen
 hi NonText	guifg=LightBlue guibg=grey30
-hi Question	guifg=springgreen
+"hi Question	guifg=springgreen
+hi Question guifg=#ffa500
 hi Search	guibg=peru guifg=wheat
 hi SpecialKey	guifg=yellowgreen
 hi StatusLine	guibg=#c2bfa5 guifg=black gui=none
@@ -64,6 +65,7 @@ hi Statement	guifg=khaki
 hi Type		guifg=darkkhaki
 hi Special	guifg=navajowhite
 hi Function	guifg=navajowhite
+hi Macro	guifg=#99FF99
 "hi Underlined
 hi Ignore	guifg=grey40
 "hi Error

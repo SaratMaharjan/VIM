@@ -934,11 +934,13 @@ let g:NERDCustomDelimiters = {
 		nnoremap K :vimgrep! /<C-R><C-W>/gj *.in<CR>:cw<CR>
 	"Search in Dir and sub directories for word under Cursor in ALL FILES
 		"map <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
+		
 	"same as above but for some extension Only...
 		map <F4> :execute "vimgrep /" . expand("<cword>") . "/gj *.in" <Bar> cw<CR>
+		
 	"Search for word under cursor in same file.... Same as / searching....(* or #)
 	"is preferred
-		command GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
+		command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 		
 	"{{{GREP settings
 		let Grep_Path=expand(pathGrep).'\grep.exe'
@@ -965,6 +967,16 @@ let g:NERDCustomDelimiters = {
 " 10. viw - select word under cursor
 " 11. :ve - to see version Information
 " 12. :argdo %s/file:\/\/\/.\\/file: /gc  - Replace in all buffers....
+" 13. :sp filename for a horizontal split
+		":vsp filename or :vs filename for a vertical split
+		"If no filename give same file opens
+" 14. :%s/.\{80}/&\r/g     - New line after 80 charachters
+" 							- &\r means Match and New Line
+" 15. zj - move down to top of next fold
+				"zk	- move up to bottom of previous fold
+" 16. :vimgrep patter **/*.ext - to search recursively in folder
+
+
 
 ":arg *.cpp	All *.cpp files in current directory.
 ":argadd *.h	And all *.h files.
@@ -1006,7 +1018,7 @@ let SessionLoad=1
 set ssop=tabpages,winsize,curdir
 
 "Update VIMRC 
-"noremap <leader>sv :source E:/VIM/vimrc.vim<CR>
+noremap <leader>sv :exe 'source ' .expand(pathvrc)<CR>
 
 exe ':set dir=' . expand(pathWork)
 noremap <leader>wd :exe 'cd ' . expand(pathWork)<CR>
@@ -1059,7 +1071,7 @@ set noerrorbells         " don't beep
 let g:airline_section_c='%t  >>>          WD: %r%{getcwd()}%h          <<< %{strftime("%c")}'
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "let g:syntastic_always_populate_loc_list = 1
@@ -1080,7 +1092,37 @@ nnoremap <F6> :GundoToggle<CR>
 "Open File under cursor in new TAB
 noremap <F11> <c-w>gf<CR>
 
+"let NERDTreeIgnore += ['\(\.in\)\@<!$[[file]]']
+let NERDTreeIgnore = ['\(\.in\)\@<!$[[file]]']
 
+set printfont=Courier:h12
 
+"{{{ Switching Between TABS
+	"let g:lasttab = 1
+	"nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
+	"au TabLeave * let g:lasttab = tabpagenr()
 
+	"Go to last active tab
+	nnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
+	vnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
+
+	"Go to last edited tab
+	let g:editTab=1
+	let g:editTab2=1
+	nmap <Leader>tt :call LastEditTab()<cr>
+	au InsertLeave * let g:editTab = tabpagenr()
+	function! LastEditTab()
+		:exe "tabn " .g:editTab2
+		let g:editTab2=g:editTab
+	endfunction
+
+"}}}
+
+nnoremap gl ''
+
+" Set up the gui cursor to look nice
+"set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+nnoremap <F12> @q
+nnoremap <leader>cfn :%s/:\/\/\/\.\\/: /gc<cr>
 
