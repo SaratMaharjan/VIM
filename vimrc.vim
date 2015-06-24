@@ -975,7 +975,7 @@ let g:NERDCustomDelimiters = {
 " 15. zj - move down to top of next fold
 				"zk	- move up to bottom of previous fold
 " 16. :vimgrep patter **/*.ext - to search recursively in folder
-
+" 17. Autocad Command: IMAGEFRAME
 
 
 ":arg *.cpp	All *.cpp files in current directory.
@@ -1059,10 +1059,10 @@ set noerrorbells         " don't beep
 	map <C-l> <C-w>l
 
 "Disable arrows in Normal Mode
-	map <up> <nop>
-	map <down> <nop>
-	map <left> <nop>
-	map <right> <nop>
+	"map <up> <nop>
+	"map <down> <nop>
+	"map <left> <nop>
+	"map <right> <nop>
 
 "CTRL-C and CTRL-Insert are Copy
 	vnoremap <C-C> "+ygv
@@ -1125,4 +1125,10 @@ nnoremap gl ''
 
 nnoremap <F12> @q
 nnoremap <leader>cfn :%s/:\/\/\/\.\\/: /gc<cr>
+
+set nohidden
+
+nnoremap u <nop>
+nnoremap U <nop>
+nnoremap <C-R> :e!<CR>G
 
