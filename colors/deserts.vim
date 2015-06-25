@@ -65,7 +65,7 @@ hi Statement	guifg=khaki
 hi Type		guifg=darkkhaki
 hi Special	guifg=navajowhite
 hi Function	guifg=navajowhite
-hi Macro	guifg=#99FF99
+hi Apdlmcs	guifg=#33ccdd
 "hi Underlined
 hi Ignore	guifg=grey40
 "hi Error

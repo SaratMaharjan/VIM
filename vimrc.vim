@@ -1128,7 +1128,12 @@ nnoremap <leader>cfn :%s/:\/\/\/\.\\/: /gc<cr>
 
 set nohidden
 
-nnoremap u <nop>
+"nnoremap u <nop>
 nnoremap U <nop>
+nnoremap J <nop>
 nnoremap <C-R> :e!<CR>G
+
+
+
+
 
