@@ -1,15 +1,15 @@
-" Vim color file
-" Modified from Desert Theme
+"Vim color file
+"Modified from Desert Theme
 
-" cool help screens
-" :he group-name
-" :he highlight-groups
-" :he cterm-colors
+"cool help screens
+":he group-name
+":he highlight-groups
+":he cterm-colors
 
 set background=dark
 if version > 580
-    " no guarantees for version 5.8 and below, but this makes it stop
-    " complaining
+    "no guarantees for version 5.8 and below, but this makes it stop
+    "complaining
     hi clear
     if exists("syntax_on")
 	syntax reset
@@ -21,7 +21,7 @@ endif
 "hi Normal	guifg=White guibg=grey20
 hi Normal	guifg=#9CE69C guibg=grey20
 
-" highlight groups
+"highlight groups
 hi Cursor	guibg=khaki guifg=slategrey
 "hi CursorIM
 "hi Directory
@@ -38,7 +38,6 @@ hi IncSearch	guifg=slategrey guibg=khaki
 hi ModeMsg	guifg=goldenrod
 hi MoreMsg	guifg=SeaGreen
 hi NonText	guifg=LightBlue guibg=grey30
-"hi Question	guifg=springgreen
 hi Question guifg=#ffa500
 hi Search	guibg=peru guifg=wheat
 hi SpecialKey	guifg=yellowgreen
@@ -53,7 +52,7 @@ hi WarningMsg	guifg=salmon
 "hi Scrollbar
 "hi Tooltip
 
-" syntax highlighting groups
+"syntax highlighting groups
 "hi Comment	guifg=SkyBlue cterm=italic gui=italic
 hi Comment	guifg=#C8C8BA cterm=italic gui=italic
 hi NotImp	guifg=#abcdef cterm=italic gui=italic
@@ -71,9 +70,9 @@ hi Ignore	guifg=grey40
 "hi Error
 hi Todo		guifg=orangered guibg=yellow2
 hi PreProc	guifg=darkgrey
-"hi ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+hi ExtraWhite guifg=yellow2 guibg=darkgreen
 
-" color terminal definitions
+"color terminal definitions
 hi SpecialKey	ctermfg=darkgreen
 hi NonText	cterm=bold ctermfg=darkblue
 hi Directory	ctermfg=darkcyan
@@ -98,7 +97,7 @@ hi DiffAdd	ctermbg=4
 hi DiffChange	ctermbg=5
 hi DiffDelete	cterm=bold ctermfg=4 ctermbg=6
 hi DiffText	cterm=bold ctermbg=1
-"
+
 "hi Comment	ctermfg=darkcyan
 hi Constant	ctermfg=brown
 hi Special	ctermfg=5

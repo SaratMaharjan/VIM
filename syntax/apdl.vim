@@ -1,26 +1,26 @@
-" Vim syntax file
-" Language:		APDL
-" Credits:	Manfred Spraul <manfred@colorfullife.com>
-" Last Change:	2003 Jan 24 (Manfred Spraul)
-" Version: 0.02
+"Vim syntax file
+"Language:	APDL
+" credits:	Manfred Spraul <manfred@colorfullife.com>
+"Last Change:	2003 Jan 24 (Manfred Spraul)
+"Version:	0.02
 "
-" Note: The support for abreviated commands is intentionally missing.
-" 	Typical file names are *.ans and *.mac.
+" note: The support for abreviated commands is intentionally missing.
+"		Typical file names are *.ans and *.mac.
 "
-" TODO: 
-" * Further parameter tests for bad params
-" * line continuations for multiline commands: *msg, *vwrite, etc.
-" * test with ansys:
-"     whitespaces + labels
-"     $ + labels
-"     $ + comment
-"     $ + multiline commands
+"TODO: 
+"* Further parameter tests for bad params
+"* line continuations for multiline commands: *msg, *vwrite, etc.
+"* test with ansys:
+"	 whitespaces + labels
+"	$ + labels
+"	$ + comment
+"	$ + multiline commands
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Common part for all syntax files:
+" common part for all syntax files:
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
+"For version 5.x: Clear all syntax items
+"For version 6.x: Quit when a syntax file was already loaded
 if version < 600
 	syntax clear
 elseif exists("b:current_syntax")
@@ -31,13 +31,13 @@ syn match apdlAnything "^.*$" contained
 
 "{{{ Numbers, allowing signs (both -, and +)
 
-" Integer number.
+"Integer number.
 syn match  apdlNumber		display "[+-]\=\<\d\+\>"
 
-" Floating point number.
+"Floating point number.
 syn match  apdlFloat		display "[+-]\=\<\d\+\.\d+\>"
 
-" Floating point number, starting with a dot.
+"Floating point number, starting with a dot.
 syn match  apdlFloat		display "[+-]\=\<.\d+\>"
 
 syn case ignore
@@ -77,7 +77,7 @@ syn case match
 
 "}}}
 
-" APDL specific part:
+"APDL specific part:
 syn case ignore
 
 "{{{ normal apdl commands
@@ -823,66 +823,66 @@ syn match apdlFunction display "/mstart\>" contained
 syn match apdlFunction display "msterm\>" contained
 syn match apdlFunction display "msvary\>" contained
 syn match apdlFunction display "mxpand\>" contained
-syn match apdlFunction display "n\>" contained
-syn match apdlFunction display "nang\>" contained
-syn match apdlFunction display "ncnv\>" contained
-syn match apdlFunction display "ndele\>" contained
-syn match apdlFunction display "ndist\>" contained
-syn match apdlFunction display "ndsurf\>" contained
-syn match apdlFunction display "neqit\>" contained
+syn match apdlFunction display " n\>" contained
+syn match apdlFunction display " nang\>" contained
+syn match apdlFunction display " ncnv\>" contained
+syn match apdlFunction display " ndele\>" contained
+syn match apdlFunction display " ndist\>" contained
+syn match apdlFunction display " ndsurf\>" contained
+syn match apdlFunction display " neqit\>" contained
 syn match apdlFunction display "/nerr\>" contained
-syn match apdlFunction display "nforce\>" contained
-syn match apdlFunction display "ngen\>" contained
-syn match apdlFunction display "nkpt\>" contained
-syn match apdlFunction display "nldiag\>" contained
-syn match apdlFunction display "nlgeom\>" contained
-syn match apdlFunction display "nlist\>" contained
-syn match apdlFunction display "nlog\>" contained
-syn match apdlFunction display "nlopt\>" contained
-syn match apdlFunction display "nmodif\>" contained
-syn match apdlFunction display "nocolor\>" contained
-syn match apdlFunction display "nodes\>" contained
+syn match apdlFunction display " nforce\>" contained
+syn match apdlFunction display " ngen\>" contained
+syn match apdlFunction display " nkpt\>" contained
+syn match apdlFunction display " nldiag\>" contained
+syn match apdlFunction display " nlgeom\>" contained
+syn match apdlFunction display " nlist\>" contained
+syn match apdlFunction display " nlog\>" contained
+syn match apdlFunction display " nlopt\>" contained
+syn match apdlFunction display " nmodif\>" contained
+syn match apdlFunction display " nocolor\>" contained
+syn match apdlFunction display " nodes\>" contained
 syn match apdlFunction display "/noerase\>" contained
 syn match apdlFunction display "/nolist\>" contained
-syn match apdlFunction display "noorder\>" contained
+syn match apdlFunction display " noorder\>" contained
 syn match apdlFunction display "/nopr\>" contained
 syn match apdlFunction display "/normal\>" contained
-syn match apdlFunction display "nplot\>" contained
-syn match apdlFunction display "nprint\>" contained
-syn match apdlFunction display "nread\>" contained
-syn match apdlFunction display "nrefine\>" contained
-syn match apdlFunction display "nrlsum\>" contained
-syn match apdlFunction display "nropt\>" contained
-syn match apdlFunction display "nrotat\>" contained
-syn match apdlFunction display "nrrang\>" contained
-syn match apdlFunction display "nscale\>" contained
+syn match apdlFunction display " nplot\>" contained
+syn match apdlFunction display " nprint\>" contained
+syn match apdlFunction display " nread\>" contained
+syn match apdlFunction display " nrefine\>" contained
+syn match apdlFunction display " nrlsum\>" contained
+syn match apdlFunction display " nropt\>" contained
+syn match apdlFunction display " nrotat\>" contained
+syn match apdlFunction display " nrrang\>" contained
+syn match apdlFunction display " nscale\>" contained
 
-"syn match apdlFunction display "nsla\>" contained
-"syn match apdlFunction display "nsle\>" contained
-"syn match apdlFunction display "nslk\>" contained
-"syn match apdlFunction display "nsll\>" contained
-"syn match apdlFunction display "nslv\>" contained
+"syn match apdlFunction display " nsla\>" contained
+"syn match apdlFunction display " nsle\>" contained
+"syn match apdlFunction display " nslk\>" contained
+"syn match apdlFunction display " nsll\>" contained
+"syn match apdlFunction display " nslv\>" contained
 
-syn match apdlFunction display "nsl\([aeklv]\)\?\>" contained
+syn match apdlFunction display " nsl\([aeklv]\)\?\>" contained
 
-syn match apdlFunction display "nsmooth\>" contained
-syn match apdlFunction display "nsol\>" contained
-syn match apdlFunction display "nsort\>" contained
-syn match apdlFunction display "nstore\>" contained
-syn match apdlFunction display "nsubst\>" contained
-syn match apdlFunction display "nsvr\>" contained
-syn match apdlFunction display "nsym\>" contained
+syn match apdlFunction display " nsmooth\>" contained
+syn match apdlFunction display " nsol\>" contained
+syn match apdlFunction display " nsort\>" contained
+syn match apdlFunction display " nstore\>" contained
+syn match apdlFunction display " nsubst\>" contained
+syn match apdlFunction display " nsvr\>" contained
+syn match apdlFunction display " nsym\>" contained
 syn match apdlFunction display "/number\>" contained
-syn match apdlFunction display "numcmp\>" contained
-syn match apdlFunction display "numexp\>" contained
-syn match apdlFunction display "nummrg\>" contained
-syn match apdlFunction display "numoff\>" contained
-syn match apdlFunction display "numstr\>" contained
-syn match apdlFunction display "numvar\>" contained
-syn match apdlFunction display "nusort\>" contained
-syn match apdlFunction display "nwpave\>" contained
-syn match apdlFunction display "nwplan\>" contained
-syn match apdlFunction display "nwrite\>" contained
+syn match apdlFunction display " numcmp\>" contained
+syn match apdlFunction display " numexp\>" contained
+syn match apdlFunction display " nummrg\>" contained
+syn match apdlFunction display " numoff\>" contained
+syn match apdlFunction display " numstr\>" contained
+syn match apdlFunction display " numvar\>" contained
+syn match apdlFunction display " nusort\>" contained
+syn match apdlFunction display " nwpave\>" contained
+syn match apdlFunction display " nwplan\>" contained
+syn match apdlFunction display " nwrite\>" contained
 syn match apdlFunction display "omega\>" contained
 syn match apdlFunction display "opadd\>" contained
 syn match apdlFunction display "opanl\>" contained
@@ -1396,7 +1396,7 @@ syn match apdlFunction display "keymod\>" contained
 
 "}}}
 
-"{{ Newer Commands
+"{{{ Newer Commands
 
 syn match apdlFunction display "bcsoption\>" contained
 
@@ -1466,15 +1466,15 @@ syn match apdlm display "bnod\>" contained
 syn match apdlm display "bnod2\>" contained
 syn match apdlm display "bnod3\>" contained
 syn match apdlm display "cms\>" contained
-syn match apdlm display "COMBIN40\>" contained
+syn match apdlm display "cOMBIN40\>" contained
 syn match apdlm display "cosym\>" contained
 syn match apdlm display "cosym2\>" contained
-syn match apdlm display "CPLO\>" contained
-syn match apdlm display "CSA\>" contained
-syn match apdlm display "CSS\>" contained
-syn match apdlm display "CSU\>" contained
-syn match apdlm display "CSYM\>" contained
-syn match apdlm display "CSYM2\>" contained
+syn match apdlm display "cPLO\>" contained
+syn match apdlm display "cSA\>" contained
+syn match apdlm display "cSS\>" contained
+syn match apdlm display "cSU\>" contained
+syn match apdlm display "cSYM\>" contained
+syn match apdlm display "cSYM2\>" contained
 syn match apdlm display "cv\>" contained
 syn match apdlm display "cvep\>" contained
 syn match apdlm display "dfy73-v1\>" contained
@@ -1634,18 +1634,18 @@ syn match apdlm display "MXX181\>" contained
 syn match apdlm display "MXX188\>" contained
 syn match apdlm display "MXX43\>" contained
 syn match apdlm display "MXX63\>" contained
-syn match apdlm display "NINFO\>" contained
-syn match apdlm display "nlschraub\>" contained
-syn match apdlm display "NLSort\>" contained
-syn match apdlm display "NLSort2\>" contained
-syn match apdlm display "NLSort3\>" contained
-syn match apdlm display "NLSort4\>" contained
-syn match apdlm display "NLSort_x\>" contained
-syn match apdlm display "NLSort_y\>" contained
-syn match apdlm display "NLSort_z\>" contained
-"syn match apdlm display "nsl\>" contained
-syn match apdlm display "NUMPLO\>" contained
-syn match apdlm display "nver\>" contained
+syn match apdlm display " nINFO\>" contained
+syn match apdlm display " nlschraub\>" contained
+syn match apdlm display " nLSort\>" contained
+syn match apdlm display " nLSort2\>" contained
+syn match apdlm display " nLSort3\>" contained
+syn match apdlm display " nLSort4\>" contained
+syn match apdlm display " nLSort_x\>" contained
+syn match apdlm display " nLSort_y\>" contained
+syn match apdlm display " nLSort_z\>" contained
+"syn match apdlm display " nsl\>" contained
+syn match apdlm display " nUMPLO\>" contained
+syn match apdlm display " nver\>" contained
 syn match apdlm display "pb\>" contained
 syn match apdlm display "pcds\>" contained
 syn match apdlm display "0PHV\>" contained
@@ -1804,28 +1804,29 @@ syn match apdlm display "zur\>" contained
 
 "}}}
 
-" magic condition for Error display, must be first.
+"magic condition for Error display, must be first.
 syn match apdlError display ".*$" contained
 
-" Commands that are missing in autoextracted file:
+" commands that are missing in autoextracted file:
 syn match apdlFunction display "/cwd\>" contained
 syn match apdlFunction display "/show\>" contained
 
-" multiline commands
+"{{{ multiline commands
 syn match apdlStringLine ".*$" contained
-syn match apdlBeforeLine ".*\n" contained "nextgroup=apdlStringLine
-syn match apdlFunction "\*msg\>" contained "nextgroup=apdlBeforeLine
-syn match apdlFunction "\*mwrite\>" contained "nextgroup=apdlBeforeLine
-syn match apdlFunction "\*vread\>" contained "nextgroup=apdlBeforeLine
-syn match apdlFunction "\*vwrite\>" contained "nextgroup=apdlBeforeLine
+syn match apdlBeforeLine ".*\n" contained " nextgroup=apdlStringLine
+syn match apdlFunction "\*msg\>" contained " nextgroup=apdlBeforeLine
+syn match apdlFunction "\*mwrite\>" contained " nextgroup=apdlBeforeLine
+syn match apdlFunction "\*vread\>" contained " nextgroup=apdlBeforeLine
+syn match apdlFunction "\*vwrite\>" contained " nextgroup=apdlBeforeLine
+"}}}
 
-" Commands with parameter checking:
-" cm
+"{{{ Commands with parameter checking:
+"cm
 syn match apdlFunction display "cm\s*,"me=e-1 contained nextgroup=apdlError,apdlCm1Ok
 syn match apdlCm1Ok display ",\s*[a-zA-Z_][a-zA-Z0-9_]*\s*," contained transparent nextgroup=apdlError,apdlCm2Ok
 syn match apdlCm2Ok display "\s*\(volu\|area\|line\|kp\|elem\|node\)\>" contained transparent
 
-" Xsel
+"Xsel
 syn match apdlFunction display "ksel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
 syn match apdlFunction display "lsel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
 syn match apdlFunction display "asel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
@@ -1833,10 +1834,11 @@ syn match apdlFunction display "vsel\s*,"me=e-1 contained nextgroup=apdlError,ap
 syn match apdlFunction display "esel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
 syn match apdlFunction display "nsel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
 syn match apdlFunction display "cmsel\s*,"me=e-1 contained nextgroup=apdlError,apdlXsel1aOk,apdlXsel1bOk
-syn match apdlXsel1aOk display ",\s*\(s\|r\|a\|u\|inve\)\=\s*," contained transparent
-syn match apdlXsel1bOk display ",\s*\(all\|none\|stat\)" contained transparent
+syn match apdlXsel1aOk display ",\s*\(s\|r\|a\|u\)\=\s*," contained transparent
+syn match apdlXsel1bOk display ",\s*\(all\|none\|stat\|inve\)" contained transparent
+"}}}
 
-" special apdl commands that should be highlighted seperately:
+"{{{ special apdl commands that should be highlighted seperately:
 syn match	apdlConditional	display	"\*if\>" contained
 syn match	apdlConditional	display	"\*elseif\>" contained
 syn match	apdlConditional	display	"\*else\>" contained
@@ -1847,18 +1849,20 @@ syn match	apdlRepeat	display "\*exit\>" contained
 syn match	apdlRepeat	display "\*enddo\>" contained
 syn match	apdlRepeat	display "\*repeat\>" contained
 syn match	apdlRepeat	display "\*go\>" contained
+"}}}
 
-" exceptional commands:
+"{{{ exceptional commands:
 syn match	apdlUnused	display "/eof\>" contained
 syn match	apdlSpecial	display "/show\>" contained
 syn match	apdlSpecial	display "/exit\>" contained
 syn match	apdlSpecial	display "/quit\>" contained
 syn match	apdlSpecial	display "debug\>" contained
+"}}}
 
-" labels
+"labels
 syn match	apdlLabel	display ":\s*[a-zA-Z_][a-zA-Z0-9_]*" contained 
 
-" apdl command groups
+"{{{ apdl command groups
 syn match	apdlSpecial	display "/prep7\>" contained
 syn match	apdlSpecial	display "/solu\>" contained
 syn match	apdlSpecial	display "/post1\>" contained
@@ -1871,6 +1875,7 @@ syn match	apdlSpecial	display "/aux15\>" contained
 syn match	apdlSpecial	display "fini\(sh\)\?\>" contained
 syn match	apdlSpecial	display "\*create\>" contained
 syn match	apdlSpecial	display "\*end\>" contained
+"}}}
 
 "{{{ Not general : Added Later
 
@@ -1882,7 +1887,122 @@ syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
 syn match apdlSpecial3 display "!ende" contained
-"syn match ExtraWhitespace /\s\+\%#\@<!$/
+syn match extraWhite display " \s"
+syn match extraWhite display "\s "
+
+"}}}
+
+"{{{ Abbreviations
+
+syn match apdlm display "w32\>" contained
+syn match apdlm display "pw\>" contained
+syn match apdlm display "fu\>" contained
+syn match apdlm display "vii\>" contained
+syn match apdlm display "vii2\>" contained
+syn match apdlm display "vii3\>" contained
+syn match apdlm display "vii4\>" contained
+syn match apdlm display "vii5\>" contained
+syn match apdlm display "vii6\>" contained
+syn match apdlm display "vii7\>" contained
+syn match apdlm display "vii8\>" contained
+syn match apdlm display "vii1\>" contained
+syn match apdlm display "vii9\>" contained
+syn match apdlm display "vx\>" contained
+syn match apdlm display "vy\>" contained
+syn match apdlm display "vz\>" contained
+syn match apdlm display "sg\>" contained
+syn match apdlm display "sx\>" contained
+syn match apdlm display "sy\>" contained
+syn match apdlm display "sz\>" contained
+syn match apdlm display "sxy\>" contained
+syn match apdlm display "syz\>" contained
+syn match apdlm display "sxz\>" contained
+syn match apdlm display "s1\>" contained
+syn match apdlm display "s2\>" contained
+syn match apdlm display "s3\>" contained
+syn match apdlm display "ux\>" contained
+syn match apdlm display "uy\>" contained
+syn match apdlm display "uz\>" contained
+syn match apdlm display "us\>" contained
+syn match apdlm display "ep\>" contained
+syn match apdlm display "pcp\>" contained
+syn match apdlm display "pcs\>" contained
+syn match apdlm display "pcf\>" contained
+syn match apdlm display "pcd\>" contained
+syn match apdlm display "pcg\>" contained
+syn match apdlm display "pce\>" contained
+syn match apdlm display "cme\>" contained
+syn match apdlm display "cmd\>" contained
+syn match apdlm display "nsf\>" contained
+syn match apdlm display "dsc0\>" contained
+syn match apdlm display "pnr1\>" contained
+syn match apdlm display "pnr2\>" contained
+syn match apdlm display "pnr3\>" contained
+syn match apdlm display "pnr4\>" contained
+syn match apdlm display "dsc20\>" contained
+syn match apdlm display "dsc50\>" contained
+syn match apdlm display "dsc100\>" contained
+syn match apdlm display "iso\>" contained
+syn match apdlm display "-iso\>" contained
+syn match apdlm display "p7\>" contained
+syn match apdlm display "p1\>" contained
+syn match apdlm display "so\>" contained
+syn match apdlm display "p26\>" contained
+syn match apdlm display "last\>" contained
+syn match apdlm display "list\>" contained
+syn match apdlm display "first\>" contained
+syn match apdlm display "prev\>" contained
+syn match apdlm display "next\>" contained
+syn match apdlm display "exit\>" contained
+syn match apdlm display "srat\>" contained
+syn match apdlm display "epeq\>" contained
+syn match apdlm display "epx\>" contained
+syn match apdlm display "epy\>" contained
+syn match apdlm display "epxy\>" contained
+syn match apdlm display "Display\>" contained
+syn match apdlm display "abs\>" contained
+syn match apdlm display "ec1\>" contained
+syn match apdlm display "ec0\>" contained
+syn match apdlm display "ac0\>" contained
+syn match apdlm display "ac1\>" contained
+syn match apdlm display "estt\>" contained
+syn match apdlm display "esn\>" contained
+syn match apdlm display "esna\>" contained
+syn match apdlm display "cg\>" contained
+syn match apdlm display "bnode\>" contained
+syn match apdlm display "dp\>" contained
+syn match apdlm display "dls\>" contained
+syn match apdlm display "avg\>" contained
+syn match apdlm display "nodeInfo\>" contained
+syn match apdlm display "elemInfo\>" contained
+syn match apdlm display "solids\>" contained
+syn match apdlm display "conts\>" contained
+syn match apdlm display "federn\>" contained
+syn match apdlm display "shells\>" contained
+syn match apdlm display "surfs\>" contained
+syn match apdlm display "lines\>" contained
+syn match apdlm display "noCont\>" contained
+syn match apdlm display "anno4modified\>" contained
+syn match apdlm display "plotFKN\>" contained
+syn match apdlm display "plotMat\>" contained
+syn match apdlm display "matPlot\>" contained
+syn match apdlm display "solFy\>" contained
+syn match apdlm display "plotFy\>" contained
+syn match apdlm display "bdPlot\>" contained
+syn match apdlm display "ano3d\>" contained
+syn match apdlm display "chPath\>" contained
+syn match apdlm display "abbr\>" contained
+syn match apdlm display "r2sec\>" contained
+syn match apdlm display "smisc1\>" contained
+syn match apdlm display "nmisc1\>" contained
+syn match apdlm display "pl7sm\>" contained
+syn match apdlm display "wpy\>" contained
+syn match apdlm display "wpn\>" contained
+syn match apdlm display "epll\>" contained
+syn match apdlm display "di78sm\>" contained
+syn match apdlm display "di78all\>" contained
+syn match apdlm display "cp7\>" contained
+syn match apdlm display "plotsm\>" contained
 
 "}}}
 
@@ -1898,90 +2018,90 @@ syn match	apdlComment	"!.*$" contains=apdlTodo,apdlWarning,apdlSpecial2,apdlSpec
 
 syn case match
 
-"{{{anfang Syntax Folding
- 
-" define groups that cannot contain the start of a fold
-syn cluster vimNoFold contains=apdlComment,apdlLineComment
-syn cluster vimEmbeddedScript contains=vimMyFold
-syn cluster vimIn contains=potionOperator,apdlString,apdlStringLine,apdlBeforeLine,apdlAnything
+	"{{{anfang Syntax Folding
+	 
+	"define groups that cannot contain the start of a fold
+	syn cluster vimNoFold contains=apdlComment,apdlLineComment
+	syn cluster vimEmbeddedScript contains=vimMyFold
+	syn cluster vimIn contains=potionOperator,apdlString,apdlStringLine,apdlBeforeLine,apdlAnything
 
-				"My own FOLD marker
-				"syn region vimMyFold start="!anfang" end="!ende" transparent fold
-				syn region vimMyFold
-					\ start="\<anf\%[ang]\>"
-					\ end="\<end\%[e]\>"
-					\ fold contains=ALL
-					\ keepend extend
-					\ containedin=apdlComment,apdlLineComment
-					\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+					"My own FOLD marker
+					"syn region vimMyFold start="!anfang"end="!ende"transparent fold
+					syn region vimMyFold
+						\ start="\<anf\%[ang]\>"
+						\ end="\<end\%[e]\>"
+						\ fold contains=ALL
+						\ keepend extend
+						\ containedin=apdlComment,apdlLineComment
+						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-				"EOF fold
-				syn region vimEofFold
-					\ start="\<eof\%[f]\>"
-					\ end="\(\%$\)"
-					\ fold contains=NONE
-					\ keepend extend transparent
-					\ containedin=ALLBUT,apdlComment,apdlLineComment
-					\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+					"EOF fold
+					syn region vimEofFold
+						\ start="\<eof\%[f]\>"
+						\ end="\(\%$\)"
+						\ fold contains=NONE
+						\ keepend extend transparent
+						\ containedin=ALLBUT,apdlComment,apdlLineComment
+						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-"fold do loops
-	"syn region vimFoldDoLoop
-		"\ start="\<d\%[o]\>"
-		"\ end="\<end\%[do]\>"
-		"\ fold
-		"\ keepend extend
-		"\ containedin=ALLBUT,@vimNoFold,vimEofFold
-		"\ contains=TOP,@vimIn
-		"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
- 
-" fold if...else...endif constructs
-"
-" note that 'endif' has a shorthand which can also match many other end patterns
-" if we did not include the word boundary \> pattern, and also it may match
-" syntax end=/pattern/ elements, so we must explicitly exclude these
-	"syn region vimFoldIfContainer
-		  "\ start="\<if\>"
-		  "\ end="\<end\%[if]\>=\@!"
-		  "\ keepend extend
-		  "\ containedin=ALLBUT,@vimNoFold,vimEofFold
-		  "\ contains=NONE
-		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-	"syn region vimFoldIf
-		  "\ start="\<if\>"
-		  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-		  "\ fold 
-		  "\ keepend
-		  "\ contained containedin=vimFoldIfContainer
-		  "\ nextgroup=vimFoldElseIf,vimFoldElse
-		  "\ contains=TOP,@vimIn
-		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-	"syn region vimFoldElseIf
-		  "\ start="\<else\%[if]\>"
-		  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-		  "\ fold
-		  "\ keepend
-		  "\ contained containedin=vimFoldIfContainer
-		  "\ nextgroup=vimFoldElseIf,vimFoldElse
-		  "\ contains=TOP,@vimIn
-		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
-	"syn region vimFoldElse
-		  "\ start="\<el\%[se]\>"
-		  "\ end="\<end\%[if]\>=\@!"
-		  "\ fold
-		  "\ keepend
-		  "\ contained containedin=vimFoldIfContainer
-		  "\ contains=TOP,@vimIn
-		  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ "comment to fix highlight on wiki'
+	"fold do loops
+		"syn region vimFoldDoLoop
+			"\ start="\<d\%[o]\>"
+			"\ end="\<end\%[do]\>"
+			"\ fold
+			"\ keepend extend
+			"\ containedin=ALLBUT,@vimNoFold,vimEofFold
+			"\ contains=TOP,@vimIn
+			"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+	 
+	"fold if...else...endif constructs
+	"
+	" note that 'endif' has a shorthand which can also match many other end patterns
+	"if we did not include the word boundary \> pattern, and also it may match
+	"syntax end=/pattern/ elements, so we must explicitly exclude these
+		"syn region vimFoldIfContainer
+			  "\ start="\<if\>"
+			  "\ end="\<end\%[if]\>=\@!"
+			  "\ keepend extend
+			  "\ containedin=ALLBUT,@vimNoFold,vimEofFold
+			  "\ contains=NONE
+			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldIf
+			  "\ start="\<if\>"
+			  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+			  "\ fold 
+			  "\ keepend
+			  "\ contained containedin=vimFoldIfContainer
+			  "\ nextgroup=vimFoldElseIf,vimFoldElse
+			  "\ contains=TOP,@vimIn
+			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldElseIf
+			  "\ start="\<else\%[if]\>"
+			  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+			  "\ fold
+			  "\ keepend
+			  "\ contained containedin=vimFoldIfContainer
+			  "\ nextgroup=vimFoldElseIf,vimFoldElse
+			  "\ contains=TOP,@vimIn
+			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldElse
+			  "\ start="\<el\%[se]\>"
+			  "\ end="\<end\%[if]\>=\@!"
+			  "\ fold
+			  "\ keepend
+			  "\ contained containedin=vimFoldIfContainer
+			  "\ contains=TOP,@vimIn
+			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-"}}}ende Syntax Folding
+	"}}}ende Syntax Folding
 
 syn match apdlStringLine ".*$" contained
 
 "{{{ Linking with Highlighter
 
-" Define the default highlighting.
-" For version 5.7 and earlier: only when not done already
-" For version 5.8 and later: only when an item doesn't have highlighting yet
+"Define the default highlighting.
+"For version 5.7 and earlier: only when not done already
+"For version 5.8 and later: only when an item doesn't have highlighting yet
 if version >= 508 || !exists("did_apdl_syntax_inits")
 	
 	if version < 508
@@ -2010,15 +2130,16 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlSpecial2	Question
 	HiLink apdlSpecial3	Type
 	HiLink apdlUnused	NotImp
+	HiLink vimEofFold NotImp	
+	highlight link apdlm Apdlmcs
+	HiLink apdlAnything Normal	
+	highlight link extraWhite ExtraWhite
+	
 	"HiLink vimFoldIfContainer Conditional	
 	"HiLink vimFoldIf Conditional	
 	"HiLink vimFoldElseIf Conditional	
 	"HiLink vimFoldElse Conditional	
 	"HiLink vimFoldDoLoop Repeat	
-	HiLink vimEofFold NotImp	
-
-	highlight link apdlm Apdlmcs
-	HiLink apdlAnything Normal	
 
 	delcommand HiLink
 	

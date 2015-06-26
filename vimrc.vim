@@ -17,7 +17,7 @@
 "}}} Sources
 
 "{{{ Initial Setting - need to be at start
-	let mapleader=","       " leader is comma
+	let mapleader=","      "leader is comma
 	let g:mapleader = ","
 
 	if has('mouse')		"Enable Mouse
@@ -47,25 +47,25 @@
 		"gvim _vimrc
 	"}}}Installing vundle
 		
-		" Use Vim settings, rather than Vi settings (much better!). This must be first, because it changes other options as a side effect.
-			set nocompatible		" be iMproved, required
-			filetype off                  " required
+		"Use Vim settings, rather than Vi settings (much better!). This must be first, because it changes other options as a side effect.
+			set nocompatible		"be iMproved, required
+			filetype off                  "required
 
-		" set the runtime path to include Vundle and initialize
+		"set the runtime path to include Vundle and initialize
 		exe 'set rtp+=' .expand(path)
 
-		" pass a path where Vundle should install plugins
+		"pass a path where Vundle should install plugins
 		call vundle#begin(pathInstall)
 
-		" let Vundle manage Vundle, required
+		"let Vundle manage Vundle, required
 			Plugin 'gmarik/Vundle.vim'
 
-			" The following are examples of different formats supported. Keep Plugin commands between vundle#begin/end.
+			"The following are examples of different formats supported. Keep Plugin commands between vundle#begin/end.
 			
-			" plugin on GitHub repo
+			"plugin on GitHub repo
 			"Plugin 'tpope/vim-fugitive'
 			
-			" plugin from http://vim-scripts.org/vim/scripts.html
+			"plugin from http://vim-scripts.org/vim/scripts.html
 			Plugin 'L9'
 			
 			 "Git plugin not hosted on GitHub
@@ -131,7 +131,7 @@
 	nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 	nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 	nnoremap <space>nh :nohlsearch<CR>    "Key. ,Space 		"turn off search highlight
-	"nnoremap <space> za		" space open/closes folds
+	"nnoremap <space> za		"space open/closes folds
 	nnoremap <leader>u :GundoToggle<CR>		"toggle gundo
 	nnoremap <leader>q :mksession<CR>		"save session
 
@@ -141,7 +141,7 @@
 	"noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm		"Remove the Windows ^M - when the encodings gets messed up
 
 	inoremap jk <esc>		"jk is escape
-	" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo, so that you can undo CTRL-U after inserting a line break.
+	"CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo, so that you can undo CTRL-U after inserting a line break.
 	inoremap <C-U> <C-G>u<C-U>
 
 	nnoremap <leader>w :w!<cr>		"Fast saving
@@ -158,13 +158,13 @@
 	"noremap <leader>ba :1,1000 bd!<cr>		"Close all the buffers
 	noremap <leader>cd :cd %:p:h<cr>:pwd<cr>		"Switch CWD to the directory of the open buffer
 	
-	" Opens a new tab with the current buffer's path : Super useful when editing files in the same directory
+	"Opens a new tab with the current buffer's path : Super useful when editing files in the same directory
 	"noremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
-	noremap 0 ^		" Remap VIM 0 to first non-blank character
-	noremap Q gq		" Don't use Ex mode, use Q for formatting	
+	noremap 0 ^		"Remap VIM 0 to first non-blank character
+	noremap Q gq		"Don't use Ex mode, use Q for formatting	
 	
-	" Useful mappings for managing tabs
+	"Useful mappings for managing tabs
 		"noremap <leader>tn :tabnew<cr>
 		"noremap <leader>to :tabonly<cr>
 		"noremap <leader>tc :tabclose<cr>
@@ -175,28 +175,28 @@
 		:noremap <F7> :checktime<CR>
 		:noremap! <F7> <C-O>:checktime<CR>
 		
-	" Visual mode pressing * or # searches for the current selection, Super useful! From an idea by Michael Naumann
+	"Visual mode pressing * or # searches for the current selection, Super useful! From an idea by Michael Naumann
 		vnoremap <silent> * :call VisualSelection('f', '')<CR>
 		vnoremap <silent> # :call VisualSelection('b', '')<CR>	
 
-	" move vertically by visual line i.e. Dont skip wrapped lines
+	"move vertically by visual line i.e. Dont skip wrapped lines
 		nnoremap j gj
 		nnoremap k gk				
 
-	" move to beginning/end of line
+	"move to beginning/end of line
 		nnoremap B ^
 		nnoremap E $
 
-	" $/^ doesn't do anything
+	"$/^ doesn't do anything
 		nnoremap $ <nop>
 		nnoremap ^ <nop>
 	
-	" edit vimrc/zshrc and load vimrc bindings - These are shortcuts to edit and source vimrc and zshrc. 
-" 		nnoremap <leader>ev :vsp $MYVIMRC<CR>
-" 		nnoremap <leader>ez :vsp ~/.zshrc<CR>
-" 		nnoremap <leader>sv :source $MYVIMRC<CR>
+	"edit vimrc/zshrc and load vimrc bindings - These are shortcuts to edit and source vimrc and zshrc. 
+"		nnoremap <leader>ev :vsp $MYVIMRC<CR>
+"		nnoremap <leader>ez :vsp ~/.zshrc<CR>
+"		nnoremap <leader>sv :source $MYVIMRC<CR>
 
-	" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+	"Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 		noremap <space>s /
 		noremap <s-space> ?
 	
@@ -209,7 +209,7 @@
 	":set guioptions-=L  "remove left-hand scroll bar
 	
 	"TO START MAXIMIZED						
-		" Use ~x on an English Windows version or ~n for French.
+		"Use ~x on an English Windows version or ~n for French.
 		au GUIEnter * simalt ~x	
 		
 		"{{{Setting Color Scheme and Appearance
@@ -218,13 +218,13 @@
 				"colorscheme peaksea
 				"colorscheme desert
 				colorscheme deserts
-				"colorscheme badwolf         " awesome colorscheme
+				"colorscheme badwolf         "awesome colorscheme
 				"colorscheme apprentice
 				
-				" Enable syntax highlighting
+				"Enable syntax highlighting
 				syntax enable 
 
-				" Set extra options when running in GUI mode
+				"Set extra options when running in GUI mode
 				if has("gui_running")
 					set guioptions-=T
 					set guioptions-=e
@@ -233,20 +233,20 @@
 				endif
 		"}}}
 		"{{{ Status Bar
-				" Always show the status line
+				"Always show the status line
 				set laststatus=2
 
-				" Format the status line
+				"Format the status line
 				set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ WD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 		"}}}
 		"{{{Tabs Setting
-				set tabstop=4       " number of visual spaces per TAB
-				"set softtabstop=4   " number of spaces in tab when editing
-				"set smarttab		" Be smart when using tabs ;)
-				set shiftwidth=4		" 1 tab == 4 spaces
+				set tabstop=4       "number of visual spaces per TAB
+				"set softtabstop=4   "number of spaces in tab when editing
+				"set smarttab		"Be smart when using tabs ;)
+				set shiftwidth=4		"1 tab == 4 spaces
 		"}}}		
 		"{{{Line Numbers
-				set number              " show line numbers
+				set number              "show line numbers
 				set relativenumber
 		"}}}		
 "}}} GUI OPTIONS
@@ -264,55 +264,55 @@
 	set tabpagemax=50
 
     "{{{if TABS used
-	" CTRL-Tab is next tab
+	"CTRL-Tab is next tab
 		noremap <C-Tab> :<C-U>tabnext<CR>
 		inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
 		cnoremap <C-Tab> <C-C>:tabnext<CR>
-	" CTRL-SHIFT-Tab is previous tab
+	"CTRL-SHIFT-Tab is previous tab
 		noremap <C-S-Tab> :<C-U>tabprevious<CR>
 		inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
 		cnoremap <C-S-Tab> <C-C>:tabprevious<CR>	
-	" Smart way to move between windows
+	"Smart way to move between windows
 		map <C-j> <C-W>j
 		map <C-k> <C-W>k
 		map <C-h> <C-W>h
 		map <C-l> <C-W>l
-	" Let 'tl' toggle between this and the last accessed tab
+	"Let 'tl' toggle between this and the last accessed tab
 		let g:lasttab = 1
 		nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 		au TabLeave * let g:lasttab = tabpagenr()	
     "}}}		
    
 "{{{ option 1 - not working
-	"set showtabline=2 " always show tabs in gvim, but not vim
-	"" set up tab labels with tab number, buffer name, number of windows
+	"set showtabline=2 "always show tabs in gvim, but not vim
+	""set up tab labels with tab number, buffer name, number of windows
 	"function! GuiTabLabel()
 	"let label = ''
 	"let bufnrlist = tabpagebuflist(v:lnum)
-	"" Add '+' if one of the buffers in the tab page is modified
+	""Add '+' if one of the buffers in the tab page is modified
 	"for bufnr in bufnrlist
 	"if getbufvar(bufnr, "&modified")
 	  "let label = '+'
 	  "break
 	"endif
 	"endfor
-	"" Append the tab number
+	""Append the tab number
 	"let label .= v:lnum.': '
-	"" Append the buffer name
+	""Append the buffer name
 	"let name = bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
 	"if name == ''
-	"" give a name to no-name documents
+	""give a name to no-name documents
 	"if &buftype=='quickfix'
 	  "let name = '[Quickfix List]'
 	"else
 	  "let name = '[No Name]'
 	"endif
 	"else
-	"" get only the file name
+	""get only the file name
 	"let name = fnamemodify(name,":t")
 	"endif
 	"let label .= name
-	"" Append the number of windows in the tab page
+	""Append the number of windows in the tab page
 	"let wincount = tabpagewinnr(v:lnum, '$')
 	"return label . '  [' . wincount . ']'
 	"endfunction
@@ -320,19 +320,19 @@
 "}}}
 
 "{{{ tool tip Not Working
-" set up tab tooltips with every buffer name
+"set up tab tooltips with every buffer name
 "function! GuiTabToolTip()
   "let tip = ''
   "let bufnrlist = tabpagebuflist(v:lnum)
   "for bufnr in bufnrlist
-    "" separate buffer entries
+    ""separate buffer entries
     "if tip!=''
-      "let tip .= " \n "
+      "let tip .= "\n "
     "endif
-    "" Add name of buffer
+    ""Add name of buffer
     "let name=bufname(bufnr)
     "if name == ''
-      "" give a name to no name documents
+      ""give a name to no name documents
       "if getbufvar(bufnr,'&buftype')=='quickfix'
         "let name = '[Quickfix List]'
       "else
@@ -340,7 +340,7 @@
       "endif
     "endif
     "let tip.=name
-    "" add modified/modifiable flags
+    ""add modified/modifiable flags
     "if getbufvar(bufnr, "&modified")
       "let tip .= ' [+]'
     "endif
@@ -358,7 +358,7 @@
     "let label = ''
     "let bufnrlist = tabpagebuflist(v:lnum)
 
-    "" Add '+' if one of the buffers in the tab page is modified
+    ""Add '+' if one of the buffers in the tab page is modified
     "for bufnr in bufnrlist
         "if getbufvar(bufnr, "&modified")
             "let label = '+'
@@ -366,7 +366,7 @@
         "endif
     "endfor
 
-    "" Append the number of windows in the tab page if more than one
+    ""Append the number of windows in the tab page if more than one
     "let wincount = tabpagewinnr(v:lnum, '$')
     "if wincount > 1
         "let label .= wincount
@@ -375,7 +375,7 @@
         "let label .= ' '
     "endif
 
-    "" Append the buffer name (not full path)
+    ""Append the buffer name (not full path)
     "return label . "%t"
 "endfunction
 
@@ -383,71 +383,71 @@
 "}}}
 
 "{{{ New one
-"set tabline=%!MyTabLine()  " custom tab pages line
+"set tabline=%!MyTabLine()  "custom tab pages line
 "function MyTabLine()
-        "let s = '' " complete tabline goes here
-        "" loop through each tab page
+        "let s = '' "complete tabline goes here
+        ""loop through each tab page
         "for t in range(tabpagenr('$'))
-                "" set highlight
+                ""set highlight
                 "if t + 1 == tabpagenr()
                         "let s .= '%#TabLineSel#'
                 "else
                         "let s .= '%#TabLine#'
                 "endif
-                "" set the tab page number (for mouse clicks)
+                ""set the tab page number (for mouse clicks)
                 "let s .= '%' . (t + 1) . 'T'
                 "let s .= ' '
-                "" set page number string
+                ""set page number string
                 "let s .= t + 1 . ' '
-                "" get buffer names and statuses
+                ""get buffer names and statuses
                 "let n = ''      "temp string for buffer names while we loop and check buftype
-                "let m = 0       " &modified counter
+                "let m = 0       "&modified counter
                 "let bc = len(tabpagebuflist(t + 1))     "counter to avoid last ' '
-                "" loop through each buffer in a tab
+                ""loop through each buffer in a tab
                 "for b in tabpagebuflist(t + 1)
-                        "" buffer types: quickfix gets a [Q], help gets [H]{base fname}
-                        "" others get 1dir/2dir/3dir/fname shortened to 1/2/3/fname
-                        "if getbufvar( b, "&buftype" ) == 'help'
+                        ""buffer types: quickfix gets a [Q], help gets [H]{base fname}
+                        ""others get 1dir/2dir/3dir/fname shortened to 1/2/3/fname
+                        "if getbufvar( b, "&buftype") == 'help'
                                 "let n .= '[H]' . fnamemodify( bufname(b), ':t:s/.txt$//' )
-                        "elseif getbufvar( b, "&buftype" ) == 'quickfix'
+                        "elseif getbufvar( b, "&buftype") == 'quickfix'
                                 "let n .= '[Q]'
                         "else
                                 "let n .= pathshorten(bufname(b))
                         "endif
-                        "" check and ++ tab's &modified count
-                        "if getbufvar( b, "&modified" )
+                        ""check and ++ tab's &modified count
+                        "if getbufvar( b, "&modified")
                                 "let m += 1
                         "endif
-                        "" no final ' ' added...formatting looks better done later
+                        ""no final ' ' added...formatting looks better done later
                         "if bc > 1
                                 "let n .= ' '
                         "endif
                         "let bc -= 1
                 "endfor
-                "" add modified label [n+] where n pages in tab are modified
+                ""add modified label [n+] where n pages in tab are modified
                 "if m > 0
                         "let s .= '[' . m . '+]'
                 "endif
-                "" select the highlighting for the buffer names
-                "" my default highlighting only underlines the active tab
-                "" buffer names.
+                ""select the highlighting for the buffer names
+                ""my default highlighting only underlines the active tab
+                ""buffer names.
                 "if t + 1 == tabpagenr()
                         "let s .= '%#TabLineSel#'
                 "else
                         "let s .= '%#TabLine#'
                 "endif
-                "" add buffer names
+                ""add buffer names
                 "if n == ''
                         "let s.= '[New]'
                 "else
                         "let s .= n
                 "endif
-                "" switch to no underlining and add final space to buffer list
+                ""switch to no underlining and add final space to buffer list
                 "let s .= ' '
         "endfor
-        "" after the last tab fill with TabLineFill and reset tab page nr
+        ""after the last tab fill with TabLineFill and reset tab page nr
         "let s .= '%#TabLineFill#%T'
-        "" right-align the label to close the current tab page
+        ""right-align the label to close the current tab page
         "if tabpagenr('$') > 1
                 "let s .= '%=%#TabLineFill#%999Xclose'
         "endif
@@ -456,11 +456,11 @@
 "}}}
 
     ""{{{if BUFFER used NEED WORKING
-	"" CTRL-Tab is next buffer
+	""CTRL-Tab is next buffer
 		"noremap <C-Tab> :bn<CR>
-	"" CTRL-SHIFT-Tab is previous tab
+	""CTRL-SHIFT-Tab is previous tab
 		"noremap <C-S-Tab> :bp<CR>
-	"" Let 'tl' toggle between this and the last accessed tab
+	""Let 'tl' toggle between this and the last accessed tab
 		"let g:lasttab = 1
 		"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 		"au TabLeave * let g:lasttab = tabpagenr()	
@@ -477,16 +477,16 @@
 			"set writebackup
 			:set nobackup
 			"To make Backups with Date
-				":au! BufWrite * execute "w" expand("%") . strftime(".%y%m%d.%H%M%S")
-				:au! BufWrite * execute "w!" expand("%") . strftime(".%y%m%d.")
+				":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
+				:au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
 "}}} Backup Settings
 
 "{{{ FOLD settings
-	set foldcolumn=3		" Add a bit extra margin to the left
-	set foldenable          " enable folding
-	set foldlevelstart=0   " open most folds by default
-	set foldnestmax=10      " 10 nested fold max
-	"set foldmethod=indent   " fold based on indent level	
+	set foldcolumn=3		"Add a bit extra margin to the left
+	set foldenable          "enable folding
+	set foldlevelstart=0   "open most folds by default
+	set foldnestmax=10      "10 nested fold max
+	"set foldmethod=indent   "fold based on indent level	
 	set foldmethod=marker
 	"set foldmethod=syntax
 	"set foldmethod=expr
@@ -508,9 +508,9 @@
 		
 	"let g:vimsyn_folding='af'
 	
-	" Section Name {{{  ---3 brackets are markers
+	"Section Name {{{  ---3 brackets are markers
 			"set number "This will be folded
-	" }}}
+	"}}}
 	
 "}}} FOLD Settings
 
@@ -530,7 +530,7 @@
 	
 	"{{{  strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
 		function! <SID>StripTrailingWhitespaces()
-			" save last search & cursor position
+			"save last search & cursor position
 			let _s=@/
 			let l = line(".")
 			let c = col(".")
@@ -539,7 +539,7 @@
 			call cursor(l, c)
 		endfunction
 		
-		" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+		"Delete trailing white space on save, useful for Python and CoffeeScript ;)
 		func! DeleteTrailingWS()
 			exe "normal mz"
 			%s/\s\+$//ge
@@ -552,7 +552,7 @@
 	
 	"{{{ Function1
 		function! CmdLine(str)
-			exe "menu Foo.Bar :" . a:str
+			exe "menu Foo.Bar :". a:str
 			emenu Foo.Bar
 			unmenu Foo
 		endfunction 
@@ -567,22 +567,22 @@
 			let l:pattern = substitute(l:pattern, "\n$", "", "")
 			
 			if a:direction == 'b'
-				execute "normal ?" . l:pattern . "^M"
+				execute "normal ?". l:pattern . "^M"
 			elseif a:direction == 'gv'
-				call CmdLine("Ack \"" . l:pattern . "\" " )
+				call CmdLine("Ack \"". l:pattern . "\"")
 			elseif a:direction == 'replace'
-				call CmdLine("%s" . '/'. l:pattern . '/')
+				call CmdLine("%s". '/'. l:pattern . '/')
 			elseif a:direction == 'f'
-				execute "normal /" . l:pattern . "^M"
+				execute "normal /". l:pattern . "^M"
 			endif
 			
 			let @/ = l:pattern
-			let @" = l:saved_reg
+			let @"= l:saved_reg
 		endfunction
 	"}}} Selection
 
 	"{{{ Function1	
-		" Returns true if paste mode is enabled
+		"Returns true if paste mode is enabled
 		function! HasPaste()
 		    if &paste
 			return 'PASTE MODE  '
@@ -592,7 +592,7 @@
 	"}}} Function1
 	
 	"{{{ Function1	
-		" Don't close window, when deleting a buffer
+		"Don't close window, when deleting a buffer
 		command! Bclose call <SID>BufcloseCloseIt()
 		function! <SID>BufcloseCloseIt()
 		   let l:currentBufNum = bufnr("%")
@@ -615,29 +615,29 @@
 	"}}} Function1
 
 	"{{{ Function1	
-" 		function MyDiff()
-" 			let opt = '-a --binary '
-" 			if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-" 			if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-" 			let arg1 = v:fname_in
-" 			if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-" 			let arg2 = v:fname_new
-" 			if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-" 			let arg3 = v:fname_out
-" 			if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-" 			let eq = ''
-" 			if $VIMRUNTIME =~ ' '
-" 				if &sh =~ '\<cmd'
-" 					let cmd = '""' . $VIMRUNTIME . '\diff"'
-" 					let eq = '"'
-" 				else
-" 					let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-" 				endif
-" 			else
-" 				let cmd = $VIMRUNTIME . '\diff'
-" 			endif
-" 			silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-" 		endfunction
+"		function MyDiff()
+"			let opt = '-a --binary '
+"			if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+"			if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+"			let arg1 = v:fname_in
+"			if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+"			let arg2 = v:fname_new
+"			if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+"			let arg3 = v:fname_out
+"			if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+"			let eq = ''
+"			if $VIMRUNTIME =~ ' '
+"				if &sh =~ '\<cmd'
+"					let cmd = '""' . $VIMRUNTIME . '\diff"'
+"					let eq = '"'
+"				else
+"					let cmd = substitute($VIMRUNTIME, ' ', '"', '') . '\diff"'
+"				endif
+"			else
+"				let cmd = $VIMRUNTIME . '\diff'
+"			endif
+"			silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+"		endfunction
 	"}}} Function1
 	
 	"{{{ Toggle Fold Function
@@ -654,14 +654,14 @@
 
 "{{{ Other Settings
 
-	" Return to last edit position when opening files (You want this!)
+	"Return to last edit position when opening files (You want this!)
 		autocmd BufReadPost *
 		     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-		     \   exe "normal! g`\"" |
+		     \   exe "normal! g`\""|
 		     \ endif
-	set viminfo^=%		" Remember info about open buffers on close
+	set viminfo^=%		"Remember info about open buffers on close
 
-	" Specify the behavior when switching between buffers 
+	"Specify the behavior when switching between buffers 
 	try
 		set switchbuf=useopen,usetab,newtab
 		set stal=2
@@ -669,38 +669,38 @@
 	endtry
 
 	:set autoread		"Auto reload files if changed outside
-	set so=7		" Set 7 lines to the cursor - when moving vertically using j/k
-	" Linebreak on 500 characters
+	set so=7		"Set 7 lines to the cursor - when moving vertically using j/k
+	"Linebreak on 500 characters
 			"set lbr
 			"set tw=500
 	set ai "Auto indent
 	set si "Smart indent
 	"set wrap "Wrap lines
-	set mousehide		" Hide the mouse when typing text
+	set mousehide		"Hide the mouse when typing text
 	set diffexpr=MyDiff()
 	set timeout timeoutlen=3000
-	set history=700		" Sets how many lines of history VIM has to remember
-	set autoread		" Set to auto read when a file is changed from the outside
-	set showcmd             " show command in bottom bar,  display incomplete commands
-	set cursorline          " highlight current line
-	set wildmenu            " visual autocomplete for command menu
-	set showmatch           " highlight matching [{()}]		Show matching brackets when text indicator is over them
-	set incsearch           " search as characters are entered, do incremental searching
-	set hlsearch            " highlight matches
-	set lazyredraw          " redraw only when we need to.
-	set wildmenu		" Turn on the WiLd menu
+	set history=700		"Sets how many lines of history VIM has to remember
+	set autoread		"Set to auto read when a file is changed from the outside
+	set showcmd             "show command in bottom bar,  display incomplete commands
+	set cursorline          "highlight current line
+	set wildmenu            "visual autocomplete for command menu
+	set showmatch           "highlight matching [{()}]		Show matching brackets when text indicator is over them
+	set incsearch           "search as characters are entered, do incremental searching
+	set hlsearch            "highlight matches
+	set lazyredraw          "redraw only when we need to.
+	set wildmenu		"Turn on the WiLd menu
 	set ruler			"Always show current position
-	set cmdheight=2			" Height of the command bar
-	set ch=2		" Make command line two lines high
-	set hid		" A buffer becomes hidden when it is abandoned
-	set backspace=eol,start,indent		" Configure backspace so it acts as it should act				allow backspacing over everything in insert mode
-	set whichwrap+=<,>,h,l				" Configure backspace so it acts as it should act
-	set ignorecase		" Ignore case when searching
-	set smartcase		" When searching try to be smart about cases 
-	set magic		" For regular expressions turn magic on
-	set mat=2		" How many tenths of a second to blink when matching brackets
+	set cmdheight=2			"Height of the command bar
+	set ch=2		"Make command line two lines high
+	set hid		"A buffer becomes hidden when it is abandoned
+	set backspace=eol,start,indent		"Configure backspace so it acts as it should act				allow backspacing over everything in insert mode
+	set whichwrap+=<,>,h,l				"Configure backspace so it acts as it should act
+	set ignorecase		"Ignore case when searching
+	set smartcase		"When searching try to be smart about cases 
+	set magic		"For regular expressions turn magic on
+	set mat=2		"How many tenths of a second to blink when matching brackets
 	
-	" No annoying sound on errors
+	"No annoying sound on errors
 		set noerrorbells visualbell t_vb=
 		if has('autocmd')
 		  autocmd GUIEnter * set visualbell t_vb=
@@ -710,19 +710,19 @@
 
 	syntax on
 	filetype plugin on
-	filetype plugin indent on    " required
-	filetype indent on      " load filetype-specific indent files
+	filetype plugin indent on    "required
+	filetype indent on      "load filetype-specific indent files
 	filetype plugin on
 	filetype indent on
 
 	autocmd InsertEnter * :set number
 	autocmd InsertLeave * :set relativenumber
 
-	" Cursor is green, Cyan when ":lmap" mappings are active, Constants are not underlined but have a slightly lighter background
+	"Cursor is green, Cyan when ":lmap"mappings are active, Constants are not underlined but have a slightly lighter background
 		highlight Cursor guibg=Green guifg=NONE
 		highlight lCursor guibg=Cyan guifg=NONE		
 	 
-	" CtrlP settings
+	"CtrlP settings
 		let g:ctrlp_match_window = 'bottom,order:ttb'
 		let g:ctrlp_switch_buffer = 0
 		let g:ctrlp_working_path_mode = 0
@@ -755,8 +755,8 @@
 			 autocmd BufEnter *.sh setlocal softtabstop=2
 		augroup END
 
-	" Convenient command to see the difference between the current buffer and the file it was loaded from, thus the changes you made.
-	" Only define it when not defined already.
+	"Convenient command to see the difference between the current buffer and the file it was loaded from, thus the changes you made.
+	"Only define it when not defined already.
 	if !exists(":DiffOrig")
 			command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 			  \ | wincmd p | diffthis
@@ -789,42 +789,42 @@
     "autocmd FileType conf,fstab       let b:comment_leader = '# '
     "autocmd FileType tex              let b:comment_leader = '% '
     "autocmd FileType mail             let b:comment_leader = '> '
-    "autocmd FileType vim              let b:comment_leader = '" '
+    "autocmd FileType vim              let b:comment_leader = '"'
     "autocmd FileType apdl             let b:comment_leader = '! '
     "noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
     "noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 "}}}
 
-" {{{TABLINE SETTINGS
-"set showtabline=2 " always show tabs in gvim, but not vim
-"" set up tab labels with tab number, buffer name, number of windows
+"{{{TABLINE SETTINGS
+"set showtabline=2 "always show tabs in gvim, but not vim
+""set up tab labels with tab number, buffer name, number of windows
 "function! GuiTabLabel()
   "let label = ''
   "let bufnrlist = tabpagebuflist(v:lnum)
-  "" Add '+' if one of the buffers in the tab page is modified
+  ""Add '+' if one of the buffers in the tab page is modified
   "for bufnr in bufnrlist
     "if getbufvar(bufnr, "&modified")
       "let label = '+'
       "break
     "endif
   "endfor
-  "" Append the tab number
+  ""Append the tab number
   "let label .= v:lnum.': '
-  "" Append the buffer name
+  ""Append the buffer name
   "let name = bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
   "if name == ''
-    "" give a name to no-name documents
+    ""give a name to no-name documents
     "if &buftype=='quickfix'
       "let name = '[Quickfix List]'
     "else
       "let name = '[No Name]'
     "endif
   "else
-    "" get only the file name
+    ""get only the file name
     "let name = fnamemodify(name,":t")
   "endif
   "let label .= name
-  "" Append the number of windows in the tab page
+  ""Append the number of windows in the tab page
   "let wincount = tabpagewinnr(v:lnum, '$')
   "return label . '  [' . wincount . ']'
 "endfunction
@@ -843,7 +843,7 @@ let g:NERDCustomDelimiters = {
 
 "{{{ File Type Association
 
-" APDL filetye association
+"APDL filetye association
 	au BufNewFile,BufRead *.in	setf apdl
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
@@ -916,27 +916,27 @@ let g:NERDCustomDelimiters = {
 	autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 "}}}
 
-"{{{" The Silver Searcher
+"{{{"The Silver Searcher
 	"if executable('ag')
-	"" Use ag over grep
+	""Use ag over grep
 	"set grepprg=ag\ --nogroup\ --nocolor
 
-	"" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+	""Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 	"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-	"" ag is fast enough that CtrlP doesn't need to cache
+	""ag is fast enough that CtrlP doesn't need to cache
 	"let g:ctrlp_use_caching = 0
 	"endif
 "}}}
 
 "{{{ SEARCH OPTIONS
-	" bind K to vimgrep word under cursor
+	"bind K to vimgrep word under cursor
 		nnoremap K :vimgrep! /<C-R><C-W>/gj *.in<CR>:cw<CR>
 	"Search in Dir and sub directories for word under Cursor in ALL FILES
-		"map <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
+		"map <F4> :execute "vimgrep /". expand("<cword>") . "/gj **"<Bar> cw<CR>
 		
 	"same as above but for some extension Only...
-		map <F4> :execute "vimgrep /" . expand("<cword>") . "/gj *.in" <Bar> cw<CR>
+		map <F4> :execute "vimgrep /". expand("<cword>") . "/gj *.in"<Bar> cw<CR>
 		
 	"Search for word under cursor in same file.... Same as / searching....(* or #)
 	"is preferred
@@ -954,28 +954,28 @@ let g:NERDCustomDelimiters = {
 
 "{{{ IMPORTANT NOTES
 
-" 1. :changes - to view changes
-" 2. :gv  - reselect last selection
-" 3.  #  - Search words under Cursor backwards
-" 4.  *  - Search words under Cursor forwards
-" 5.  :%s/pattern//gn     - count number of occurences of pattern
-" 6.  To search and replace in selection
+"1. :changes - to view changes
+"2. :gv  - reselect last selection
+"3.  #  - Search words under Cursor backwards
+"4.  *  - Search words under Cursor forwards
+"5.  :%s/pattern//gn     - count number of occurences of pattern
+"6.  To search and replace in selection
 	  "press :, selection symbol auto appears then press s/pattern/replacement/gc
-" 7.  :g; to go to last edit position, mapped to g-
-" 8.  gi command switches Vim to Insert mode and places cursor in the same position as where Insert mode was stopped last time.
-" 9.  byw - yank word under cursor
-" 10. viw - select word under cursor
-" 11. :ve - to see version Information
-" 12. :argdo %s/file:\/\/\/.\\/file: /gc  - Replace in all buffers....
-" 13. :sp filename for a horizontal split
+"7.  :g; to go to last edit position, mapped to g-
+"8.  gi command switches Vim to Insert mode and places cursor in the same position as where Insert mode was stopped last time.
+"9.  byw - yank word under cursor
+"10. viw - select word under cursor
+"11. :ve - to see version Information
+"12. :argdo %s/file:\/\/\/.\\/file: /gc  - Replace in all buffers....
+"13. :sp filename for a horizontal split
 		":vsp filename or :vs filename for a vertical split
 		"If no filename give same file opens
-" 14. :%s/.\{80}/&\r/g     - New line after 80 charachters
-" 							- &\r means Match and New Line
-" 15. zj - move down to top of next fold
+"14. :%s/.\{80}/&\r/g     - New line after 80 charachters
+"							- &\r means Match and New Line
+"15. zj - move down to top of next fold
 				"zk	- move up to bottom of previous fold
-" 16. :vimgrep patter **/*.ext - to search recursively in folder
-" 17. Autocad Command: IMAGEFRAME
+"16. :vimgrep patter **/*.ext - to search recursively in folder
+"17. Autocad Command: IMAGEFRAME
 
 
 ":arg *.cpp	All *.cpp files in current directory.
@@ -984,7 +984,7 @@ let g:NERDCustomDelimiters = {
 ":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist.
 
 ":%s#\($\n\s*\)\+\%$##
-"Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty" lines, remove the \s* from the above command.
+"Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty"lines, remove the \s* from the above command.
 	"Explanation:
 	"\( ..... Start a match group
 	"$\n ... Match a new line (end-of-line character followed by a carriage return).
@@ -993,7 +993,7 @@ let g:NERDCustomDelimiters = {
 	"\+ ..... Allow any number of occurrences of this group (one or more).
 	"\%$ ... Match the end of the file
 
-" SEARCH AND REPLACE
+"SEARCH AND REPLACE
 	":%s/foo/bar/g
 	    "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
 	":s/foo/bar/g
@@ -1028,10 +1028,10 @@ vnoremap > >gv
 
 ":verbose nnoremap ö <C-]>
 ":verbose nnoremap ä <C-O>
-	"exe 'noremap <Char-196> }'	| " LATIN CAPITAL A WITH DIAERESIS 
-	"exe 'noremap <Char-214> {'	| " LATIN CAPITAL O WITH DIAERESIS 
-	"exe 'noremap <Char-228> ]'	| " LATIN SMALL A WITH DIAERESIS 
-	"exe 'noremap <Char-246> ['	| " LATIN SMALL O WITH DIAERESIS
+	"exe 'noremap <Char-196> }'	| "LATIN CAPITAL A WITH DIAERESIS 
+	"exe 'noremap <Char-214> {'	| "LATIN CAPITAL O WITH DIAERESIS 
+	"exe 'noremap <Char-228> ]'	| "LATIN SMALL A WITH DIAERESIS 
+	"exe 'noremap <Char-246> ['	| "LATIN SMALL O WITH DIAERESIS
 
 nnoremap <leader>llt $
 nnoremap <leader>lls ^
@@ -1048,9 +1048,9 @@ set guitablabel=\[%N\]\ %t\ %M
 "Map g- as an alias for g;
 nnoremap g- g;
 
-set nowrap        " don't wrap lines
-set visualbell           " don't beep
-set noerrorbells         " don't beep
+set nowrap        "don't wrap lines
+set visualbell           "don't beep
+set noerrorbells         "don't beep
 
 "Easy window navigation
 	map <C-h> <C-w>h
@@ -1112,7 +1112,7 @@ set printfont=Courier:h12
 	nmap <Leader>tt :call LastEditTab()<cr>
 	au InsertLeave * let g:editTab = tabpagenr()
 	function! LastEditTab()
-		:exe "tabn " .g:editTab2
+		:exe "tabn ".g:editTab2
 		let g:editTab2=g:editTab
 	endfunction
 
@@ -1120,7 +1120,7 @@ set printfont=Courier:h12
 
 nnoremap gl ''
 
-" Set up the gui cursor to look nice
+"Set up the gui cursor to look nice
 "set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 nnoremap <F12> @q
