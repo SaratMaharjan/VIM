@@ -823,66 +823,66 @@ syn match apdlFunction display "/mstart\>" contained
 syn match apdlFunction display "msterm\>" contained
 syn match apdlFunction display "msvary\>" contained
 syn match apdlFunction display "mxpand\>" contained
-syn match apdlFunction display " n\>" contained
-syn match apdlFunction display " nang\>" contained
-syn match apdlFunction display " ncnv\>" contained
-syn match apdlFunction display " ndele\>" contained
-syn match apdlFunction display " ndist\>" contained
-syn match apdlFunction display " ndsurf\>" contained
-syn match apdlFunction display " neqit\>" contained
+syn match apdlFunction display "n\>" contained
+syn match apdlFunction display "nang\>" contained
+syn match apdlFunction display "ncnv\>" contained
+syn match apdlFunction display "ndele\>" contained
+syn match apdlFunction display "ndist\>" contained
+syn match apdlFunction display "ndsurf\>" contained
+syn match apdlFunction display "neqit\>" contained
 syn match apdlFunction display "/nerr\>" contained
-syn match apdlFunction display " nforce\>" contained
-syn match apdlFunction display " ngen\>" contained
-syn match apdlFunction display " nkpt\>" contained
-syn match apdlFunction display " nldiag\>" contained
-syn match apdlFunction display " nlgeom\>" contained
-syn match apdlFunction display " nlist\>" contained
-syn match apdlFunction display " nlog\>" contained
-syn match apdlFunction display " nlopt\>" contained
-syn match apdlFunction display " nmodif\>" contained
-syn match apdlFunction display " nocolor\>" contained
-syn match apdlFunction display " nodes\>" contained
+syn match apdlFunction display "nforce\>" contained
+syn match apdlFunction display "ngen\>" contained
+syn match apdlFunction display "nkpt\>" contained
+syn match apdlFunction display "nldiag\>" contained
+syn match apdlFunction display "nlgeom\>" contained
+syn match apdlFunction display "nlist\>" contained
+syn match apdlFunction display "nlog\>" contained
+syn match apdlFunction display "nlopt\>" contained
+syn match apdlFunction display "nmodif\>" contained
+syn match apdlFunction display "nocolor\>" contained
+syn match apdlFunction display "nodes\>" contained
 syn match apdlFunction display "/noerase\>" contained
 syn match apdlFunction display "/nolist\>" contained
-syn match apdlFunction display " noorder\>" contained
+syn match apdlFunction display "noorder\>" contained
 syn match apdlFunction display "/nopr\>" contained
 syn match apdlFunction display "/normal\>" contained
-syn match apdlFunction display " nplot\>" contained
-syn match apdlFunction display " nprint\>" contained
-syn match apdlFunction display " nread\>" contained
-syn match apdlFunction display " nrefine\>" contained
-syn match apdlFunction display " nrlsum\>" contained
-syn match apdlFunction display " nropt\>" contained
-syn match apdlFunction display " nrotat\>" contained
-syn match apdlFunction display " nrrang\>" contained
-syn match apdlFunction display " nscale\>" contained
+syn match apdlFunction display "nplot\>" contained
+syn match apdlFunction display "nprint\>" contained
+syn match apdlFunction display "nread\>" contained
+syn match apdlFunction display "nrefine\>" contained
+syn match apdlFunction display "nrlsum\>" contained
+syn match apdlFunction display "nropt\>" contained
+syn match apdlFunction display "nrotat\>" contained
+syn match apdlFunction display "nrrang\>" contained
+syn match apdlFunction display "nscale\>" contained
 
-"syn match apdlFunction display " nsla\>" contained
-"syn match apdlFunction display " nsle\>" contained
-"syn match apdlFunction display " nslk\>" contained
-"syn match apdlFunction display " nsll\>" contained
-"syn match apdlFunction display " nslv\>" contained
+"syn match apdlFunction display "nsla\>" contained
+"syn match apdlFunction display "nsle\>" contained
+"syn match apdlFunction display "nslk\>" contained
+"syn match apdlFunction display "nsll\>" contained
+"syn match apdlFunction display "nslv\>" contained
 
-syn match apdlFunction display " nsl\([aeklv]\)\?\>" contained
+syn match apdlFunction display "nsl\([aeklv]\)\?\>" contained
 
-syn match apdlFunction display " nsmooth\>" contained
-syn match apdlFunction display " nsol\>" contained
-syn match apdlFunction display " nsort\>" contained
-syn match apdlFunction display " nstore\>" contained
-syn match apdlFunction display " nsubst\>" contained
-syn match apdlFunction display " nsvr\>" contained
-syn match apdlFunction display " nsym\>" contained
+syn match apdlFunction display "nsmooth\>" contained
+syn match apdlFunction display "nsol\>" contained
+syn match apdlFunction display "nsort\>" contained
+syn match apdlFunction display "nstore\>" contained
+syn match apdlFunction display "nsubst\>" contained
+syn match apdlFunction display "nsvr\>" contained
+syn match apdlFunction display "nsym\>" contained
 syn match apdlFunction display "/number\>" contained
-syn match apdlFunction display " numcmp\>" contained
-syn match apdlFunction display " numexp\>" contained
-syn match apdlFunction display " nummrg\>" contained
-syn match apdlFunction display " numoff\>" contained
-syn match apdlFunction display " numstr\>" contained
-syn match apdlFunction display " numvar\>" contained
-syn match apdlFunction display " nusort\>" contained
-syn match apdlFunction display " nwpave\>" contained
-syn match apdlFunction display " nwplan\>" contained
-syn match apdlFunction display " nwrite\>" contained
+syn match apdlFunction display "numcmp\>" contained
+syn match apdlFunction display "numexp\>" contained
+syn match apdlFunction display "nummrg\>" contained
+syn match apdlFunction display "numoff\>" contained
+syn match apdlFunction display "numstr\>" contained
+syn match apdlFunction display "numvar\>" contained
+syn match apdlFunction display "nusort\>" contained
+syn match apdlFunction display "nwpave\>" contained
+syn match apdlFunction display "nwplan\>" contained
+syn match apdlFunction display "nwrite\>" contained
 syn match apdlFunction display "omega\>" contained
 syn match apdlFunction display "opadd\>" contained
 syn match apdlFunction display "opanl\>" contained
@@ -1634,18 +1634,18 @@ syn match apdlm display "MXX181\>" contained
 syn match apdlm display "MXX188\>" contained
 syn match apdlm display "MXX43\>" contained
 syn match apdlm display "MXX63\>" contained
-syn match apdlm display " nINFO\>" contained
-syn match apdlm display " nlschraub\>" contained
-syn match apdlm display " nLSort\>" contained
-syn match apdlm display " nLSort2\>" contained
-syn match apdlm display " nLSort3\>" contained
-syn match apdlm display " nLSort4\>" contained
-syn match apdlm display " nLSort_x\>" contained
-syn match apdlm display " nLSort_y\>" contained
-syn match apdlm display " nLSort_z\>" contained
-"syn match apdlm display " nsl\>" contained
-syn match apdlm display " nUMPLO\>" contained
-syn match apdlm display " nver\>" contained
+syn match apdlm display "nINFO\>" contained
+syn match apdlm display "nlschraub\>" contained
+syn match apdlm display "nLSort\>" contained
+syn match apdlm display "nLSort2\>" contained
+syn match apdlm display "nLSort3\>" contained
+syn match apdlm display "nLSort4\>" contained
+syn match apdlm display "nLSort_x\>" contained
+syn match apdlm display "nLSort_y\>" contained
+syn match apdlm display "nLSort_z\>" contained
+"syn match apdlm display "nsl\>" contained
+syn match apdlm display "nUMPLO\>" contained
+syn match apdlm display "nver\>" contained
 syn match apdlm display "pb\>" contained
 syn match apdlm display "pcds\>" contained
 syn match apdlm display "0PHV\>" contained
@@ -1813,11 +1813,11 @@ syn match apdlFunction display "/show\>" contained
 
 "{{{ multiline commands
 syn match apdlStringLine ".*$" contained
-syn match apdlBeforeLine ".*\n" contained " nextgroup=apdlStringLine
-syn match apdlFunction "\*msg\>" contained " nextgroup=apdlBeforeLine
-syn match apdlFunction "\*mwrite\>" contained " nextgroup=apdlBeforeLine
-syn match apdlFunction "\*vread\>" contained " nextgroup=apdlBeforeLine
-syn match apdlFunction "\*vwrite\>" contained " nextgroup=apdlBeforeLine
+syn match apdlBeforeLine ".*\n" contained "nextgroup=apdlStringLine
+syn match apdlFunction "\*msg\>" contained "nextgroup=apdlBeforeLine
+syn match apdlFunction "\*mwrite\>" contained "nextgroup=apdlBeforeLine
+syn match apdlFunction "\*vread\>" contained "nextgroup=apdlBeforeLine
+syn match apdlFunction "\*vwrite\>" contained "nextgroup=apdlBeforeLine
 "}}}
 
 "{{{ Commands with parameter checking:
