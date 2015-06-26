@@ -11,6 +11,7 @@
 		let pathColor='E:/Cloud/Dropbox/VIM/colors/deserts.vim'
 		let pathSnips='E:/Cloud/Dropbox/VIM/snips'
 		let pathGrep='E:\Cloud\Dropbox\VIM\GREP\bin'
+		let pathAbbr='D:\zCore\absm.mac'
 
 "ende Path
 

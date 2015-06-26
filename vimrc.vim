@@ -501,6 +501,8 @@
 	autocmd FileType apdl setlocal foldmarker=!anfang,!ende	
 	autocmd FileType dosbatch setlocal foldmethod=marker    	
 	autocmd FileType dosbatch setlocal foldmarker=anfang,ende	
+	autocmd FileType asm setlocal foldmethod=marker    	
+	autocmd FileType asm setlocal foldmarker=anfang,ende	
 
 	"let g:FoldMethod = 0		"Defining Global Variable	
 
@@ -659,6 +661,7 @@
 		     \ if line("'\"") > 0 && line("'\"") <= line("$") |
 		     \   exe "normal! g`\""|
 		     \ endif
+
 	set viminfo^=%		"Remember info about open buffers on close
 
 	"Specify the behavior when switching between buffers 
@@ -831,19 +834,10 @@
 "set guitablabel=%{GuiTabLabel()}
 "}}}
 
-"{{{ Nerd Commentator Settings
-let g:NERDCustomDelimiters = {
-    \ 'ruby': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
-    \ 'grondle': { 'left': '{{', 'right': '}}' },
-    \ 'apdl': { 'left': '!', 'right': '' },
-    \ 'mac': { 'left': '!', 'right': '' },
-    \ 'macro': { 'left': '!', 'right': '' }
-\ }
-"}}}
-
 "{{{ File Type Association
 
 "APDL filetye association
+
 	au BufNewFile,BufRead *.in	setf apdl
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
@@ -862,6 +856,23 @@ let g:NERDCustomDelimiters = {
 	
 "}}}
 
+"{{{ Nerd Commentator Settings
+
+let g:NERDCustomDelimiters = {
+    \ 'ruby': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+    \ 'grondle': { 'left': '{{', 'right': '}}' },
+    \ 'apdl': { 'left': '!', 'right': '' },
+    \ 'mac': { 'left': '!', 'right': '' },
+    \ 'macro': { 'left': '!', 'right': '' },
+    \ 'asm': { 'left': '!', 'right': '' }
+\ }
+
+let NERD_apdl_alt_style=1
+let NERD_mac_alt_style=1
+let NERD_macro_alt_style=1
+
+"}}}
+
 "{{{ Open Important Files
 	noremap <leader>vrc :exe 'tabedit ' . expand(pathvrc)<CR>
 	noremap <leader>apd :exe 'tabedit ' . expand(pathapdl)<CR>
@@ -869,6 +880,7 @@ let g:NERDCustomDelimiters = {
 	noremap <leader>cp :exe 'tabedit ' . expand(pathcp)<CR>
 	noremap <leader>sm :exe 'tabedit ' . expand(pathsm)<CR>
 	noremap <leader>app :exe 'tabedit ' . expand(pathColor)<CR>
+	noremap <leader>ab :exe 'tabedit ' . expand(pathAbbr)<CR>
 "}}}	
 
 "{{{ UltiSnips Settings
@@ -996,6 +1008,7 @@ let g:NERDCustomDelimiters = {
 "SEARCH AND REPLACE
 	":%s/foo/bar/g
 	    "Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+		"g means global: all occurence in  a line.... when not used. only first occurence
 	":s/foo/bar/g
 	    "Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
 	":%s/foo/bar/gc

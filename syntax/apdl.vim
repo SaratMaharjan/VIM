@@ -1300,6 +1300,7 @@ syn match apdlFunction display "/units\>" contained
 syn match apdlFunction display "upcoord\>" contained
 syn match apdlFunction display "upgeom\>" contained
 syn match apdlFunction display "\*use\>" contained
+syn match apdlFunction display "/user\>" contained
 syn match apdlFunction display "usrcal\>" contained
 syn match apdlFunction display "v\>" contained
 syn match apdlFunction display "v2dopt\>" contained
@@ -1409,6 +1410,7 @@ syn match apdlm display "aaa\>" contained
 syn match apdlm display "aa\>" contained
 syn match apdlm display "ABGE\>" contained
 syn match apdlm display "ABHA\>" contained
+syn match apdlm display "ABSM\>" contained
 syn match apdlm display "ABWA\>" contained
 syn match apdlm display "AEXT\>" contained
 syn match apdlm display "AEXT1\>" contained
