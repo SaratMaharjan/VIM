@@ -671,7 +671,7 @@
 	catch
 	endtry
 
-	:set autoread		"Auto reload files if changed outside
+	set autoread		"Auto reload files if changed outside
 	set so=7		"Set 7 lines to the cursor - when moving vertically using j/k
 	"Linebreak on 500 characters
 			"set lbr
@@ -1146,7 +1146,17 @@ nnoremap U <nop>
 nnoremap J <nop>
 nnoremap <C-R> :e!<CR>G
 
+"{{{ TO HIGHLLIGHT space-tab or tab-space or space-space
+"if &ft=='out'
 
-
-
+"else
+	"match extraWhite / \s/
+	"match extraWhite /\s /
+	"match extraWhite /\( \s\)\|\(\s \)/
+	"autocmd ColorScheme * highlight extraWhite ctermbg=red guibg=red
+	"autocmd ColorScheme * highlight extraWhite ctermbg=red guibg=red
+"endif
+nnoremap <Leader>wn :match extraWhite /\( \s\)\\|\(\s \)/<cr>
+nnoremap <Leader>wf :match<CR>
+"}}}
 

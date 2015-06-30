@@ -1889,8 +1889,8 @@ syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
 syn match apdlSpecial3 display "!ende" contained
-syn match extraWhite display " \s"
-syn match extraWhite display "\s "
+"syn match extraWhite display " \s"
+"syn match extraWhite display "\s "
 
 "}}}
 
@@ -2008,17 +2008,20 @@ syn match apdlm display "plotsm\>" contained
 
 "}}}
 
-" commands must be the first entry in a line or behind an $
+"commands must be the first entry in a line or behind an $
 syn cluster	apdlToken contains=apdlm,apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused,apdlSpecial2
 
 syn match	apdlStart1	"\$" nextgroup=@apdlToken skipwhite transparent
 syn match	apdlStart2	"^" nextgroup=@apdlToken skipwhite transparent
 
-" comment must be the last match, it has priority over apdlStart2
+"comment must be the last match, it has priority over apdlStart2
 syn keyword	apdlTodo	contained TODO FIXME XXX
 syn match	apdlComment	"!.*$" contains=apdlTodo,apdlWarning,apdlSpecial2,apdlSpecial3
 
 syn case match
+
+"For output file
+"syn region output start="ANSYS" end="\%$" contains=ALLBUT,extraWhite keepend extend transparent
 
 	"{{{anfang Syntax Folding
 	 
