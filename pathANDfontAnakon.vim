@@ -6,6 +6,7 @@
 		let pathvrc='E:/Cloud/Dropbox/VIM/vimrc.vim'
 		let pathapdl='E:\Cloud\Dropbox\VIM\syntax\apdl.vim'
 		let pathbat='D:\zCore\SM.bat'
+		let pathbat2='D:\zCore\SM2.bat'
 		let pathcp='E:\__CoreE\cp7.mac'
 		let pathsm='E:\__CoreE\sm.mac'
 		let pathColor='E:/Cloud/Dropbox/VIM/colors/deserts.vim'

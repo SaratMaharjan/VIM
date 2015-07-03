@@ -1,17 +1,17 @@
 "Vim syntax file
 "Language:	APDL
-" credits:	Manfred Spraul <manfred@colorfullife.com>
+"credits:	Manfred Spraul <manfred@colorfullife.com>
 "Last Change:	2003 Jan 24 (Manfred Spraul)
 "Version:	0.02
 "
-" note: The support for abreviated commands is intentionally missing.
+"note: The support for abreviated commands is intentionally missing.
 "		Typical file names are *.ans and *.mac.
 "
-"TODO: 
-"* Further parameter tests for bad params
-"* line continuations for multiline commands: *msg, *vwrite, etc.
-"* test with ansys:
-"	 whitespaces + labels
+"TODO:
+" *Further parameter tests for bad params
+" *line continuations for multiline commands: *msg, *vwrite, etc.
+" *test with ansys:
+"	whitespaces + labels
 "	$ + labels
 "	$ + comment
 "	$ + multiline commands
@@ -32,24 +32,24 @@ syn match apdlAnything "^.*$" contained
 "{{{ Numbers, allowing signs (both -, and +)
 
 "Integer number.
-syn match  apdlNumber		display "[+-]\=\<\d\+\>"
+syn match	apdlNumber		display "[+-]\=\<\d\+\>"
 
 "Floating point number.
-syn match  apdlFloat		display "[+-]\=\<\d\+\.\d+\>"
+syn match apdlFloat		display "[+-]\=\<\d\+\.\d+\>"
 
 "Floating point number, starting with a dot.
-syn match  apdlFloat		display "[+-]\=\<.\d+\>"
+syn match	apdlFloat		display "[+-]\=\<.\d+\>"
 
 syn case ignore
 
 "floating point number, with dot, optional exponent
-syn match  apdlFloat	display "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\>"
+syn match	apdlFloat	display "\<\d\+\.\d*\(e[-+]\=\d\+\)\=\>"
 
 "floating point number, starting with a dot, optional exponent
-syn match  apdlFloat	display "\.\d\+\(e[-+]\=\d\+\)\=\>"
+syn match	apdlFloat	display "\.\d\+\(e[-+]\=\d\+\)\=\>"
 
 "floating point number, without dot, with exponent
-syn match  apdlFloat	display "\<\d\+e[-+]\=\d\+\>"
+syn match	apdlFloat	display "\<\d\+e[-+]\=\d\+\>"
 
 syn case match
 
@@ -1862,7 +1862,7 @@ syn match	apdlSpecial	display "debug\>" contained
 "}}}
 
 "labels
-syn match	apdlLabel	display ":\s*[a-zA-Z_][a-zA-Z0-9_]*" contained 
+syn match	apdlLabel	display ":\s*[a-zA-Z_][a-zA-Z0-9_]*" contained
 
 "{{{ apdl command groups
 syn match	apdlSpecial	display "/prep7\>" contained
@@ -1881,10 +1881,12 @@ syn match	apdlSpecial	display "\*end\>" contained
 
 "{{{ Not general : Added Later
 
-syn keyword	apdlWarning	contained edited 
-syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif 
-syn match   apdlSpecial2    display "<--.*-->" contained
-"syn match   apdlUnused    display "\(eoff.*\Z\)" contained
+syn keyword	apdlWarning	contained edited
+syn keyword	apdlWarning	contained update
+syn keyword	apdlWarning	contained verify
+syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
+syn match apdlSpecial2		display "<--.*-->" contained
+"syn match apdlUnused		display "\(eoff.*\Z\)" contained
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
@@ -2024,7 +2026,7 @@ syn case match
 "syn region output start="ANSYS" end="\%$" contains=ALLBUT,extraWhite keepend extend transparent
 
 	"{{{anfang Syntax Folding
-	 
+
 	"define groups that cannot contain the start of a fold
 	syn cluster vimNoFold contains=apdlComment,apdlLineComment
 	syn cluster vimEmbeddedScript contains=vimMyFold
@@ -2058,45 +2060,45 @@ syn case match
 			"\ containedin=ALLBUT,@vimNoFold,vimEofFold
 			"\ contains=TOP,@vimIn
 			"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
-	 
+
 	"fold if...else...endif constructs
 	"
 	" note that 'endif' has a shorthand which can also match many other end patterns
 	"if we did not include the word boundary \> pattern, and also it may match
 	"syntax end=/pattern/ elements, so we must explicitly exclude these
 		"syn region vimFoldIfContainer
-			  "\ start="\<if\>"
-			  "\ end="\<end\%[if]\>=\@!"
-			  "\ keepend extend
-			  "\ containedin=ALLBUT,@vimNoFold,vimEofFold
-			  "\ contains=NONE
-			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+				"\ start="\<if\>"
+				"\ end="\<end\%[if]\>=\@!"
+				"\ keepend extend
+				"\ containedin=ALLBUT,@vimNoFold,vimEofFold
+				"\ contains=NONE
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		"syn region vimFoldIf
-			  "\ start="\<if\>"
-			  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-			  "\ fold 
-			  "\ keepend
-			  "\ contained containedin=vimFoldIfContainer
-			  "\ nextgroup=vimFoldElseIf,vimFoldElse
-			  "\ contains=TOP,@vimIn
-			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+				"\ start="\<if\>"
+				"\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ nextgroup=vimFoldElseIf,vimFoldElse
+				"\ contains=TOP,@vimIn
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		"syn region vimFoldElseIf
-			  "\ start="\<else\%[if]\>"
-			  "\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
-			  "\ fold
-			  "\ keepend
-			  "\ contained containedin=vimFoldIfContainer
-			  "\ nextgroup=vimFoldElseIf,vimFoldElse
-			  "\ contains=TOP,@vimIn
-			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+				"\ start="\<else\%[if]\>"
+				"\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ nextgroup=vimFoldElseIf,vimFoldElse
+				"\ contains=TOP,@vimIn
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		"syn region vimFoldElse
-			  "\ start="\<el\%[se]\>"
-			  "\ end="\<end\%[if]\>=\@!"
-			  "\ fold
-			  "\ keepend
-			  "\ contained containedin=vimFoldIfContainer
-			  "\ contains=TOP,@vimIn
-			  "\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+				"\ start="\<el\%[se]\>"
+				"\ end="\<end\%[if]\>=\@!"
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ contains=TOP,@vimIn
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 	"}}}ende Syntax Folding
 
@@ -2108,7 +2110,7 @@ syn match apdlStringLine ".*$" contained
 "For version 5.7 and earlier: only when not done already
 "For version 5.8 and later: only when an item doesn't have highlighting yet
 if version >= 508 || !exists("did_apdl_syntax_inits")
-	
+
 	if version < 508
 		let did_apdl_syntax_inits = 1
 		command -nargs=+ HiLink hi link <args>
@@ -2126,7 +2128,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlm	Macro
 	HiLink apdlLabel	PreProc
 	HiLink apdlSpecial	PreProc
-	
+
 	HiLink apdlError	Error
 	HiLink apdlWarning	Todo
 	HiLink apdlStringLine	Normal
@@ -2135,27 +2137,27 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlSpecial2	Question
 	HiLink apdlSpecial3	Type
 	HiLink apdlUnused	NotImp
-	HiLink vimEofFold NotImp	
+	HiLink vimEofFold NotImp
 	highlight link apdlm Apdlmcs
-	HiLink apdlAnything Normal	
+	HiLink apdlAnything Normal
 	highlight link extraWhite ExtraWhite
-	
-	"HiLink vimFoldIfContainer Conditional	
-	"HiLink vimFoldIf Conditional	
-	"HiLink vimFoldElseIf Conditional	
-	"HiLink vimFoldElse Conditional	
-	"HiLink vimFoldDoLoop Repeat	
+
+	"HiLink vimFoldIfContainer Conditional
+	"HiLink vimFoldIf Conditional
+	"HiLink vimFoldElseIf Conditional
+	"HiLink vimFoldElse Conditional
+	"HiLink vimFoldDoLoop Repeat
 
 	delcommand HiLink
-	
+
 endif
 "}}}
 
 "{{{Defining Comment Prefix
-    :set comments=f:\!
+		:set comments=f:\!
 "}}}
 
 "{{{ Defining Language
-    let b:current_syntax = "apdl"
+		let b:current_syntax = "apdl"
 "}}}
 
