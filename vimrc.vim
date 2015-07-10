@@ -17,6 +17,9 @@
 	"exe 'source ' .expand(pathColor)
 	exe 'set rtp+=' .expand(pathRTP)
 
+	"Zoom Functions
+	exe 'so ' .expand(pathZoom)
+
 "}}} Sources
 
 "{{{ Initial Setting - need to be at start
@@ -504,7 +507,7 @@
 	autocmd FileType dosbatch setlocal foldmethod=marker
 	autocmd FileType dosbatch setlocal foldmarker=anfang,ende
 	autocmd FileType asm setlocal foldmethod=marker
-	autocmd FileType asm setlocal foldmarker=anfang,ende
+	autocmd FileType asm setlocal foldmarker=!anfang,!ende
 
 	"let g:FoldMethod = 0		"Defining Global Variable
 
@@ -981,7 +984,7 @@ let NERD_macro_alt_style=1
 "9. byw - yank word under cursor
 "10. viw - select word under cursor
 "11. :ve - to see version Information
-"12. :argdo %s/file:\/\/\/.\\/file: /gc - Replace in all buffers....
+"12. :argdo %s/file:\/\/\/.\\/file: /gc - Replace in all buffers.... SEE 19
 "13. :sp filename for a horizontal split
 		":vsp filename or :vs filename for a vertical split
 		"If no filename give same file opens
@@ -991,13 +994,16 @@ let NERD_macro_alt_style=1
 				"zk	- move up to bottom of previous fold
 "16. :vimgrep patter **/*.ext - to search recursively in folder
 "17. Autocad Command: IMAGEFRAME
-
-
-
-":arg *.cpp	All *.cpp files in current directory.
-":argadd *.h	And all *.h files.
-":arg	Optional: Display the current arglist.
-":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist.
+"18. to open all *.in Files
+		":args *.in
+		":tab all
+"19. to search and replace in all open buffers/args	, e means ignore error - match not found
+		":bufdo %s/cmd/command/ge
+		": add | update to save files automatically
+		":arg *.cpp	All *.cpp files in current directory.
+		":argadd *.h	And all *.h files.
+		":arg	Optional: Display the current arglist.
+		":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist. - | update to save the files
 
 ":%s#\($\n\s*\)\+\%$##
 "Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty"lines, remove the \s* from the above command.

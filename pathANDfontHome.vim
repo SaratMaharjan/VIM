@@ -12,6 +12,8 @@
 		let pathColor='C:/Users/Sarat/Dropbox/VIM/deserts.vim'
 		let pathSnips='C:/Users/Sarat/Dropbox/VIM/snips'
 		let pathGrep='C:\Users\Sarat\Dropbox\VIM\GREP\bin'
+		"let pathZoom=expand('%:p:h')."\\zoom.vim"
+		let pathZoom='E:/Cloud/Dropbox/VIM/zoom.vim'
 "ende Path
 
 "anfang GUI font

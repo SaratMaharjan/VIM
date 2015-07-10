@@ -1400,6 +1400,7 @@ syn match apdlFunction display "keymod\>" contained
 "{{{ Newer Commands
 
 syn match apdlFunction display "bcsoption\>" contained
+syn match apdlFunction display "/gcolumn\>" contained
 
 "}}}
 
@@ -1884,7 +1885,11 @@ syn match	apdlSpecial	display "\*end\>" contained
 syn keyword	apdlWarning	contained edited
 syn keyword	apdlWarning	contained update
 syn keyword	apdlWarning	contained verify
+
+syn keyword apdlHigh converged warning error
+
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
+
 syn match apdlSpecial2		display "<--.*-->" contained
 "syn match apdlUnused		display "\(eoff.*\Z\)" contained
 syn match apdlFunction display "/inp\>" contained
@@ -2010,6 +2015,26 @@ syn match apdlm display "plotsm\>" contained
 
 "}}}
 
+"{{{ Valid Arguments for Commands
+
+syn match vArgs display "\<elem\>"
+syn match vArgs display "\<node\>"
+syn match vArgs display "\<ename\>"
+
+syn match vArgs display "\<s\>"
+syn match vArgs display "\<u\>"
+syn match vArgs display "\<r\>"
+syn match vArgs display "\<a\>"
+
+syn match vArgs display "\<mnloc\>"
+syn match vArgs display "\<mxloc\>"
+
+syn match vArgs display "\<forc\>"
+
+syn match vArgs display "\<defa\>"
+
+"}}}
+
 "commands must be the first entry in a line or behind an $
 syn cluster	apdlToken contains=apdlm,apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused,apdlSpecial2
 
@@ -2131,6 +2156,10 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 
 	HiLink apdlError	Error
 	HiLink apdlWarning	Todo
+
+	HiLink apdlHigh	ApdlFocus
+	HiLink vArgs	ApdlArgs
+
 	HiLink apdlStringLine	Normal
 	HiLink apdlBeforeLine	Normal
 	HiLink apdlString	Normal

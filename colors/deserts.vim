@@ -57,6 +57,10 @@ hi WarningMsg	guifg=salmon
 hi Comment	guifg=#C8C8BA cterm=italic gui=italic
 hi NotImp	guifg=#abcdef cterm=italic gui=italic
 hi ApdlComment	guifg=#A37A00 cterm=italic gui=italic
+
+hi ApdlFocus	guifg=#ccff11 cterm=italic gui=italic
+hi ApdlArgs	cterm=italic gui=italic
+
 "hi Comment	guifg=#474719
 hi Constant	guifg=#ffa0a0
 hi Identifier	guifg=palegreen
