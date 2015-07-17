@@ -1826,7 +1826,7 @@ syn match apdlFunction "\*vwrite\>" contained "nextgroup=apdlBeforeLine
 "{{{ Commands with parameter checking:
 "cm
 syn match apdlFunction display "cm\s*,"me=e-1 contained nextgroup=apdlError,apdlCm1Ok
-syn match apdlCm1Ok display ",\s*[a-zA-Z_][a-zA-Z0-9_]*\s*," contained transparent nextgroup=apdlError,apdlCm2Ok
+syn match apdlCm1Ok display ",\s*[a-zA-Z_][a-zA-Z0-9_%]*\s*," contained transparent nextgroup=apdlError,apdlCm2Ok
 syn match apdlCm2Ok display "\s*\(volu\|area\|line\|kp\|elem\|node\)\>" contained transparent
 
 "Xsel

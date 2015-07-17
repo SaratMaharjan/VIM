@@ -8,11 +8,10 @@
 
 set background=dark
 if version > 580
-    "no guarantees for version 5.8 and below, but this makes it stop
-    "complaining
+    "no guarantees for version 5.8 and below, but this makes it stop complaining
     hi clear
     if exists("syntax_on")
-	syntax reset
+		syntax reset
     endif
 endif
 
@@ -72,7 +71,7 @@ hi Apdlmcs	guifg=#ffff80 gui=italic
 "hi Underlined
 hi Ignore	guifg=grey40
 "hi Error
-hi Todo		guifg=orangered guibg=yellow2
+hi Todo		guifg=orangered guibg=yellow
 hi PreProc	guifg=darkgrey
 hi ExtraWhite guifg=yellow2 guibg=darkgreen
 
@@ -90,7 +89,7 @@ hi Question	ctermfg=green
 hi StatusLine	cterm=bold,reverse
 hi StatusLineNC cterm=reverse
 hi VertSplit	cterm=reverse
-hi Title	ctermfg=5 
+hi Title	ctermfg=5
 hi Visual	cterm=reverse
 hi VisualNOS	cterm=bold,underline
 hi WarningMsg	ctermfg=1

@@ -557,11 +557,11 @@
 
 	"}}} strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
 
-	"{{{ Function1
+	"{{{ Function1			Adding Menu Item for Commands!!!
 		function! CmdLine(str)
 			exe "menu Foo.Bar :". a:str
-			emenu Foo.Bar
-			unmenu Foo
+			emenu Foo.Bar		"add menu
+			unmenu Foo		"remove menu
 		endfunction
 	"}}} Function 1
 
@@ -621,30 +621,31 @@
 		endfunction
 	"}}} Function1
 
-	"{{{ Function1
-"		function MyDiff()
-"			let opt = '-a --binary '
-"			if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"			if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"			let arg1 = v:fname_in
-"			if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"			let arg2 = v:fname_new
-"			if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"			let arg3 = v:fname_out
-"			if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"			let eq = ''
-"			if $VIMRUNTIME =~ ' '
-"				if &sh =~ '\<cmd'
-"					let cmd = '""' . $VIMRUNTIME . '\diff"'
-"					let eq = '"'
-"				else
-"					let cmd = substitute($VIMRUNTIME, ' ', '"', '') . '\diff"'
-"				endif
-"			else
-"				let cmd = $VIMRUNTIME . '\diff'
-"			endif
-"			silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-"		endfunction
+	"set diffexpr=MyDiff()		"ONLY required if VIM doesnot have DIFF component
+	"{{{ Function1		ONLY REQUIRED IF VIM does not have DIFF Component
+		"function MyDiff()
+			"let opt = '-a --binary '
+			"if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+			"if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+			"let arg1 = v:fname_in
+			"if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+			"let arg2 = v:fname_new
+			"if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+			"let arg3 = v:fname_out
+			"if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+			"let eq = ''
+			"if $VIMRUNTIME =~ ' '
+				"if &sh =~ '\<cmd'
+					"let cmd = '""' . $VIMRUNTIME . '\diff"'
+					"let eq = '"'
+				"else
+					"let cmd = substitute($VIMRUNTIME, ' ', '"', '') . '\diff"'
+				"endif
+			"else
+				"let cmd = $VIMRUNTIME . '\diff'
+			"endif
+			"silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+		"endfunction
 	"}}} Function1
 
 	"{{{ Toggle Fold Function
@@ -685,7 +686,6 @@
 	set si "Smart indent
 	"set wrap "Wrap lines
 	set mousehide		"Hide the mouse when typing text
-	set diffexpr=MyDiff()
 	set timeout timeoutlen=3000
 	set history=700		"Sets how many lines of history VIM has to remember
 	set autoread		"Set to auto read when a file is changed from the outside
@@ -970,82 +970,190 @@ let NERD_macro_alt_style=1
 
 "}}}
 
+"{{{ Session Settings
+	let SessionLoad=1
+	"set ssop=buffers,tabpages,winsize,curdir
+	set ssop=tabpages,winsize,curdir
+"}}}
+
+"{{{ Switching Between TABS
+
+	"let g:lasttab = 1
+	"nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
+	"au TabLeave * let g:lasttab = tabpagenr()
+
+	"Go to last active tab
+	nnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
+	vnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
+
+	"Go to last edited tab
+	let g:editTab=1
+	let g:editTab2=1
+	nmap <Leader>tt :call LastEditTab()<cr>
+	au InsertLeave * let g:editTab = tabpagenr()
+	function! LastEditTab()
+		:exe "tabn ".g:editTab2
+		if g:editTab2 ==# g:editTab
+
+		else
+			let g:editTab2=g:editTab
+		endif
+	endfunction
+
+"}}}
+
+"{{{ Windows Settings
+
+	"window Naviations
+		nnoremap ,hor <C-w>t<C-w>K
+		nnoremap ,ver <C-w>t<C-w>H
+		nnoremap <S-tab> <C-w>w
+
+	"Smart way to move between windows
+		"map <C-j> <C-W>j
+		"map <C-k> <C-W>k
+		"map <C-h> <C-W>h
+		"map <C-l> <C-W>l
+
+	"resize Window
+		nnoremap ++ :vertical resize +5<cr>
+		nnoremap -- :vertical resize -5<cr>
+		nnoremap +-+ <C-w>o
+		nnoremap +- <C-w>=
+		nnoremap -+ <C-w>c
+"}}}
+
 "{{{ IMPORTANT NOTES
 
-"1. :changes - to view changes
-"2. :gv - reselect last selection
-"3. # - Search words under Cursor backwards
-"4. * - Search words under Cursor forwards
-"5. :%s/pattern//gn - count number of occurences of pattern
-"6. To search and replace in selection
-	"press :, selection symbol auto appears then press s/pattern/replacement/gc
-"7. :g; to go to last edit position, mapped to g-
-"8. gi command switches Vim to Insert mode and places cursor in the same position as where Insert mode was stopped last time.
-"9. byw - yank word under cursor
-"10. viw - select word under cursor
-"11. :ve - to see version Information
-"12. :argdo %s/file:\/\/\/.\\/file: /gc - Replace in all buffers.... SEE 19
-"13. :sp filename for a horizontal split
-		":vsp filename or :vs filename for a vertical split
-		"If no filename give same file opens
-"14. :%s/.\{80}/&\r/g - New line after 80 charachters
-"							- &\r means Match and New Line
-"15. zj - move down to top of next fold
-				"zk	- move up to bottom of previous fold
-"16. :vimgrep patter **/*.ext - to search recursively in folder
-"17. Autocad Command: IMAGEFRAME
-"18. to open all *.in Files
-		":args *.in
-		":tab all
-"19. to search and replace in all open buffers/args	, e means ignore error - match not found
-		":bufdo %s/cmd/command/ge
-		": add | update to save files automatically
-		":arg *.cpp	All *.cpp files in current directory.
-		":argadd *.h	And all *.h files.
-		":arg	Optional: Display the current arglist.
-		":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist. - | update to save the files
+	"{{{VIM
+		"1. :changes - to view changes
+		"2. :gv - reselect last selection
+		"3. # - Search words under Cursor backwards
+		"4. * - Search words under Cursor forwards
+		"5. :%s/pattern//gn - count number of occurences of pattern
+		"6. To search and replace in selection
+			"press :, selection symbol auto appears then press s/pattern/replacement/gc
+		"7. :g; to go to last edit position, mapped to g-
+		"8. gi command switches Vim to Insert mode and places cursor in the same position as where Insert mode was stopped last time.
+		"9. byw - yank word under cursor
+		"10. viw - select word under cursor
+		"11. :ve - to see version Information
+		"12. :argdo %s/file:\/\/\/.\\/file: /gc - Replace in all buffers.... SEE 19
+		"13. :sp filename for a horizontal split
+				":vsp filename or :vs filename for a vertical split
+				"If no filename give same file opens
+		"14. :%s/.\{80}/&\r/g - New line after 80 charachters
+		"							- &\r means Match and New Line
+		"15. zj - move down to top of next fold
+						"zk	- move up to bottom of previous fold
+		"16. :vimgrep patter **/*.ext - to search recursively in folder
+		"18. to open all *.in Files
+				":args *.in
+				":tab all
+		"19. to search and replace in all open buffers/args	, e means ignore error - match not found
+				":bufdo %s/cmd/command/ge
+				": add | update to save files automatically
+				":arg *.cpp	All *.cpp files in current directory.
+				":argadd *.h	And all *.h files.
+				":arg	Optional: Display the current arglist.
+				":argdo %s/pattern/replace/ge | update	Search and replace in all files in arglist. - | update to save the files
 
-":%s#\($\n\s*\)\+\%$##
-"Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty"lines, remove the \s* from the above command.
-	"Explanation:
-	"\( ..... Start a match group
-	"$\n ... Match a new line (end-of-line character followed by a carriage return).
-	"\s* ... Allow any amount of whitespace on this new line
-	"\) ..... End the match group
-	"\+ ..... Allow any number of occurrences of this group (one or more).
-	"\%$ ... Match the end of the file
+					":%s#\($\n\s*\)\+\%$##
+					"Note that this removes all trailing lines that contain only whitespace. To remove only truly "empty"lines, remove the \s* from the above command.
+						"Explanation:
+						"\( ..... Start a match group
+						"$\n ... Match a new line (end-of-line character followed by a carriage return).
+						"\s* ... Allow any amount of whitespace on this new line
+						"\) ..... End the match group
+						"\+ ..... Allow any number of occurrences of this group (one or more).
+						"\%$ ... Match the end of the file
 
-"SEARCH AND REPLACE
-	":%s/foo/bar/g
-		"Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
-		"g means global: all occurence in a line.... when not used. only first occurence
-	":s/foo/bar/g
-		"Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
-	":%s/foo/bar/gc
-		"Change each 'foo' to 'bar', but ask for confirmation first.
-	":%s/\<foo\>/bar/gc
-		"Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
-	":%s/foo/bar/gci
-		"Change each 'foo' (case insensitive) to 'bar'; ask for confirmation.
-		"This may be wanted after using :set noignorecase to make searches case sensitive (the default).
-	":%s/foo/bar/gcI
-	"Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
-	"This may be wanted after using :set ignorecase to make searches case insensitive.
+					"SEARCH AND REPLACE
+						":%s/foo/bar/g
+							"Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+							"g means global: all occurence in a line.... when not used. only first occurence
+						":s/foo/bar/g
+							"Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
+						":%s/foo/bar/gc
+							"Change each 'foo' to 'bar', but ask for confirmation first.
+						":%s/\<foo\>/bar/gc
+							"Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
+						":%s/foo/bar/gci
+							"Change each 'foo' (case insensitive) to 'bar'; ask for confirmation.
+							"This may be wanted after using :set noignorecase to make searches case sensitive (the default).
+						":%s/foo/bar/gcI
+						"Change each 'foo' (case sensitive) to 'bar'; ask for confirmation.
+						"This may be wanted after using :set ignorecase to make searches case insensitive.
+
+		"20. :mksession ~/mysession.vim		OR :mks
+					":so{urce} ~/mysession.vim 
+
+		"21. To close all TABS
+				"Shortest/simplest/fastest way would be:
+					":qa
+				"To save work in all tabs and quit:
+					":wqa
+
+		"22. :ls   for list of open buffers
+				":bp previous buffer
+				":bn next buffer
+				":bn (n a number) move to n'th buffer
+				":b <filename-part>
+				":b fileName : to switch to file
+				":b# go to last visited file.... so switching easy
+
+		"23	:scriptnames  -shows all loaded scripts
+		 
+		"24. Ctrl-W s and Ctrl-W v to split the current window horizontally and vertically. You can also use :split and :vertical split (:sp and :vs)
+
+	"}}}
+
+	"{{{OTHERS
+
+		"17. Autocad Command: IMAGEFRAME
+
+		"1. To use macros.xla: In excel: start-add-ins and add macros.xla
+
+		"2. Replace with ^p to replace with new line. NOTEPAD++??
+
+		"3. ren ???????????.jpg	????????1??.jpg :::replaces anything to 1 and third ralst position.
+
+		"4. forfiles /m *.jpg /c "cmd /c ren @file prefix@file" 		:: adding prefix to file Name
+				
+				"Recursively rename file extensions
+				"forfiles /S /M *.ext1 /C "cmd /c rename @file @fname.ext2"
+
+				"Remove file extensions
+				"forfiles /S /M *.ext /C "cmd /c rename @file @fname"
+
+				"Add prefix to file names
+				"forfiles /S /M *.jpg /C "cmd /c rename @file photo@file"
+
+				"Handling names with white spaces
+				"forfiles /M *.jpg /C "cmd /c rename @file \"@fname - pic.jpg\""
+
+		"5. IMAGEFRAME command in AUTOCAD
+
+		"6. Add suffix to File Name
+				"for %a in (*.txt) do ren "%~a" "%~naThingsToAdd%~xa"
+
+
+
+
+	"}}}
 
 "}}}
 
 "{{{ Still TO MANAGE
 
-let SessionLoad=1
-"set ssop=buffers,tabpages,winsize,curdir
-set ssop=tabpages,winsize,curdir
-
 "Update VIMRC
 noremap <leader>sv :exe 'source ' .expand(pathvrc)<CR>
 
+"Set working Directory
 exe ':set dir=' . expand(pathWork)
 noremap <leader>wd :exe 'cd ' . expand(pathWork)<CR>
 
+"for Indentation
 vnoremap < <gv
 vnoremap > >gv
 
@@ -1114,32 +1222,6 @@ let NERDTreeIgnore = ['\(\.in\)\@<!$[[file]]']
 
 set printfont=Courier:h12
 
-"{{{ Switching Between TABS
-
-	"let g:lasttab = 1
-	"nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
-	"au TabLeave * let g:lasttab = tabpagenr()
-
-	"Go to last active tab
-	nnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
-	vnoremap <silent>tl :exe "tabn ".g:lasttab<cr>
-
-	"Go to last edited tab
-	let g:editTab=1
-	let g:editTab2=1
-	nmap <Leader>tt :call LastEditTab()<cr>
-	au InsertLeave * let g:editTab = tabpagenr()
-	function! LastEditTab()
-		:exe "tabn ".g:editTab2
-		if g:editTab2 ==# g:editTab
-
-		else
-			let g:editTab2=g:editTab
-		endif
-	endfunction
-
-"}}}
-
 nnoremap gl ''
 
 "Set up the gui cursor to look nice
@@ -1181,26 +1263,18 @@ nnoremap ,run :!start %:p<CR>
 "Select word under Cursor
 nnoremap <space> viw
 
-"{{{ Windows Settings
+"Compare with last saved FILE
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! Dsave call s:DiffWithSaved()
 
-	"window Naviations
-		nnoremap ,hor <C-w>t<C-w>K
-		nnoremap ,ver <C-w>t<C-w>H
-		nnoremap <S-tab> <C-w>w
-
-	"Smart way to move between windows
-		"map <C-j> <C-W>j
-		"map <C-k> <C-W>k
-		"map <C-h> <C-W>h
-		"map <C-l> <C-W>l
-
-	"resize Window
-		nnoremap ++ :vertical resize +5<cr>
-		nnoremap -- :vertical resize -5<cr>
-		nnoremap +-+ <C-w>o
-		nnoremap +- <C-w>=
-		nnoremap -+ <C-w>c
-"}}}
-
+"maps to move between changes/DIFF
+noremap <C-h> ]c
+noremap <C-g> [c
 
 
