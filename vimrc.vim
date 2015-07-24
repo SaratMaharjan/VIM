@@ -1205,8 +1205,6 @@ set statusline+=%*
 "let g:syntastic_check_on_wq = 0
 ":SyntasticInfo
 
-nnoremap <F6> :GundoToggle<CR>
-
 "set list
 "set listchars=tab:»·,trail:·
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -1214,18 +1212,17 @@ nnoremap <F6> :GundoToggle<CR>
 "Alternative to intent-guides Plugin
 	":set list lcs=tab:\|\
 
-"Open File under cursor in new TAB
-noremap <F11> <c-w>gf<CR>
-
 "let NERDTreeIgnore += ['\(\.in\)\@<!$[[file]]']
 let NERDTreeIgnore = ['\(\.in\)\@<!$[[file]]']
 
 set printfont=Courier:h12
 
-nnoremap gl ''
+nnoremap <F6> :GundoToggle<CR>
 
-"Set up the gui cursor to look nice
-"set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+"Open File under cursor in new TAB
+noremap <F11> <c-w>gf<CR>
+
+nnoremap gl ''
 
 "repeat last : command
 nnoremap <F12> @q
@@ -1233,13 +1230,28 @@ nnoremap <F12> @q
 "searcha and replace :///, ask for confirmation
 nnoremap <leader>cfn :%s/:\/\/\/\.\\/: /gc<cr>
 
-set nohidden
-
 "nnoremap u <nop>
 nnoremap U <nop>
 nnoremap J <nop>
 nnoremap <C-R> :e!<CR>G
 nnoremap <C-R> <nop>
+
+"maps to move between changes/DIFF
+noremap <C-h> ]c
+noremap <C-g> [c
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+nnoremap zs zO
+nnoremap zd zC
+
+"execute current file in cmd
+nnoremap ,run :!start %:p<CR>
+
+"Select word under Cursor
+nnoremap <space> viw
 
 "{{{ TO HIGHLLIGHT space-tab or tab-space or space-space
 	"if &ft=='out'
@@ -1257,12 +1269,6 @@ nnoremap <C-R> <nop>
 
 set shortmess=a
 
-"execute current file in cmd
-nnoremap ,run :!start %:p<CR>
-
-"Select word under Cursor
-nnoremap <space> viw
-
 "Compare with last saved FILE
 function! s:DiffWithSaved()
   let filetype=&ft
@@ -1273,14 +1279,10 @@ function! s:DiffWithSaved()
 endfunction
 com! Dsave call s:DiffWithSaved()
 
-"maps to move between changes/DIFF
-noremap <C-h> ]c
-noremap <C-g> [c
-
 set splitbelow
 set splitright
+set nohidden
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"Set up the gui cursor to look nice
+"set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 

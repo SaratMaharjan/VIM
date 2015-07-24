@@ -421,7 +421,7 @@ syn match apdlFunction display "engen\>" contained
 syn match apdlFunction display "enorm\>" contained
 syn match apdlFunction display "ensym\>" contained
 syn match apdlFunction display "eorient\>" contained
-syn match apdlFunction display "eplot\>" contained
+syn match apdlFunction display "eplo\(t\)\?\>" contained
 syn match apdlFunction display "eqslv\>" contained
 syn match apdlFunction display "/erase\>" contained
 syn match apdlFunction display "erase\>" contained
@@ -847,7 +847,7 @@ syn match apdlFunction display "/nolist\>" contained
 syn match apdlFunction display "noorder\>" contained
 syn match apdlFunction display "/nopr\>" contained
 syn match apdlFunction display "/normal\>" contained
-syn match apdlFunction display "nplot\>" contained
+syn match apdlFunction display "nplo\(t\)\?\>" contained
 syn match apdlFunction display "nprint\>" contained
 syn match apdlFunction display "nread\>" contained
 syn match apdlFunction display "nrefine\>" contained
@@ -863,7 +863,7 @@ syn match apdlFunction display "nscale\>" contained
 "syn match apdlFunction display "nsll\>" contained
 "syn match apdlFunction display "nslv\>" contained
 
-syn match apdlFunction display "nsl\([aeklv]\)\?\>" contained
+syn match apdlFunction display "nsl[aeklv]\?\>" contained
 
 syn match apdlFunction display "nsmooth\>" contained
 syn match apdlFunction display "nsol\>" contained
@@ -1401,6 +1401,7 @@ syn match apdlFunction display "keymod\>" contained
 
 syn match apdlFunction display "bcsoption\>" contained
 syn match apdlFunction display "/gcolumn\>" contained
+syn match apdlFunction display "sload\>" contained
 
 "}}}
 
@@ -1492,7 +1493,7 @@ syn match apdlm display "DI73-H\>" contained
 syn match apdlm display "di73\>" contained
 syn match apdlm display "di74-0\>" contained
 syn match apdlm display "di74-1\>" contained
-syn match apdlm display "di74\>" contained
+syn match apdlm display "di74\(sm\)\?\>" contained
 syn match apdlm display "DI75\>" contained
 syn match apdlm display "DI76\>" contained
 syn match apdlm display "di77\>" contained
@@ -2094,7 +2095,7 @@ syn case match
 				\ end="\*endif\>=\@!"
 				\ keepend extend
 				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken
-				\ contains=@apdlStart1
+				\ contains=NONE
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldIf
 				\ start="\*if\>"
