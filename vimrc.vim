@@ -101,6 +101,7 @@
 			"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 			Plugin 'https://github.com/yegappan/grep.git'
 			"Plugin 'https://github.com/vim-scripts/TabLineSet.vim.git'
+			Plugin 'https://github.com/tpope/vim-fugitive.git'
 
 			"git repos on your local machine (i.e. when working on your own plugin)
 			"Plugin 'file:///home/gmarik/path/to/plugin'
