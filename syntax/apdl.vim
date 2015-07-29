@@ -1857,11 +1857,13 @@ syn match	apdlRepeat	display "\*go\>" contained
 "}}}
 
 "{{{ exceptional commands:
-syn match	apdlUnused	display "/eof\>" contained
+
+"syn match	apdlUnused	display "/eof\>" contained
 syn match	apdlSpecial	display "/show\>" contained
 syn match	apdlSpecial	display "/exit\>" contained
 syn match	apdlSpecial	display "/quit\>" contained
 syn match	apdlSpecial	display "debug\>" contained
+
 "}}}
 
 "labels
@@ -1888,14 +1890,14 @@ syn keyword	apdlWarning	contained edited
 syn keyword	apdlWarning	contained update
 syn keyword	apdlWarning	contained verify
 
-syn match	apdlspc display "sp\(ecial_\)\?case"
+syn match	apdlspc display "sp\(.*\)\?case"
 
 syn keyword apdlHigh converged warning error
 
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
 
 syn match apdlSpecial2		display "<--.*-->" contained
-"syn match apdlUnused		display "\(eoff.*\Z\)" contained
+syn match apdlUnused		display "eof\(.*\_..*\)*\%$"
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
@@ -2081,13 +2083,13 @@ syn case match
 						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 					"EOF fold
-					syn region vimEofFold
-						\ start="\<eof\%[f]\>"
-						\ end="\(\%$\)"
-						\ fold contains=NONE
-						\ keepend extend
-						\ containedin=ALLBUT,apdlComment,apdlLineComment
-						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+					"syn region vimEofFold
+						"\ start="\<eof\%[f]\>"
+						"\ end="\%$"
+						"\ fold contains=NONE
+						"\ keepend extend
+						"\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
+						"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 	"fold do loops
 		syn region vimFoldDoLoop
@@ -2178,7 +2180,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlSpecial2	Question
 	HiLink apdlSpecial3	Type
 	HiLink apdlUnused	NotImp
-	HiLink vimEofFold NotImp
+	"HiLink vimEofFold NotImp
 	HiLink apdlAnything Normal
 	highlight link extraWhite ExtraWhite
 	highlight link apdlm Apdlmcs
