@@ -1450,6 +1450,7 @@ syn match apdlm display "APX\>" contained
 syn match apdlm display "APY\>" contained
 syn match apdlm display "APY2\>" contained
 syn match apdlm display "APZ\>" contained
+syn match apdlm display "arsort\>" contained
 syn match apdlm display "ARVN\>" contained
 syn match apdlm display "ASA\>" contained
 syn match apdlm display "ASLE-alt\>" contained
@@ -1887,6 +1888,8 @@ syn keyword	apdlWarning	contained edited
 syn keyword	apdlWarning	contained update
 syn keyword	apdlWarning	contained verify
 
+syn match	apdlspc display "sp\(ecial_\)\?case"
+
 syn keyword apdlHigh converged warning error
 
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
@@ -1899,6 +1902,10 @@ syn match apdlSpecial3 display "!anfang" contained
 syn match apdlSpecial3 display "!ende" contained
 "syn match extraWhite display " \s"
 "syn match extraWhite display "\s "
+
+syn match	batchArgs	"joblk\d"
+syn match	batchArgs	"jobset"
+syn match	batchArgs	"jstg\d"
 
 "}}}
 
@@ -2030,6 +2037,11 @@ syn match vArgs display "\<a\>"
 syn match vArgs display "\<mnloc\>"
 syn match vArgs display "\<mxloc\>"
 
+syn match vArgs display "\<mat\>"
+syn match vArgs display "\<real\>"
+syn match vArgs display "\<type\>"
+
+syn match vArgs display "\<pres\>"
 syn match vArgs display "\<forc\>"
 
 syn match vArgs display "\<defa\>"
@@ -2037,14 +2049,14 @@ syn match vArgs display "\<defa\>"
 "}}}
 
 "commands must be the first entry in a line or behind an $
-syn cluster	apdlToken contains=apdlm,apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused,apdlSpecial2
+syn cluster	apdlToken contains=apdlm,apdlSpecial,apdlRepeat,apdlConditional,apdlFunction,apdlLabel,apdlUnused,apdlSpecial2,batchArgs
 
 syn match	apdlStart1	"\$" nextgroup=@apdlToken skipwhite transparent
 syn match	apdlStart2	"^" nextgroup=@apdlToken skipwhite transparent
 
 "comment must be the last match, it has priority over apdlStart2
 syn keyword	apdlTodo	contained TODO FIXME XXX
-syn match	apdlComment	"!.*$" contains=apdlTodo,apdlWarning,apdlSpecial2,apdlSpecial3
+syn match	apdlComment	"!.*$" contains=apdlTodo,apdlWarning,apdlSpecial2,apdlSpecial3,apdlspc
 
 syn case match
 
@@ -2065,7 +2077,7 @@ syn case match
 						\ end="\<end\%[e]\>"
 						\ fold contains=ALL
 						\ keepend extend
-						\ containedin=apdlComment,apdlLineComment
+						\ containedin=apdlComment,apdlLineComment,@apdlToken
 						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 					"EOF fold
@@ -2155,6 +2167,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 
 	HiLink apdlError	Error
 	HiLink apdlWarning	Todo
+	HiLink apdlspc	Todo
 
 	HiLink apdlHigh	ApdlFocus
 	HiLink vArgs	ApdlArgs
@@ -2166,15 +2179,10 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlSpecial3	Type
 	HiLink apdlUnused	NotImp
 	HiLink vimEofFold NotImp
-	highlight link apdlm Apdlmcs
 	HiLink apdlAnything Normal
 	highlight link extraWhite ExtraWhite
-
-	"HiLink vimFoldIfContainer Conditional
-	"HiLink vimFoldIf Conditional
-	"HiLink vimFoldElseIf Conditional
-	"HiLink vimFoldElse Conditional
-	"HiLink vimFoldDoLoop Repeat
+	highlight link apdlm Apdlmcs
+	highlight link batchArgs BatchArgs
 
 	delcommand HiLink
 

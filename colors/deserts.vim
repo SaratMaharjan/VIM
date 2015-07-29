@@ -29,11 +29,11 @@ hi Cursor	guibg=khaki guifg=slategrey
 "hi DiffDelete
 "hi DiffText
 "hi ErrorMsg
+"hi LineNr
 hi VertSplit	guibg=#c2bfa5 guifg=grey50 gui=none
 hi Folded	guibg=grey30 guifg=gold
 hi FoldColumn	guibg=grey30 guifg=tan
 hi IncSearch	guifg=slategrey guibg=khaki
-"hi LineNr
 hi ModeMsg	guifg=goldenrod
 hi MoreMsg	guifg=SeaGreen
 hi NonText	guifg=LightBlue guibg=grey30
@@ -44,8 +44,8 @@ hi StatusLine	guibg=#c2bfa5 guifg=black gui=none
 hi StatusLineNC	guibg=#c2bfa5 guifg=grey50 gui=none
 hi Title	guifg=indianred
 hi Visual	gui=none guifg=khaki guibg=olivedrab
-"hi VisualNOS
 hi WarningMsg	guifg=salmon
+"hi VisualNOS
 "hi WildMenu
 "hi Menu
 "hi Scrollbar
@@ -61,6 +61,8 @@ hi ApdlFocus	guifg=#ccff11 cterm=italic gui=italic
 hi ApdlArgs	cterm=italic gui=italic
 
 "hi Comment	guifg=#474719
+"hi Underlined
+"hi Error
 hi Constant	guifg=#ffa0a0
 hi Identifier	guifg=palegreen
 hi Statement	guifg=khaki
@@ -68,9 +70,8 @@ hi Type		guifg=darkkhaki
 hi Special	guifg=navajowhite
 hi Function	guifg=navajowhite
 hi Apdlmcs	guifg=#ffff80 gui=italic
-"hi Underlined
+hi BatchArgs	guifg=#fedcba gui=italic
 hi Ignore	guifg=grey40
-"hi Error
 hi Todo		guifg=orangered guibg=yellow
 hi PreProc	guifg=darkgrey
 hi ExtraWhite guifg=yellow2 guibg=darkgreen

@@ -966,6 +966,8 @@ let NERD_macro_alt_style=1
 		let Egrep_Path=expand(pathGrep).'\egrep.exe'
 		let Agrep_Path=expand(pathGrep).'\agrep.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
+		let Grep_Default_Options = '-i' 
+		nnoremap ,spc :Grep sp.*case *.in *.mac *.out <CR>
 	"}}}
 
 "}}}
@@ -1052,7 +1054,7 @@ let NERD_macro_alt_style=1
 				":tab all
 		"19. to search and replace in all open buffers/args	, e means ignore error - match not found
 				":bufdo %s/cmd/command/ge
-				": add | update to save files automatically
+				":add | update to save files automatically
 				":arg *.cpp	All *.cpp files in current directory.
 				":argadd *.h	And all *.h files.
 				":arg	Optional: Display the current arglist.
@@ -1116,7 +1118,7 @@ let NERD_macro_alt_style=1
 
 		"2. Replace with ^p to replace with new line. NOTEPAD++??
 
-		"3. ren ???????????.jpg	????????1??.jpg :::replaces anything to 1 and third ralst position.
+		"3. ren ???????????.jpg	????????1??.jpg :::replaces anything to 1 and third last position.
 
 		"4. forfiles /m *.jpg /c "cmd /c ren @file prefix@file" 		:: adding prefix to file Name
 				
@@ -1285,4 +1287,7 @@ set nohidden
 
 "Set up the gui cursor to look nice
 "set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
+
 
