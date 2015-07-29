@@ -2085,7 +2085,7 @@ syn case match
 						\ start="\<eof\%[f]\>"
 						\ end="\(\%$\)"
 						\ fold contains=NONE
-						\ keepend extend transparent
+						\ keepend extend
 						\ containedin=ALLBUT,apdlComment,apdlLineComment
 						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
@@ -2094,7 +2094,7 @@ syn case match
 			\ start="\*do\>"
 			\ end="\*enddo\>"
 			\ fold
-			\ containedin=ALLBUT,@vimNoFold,@apdlToken
+			\ containedin=ALLBUT,@vimNoFold,@apdlToken,vimEofFold
 			\ contains=TOP
 
 	"fold if...else...endif constructs
@@ -2106,7 +2106,7 @@ syn case match
 				\ start="\*if\>"
 				\ end="\*endif\>=\@!"
 				\ keepend extend
-				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken
+				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken,vimEofFold
 				\ contains=NONE
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldIf
