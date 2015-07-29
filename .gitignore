@@ -1,10 +1,10 @@
 #ignore files except following
+*
 !*.vim
 !*.gitignore
 !*.snippets
 !*.md
 !*.in
-*.swp
 !plugin/
 GREP/
 bundle/
