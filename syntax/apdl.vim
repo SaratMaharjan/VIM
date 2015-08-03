@@ -1466,7 +1466,7 @@ syn match apdlm display "bea188\>" contained
 syn match apdlm display "bea4\>" contained
 syn match apdlm display "7BEM1\>" contained
 syn match apdlm display "Beul_UR_Mod\>" contained
-syn match apdlm display "7BLAST\>" contained
+syn match apdlm display "\(7\)\?blast\>" contained
 syn match apdlm display "bnod\>" contained
 syn match apdlm display "bnod2\>" contained
 syn match apdlm display "bnod3\>" contained
@@ -1806,6 +1806,7 @@ syn match apdlm display "XX\>" contained
 syn match apdlm display "xxx\>" contained
 syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
+syn match apdlm display "co2real\>" contained
 
 "}}}
 
