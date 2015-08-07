@@ -1300,4 +1300,7 @@ nnoremap <leader>fe ]z
 autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview
 
+let username=$USERNAME
+noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
+
 
