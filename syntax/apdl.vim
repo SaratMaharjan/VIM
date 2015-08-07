@@ -1807,6 +1807,7 @@ syn match apdlm display "xxx\>" contained
 syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
 syn match apdlm display "co2real\>" contained
+syn match apdlm display "sset\>" contained
 
 "}}}
 
@@ -2114,7 +2115,7 @@ syn case match
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldIf
 				\ start="\*if\>"
-				\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+				\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
 				\ fold
 				\ keepend
 				\ contained containedin=vimFoldIfContainer
@@ -2123,7 +2124,7 @@ syn case match
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldElseIf
 				\ start="\*else\%[if]\>"
-				\ end="^\s*\\\?\s*\*else\%[if]\>"ms=s-1,me=s-1
+				\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
 				\ fold
 				\ keepend
 				\ contained containedin=vimFoldIfContainer

@@ -2,7 +2,7 @@
 		let path='E:/Cloud/Dropbox/VIM/bundle/Vundle.vim'
 		let pathInstall='E:/Cloud/Dropbox/VIM/bundle'
 		let pathRTP='E:/Cloud/Dropbox/VIM'
-		let pathWork='E:/Cloud/Dropbox/VIM'
+		let pathWork='D:/VIM'
 		let pathvrc='E:/Cloud/Dropbox/VIM/vimrc.vim'
 		let pathapdl='E:\Cloud\Dropbox\VIM\syntax\apdl.vim'
 		let pathbat='D:\zCore\SM.bat'

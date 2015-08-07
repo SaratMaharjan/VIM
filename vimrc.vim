@@ -19,7 +19,7 @@
 
 	"Zoom Functions
 	exe 'so ' .expand(pathZoom)
-
+	exe 'set undodir=' .expand(pathWork)
 "}}} Sources
 
 "{{{ Initial Setting - need to be at start
@@ -38,8 +38,8 @@
 	source $VIMRUNTIME/delmenu.vim
 	source $VIMRUNTIME/menu.vim
 	set encoding=utf-8
-	"set encoding=latin1
 	:scriptencoding utf-8
+	"set encoding=latin1
 	"set keymap=german
 "}}} Language and Encoding
 
@@ -142,7 +142,7 @@
 	nnoremap <leader>u :GundoToggle<CR>		"toggle gundo
 	nnoremap <leader>q :mksession<CR>		"save session
 
-	nnoremap <leader>a :Ag		"open ag.vim
+	"nnoremap <leader>a :Ag		"open ag.vim
 	nnoremap le `[v`]		"highlight last inserted text : last edit
 
 	"noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm		"Remove the Windows ^M - when the encodings gets messed up
@@ -968,7 +968,7 @@ let NERD_macro_alt_style=1
 		let Agrep_Path=expand(pathGrep).'\agrep.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
 		let Grep_Default_Options = '-i' 
-		nnoremap ,spc :Grep sp.*case *.in *.mac *.out <CR>
+		nnoremap <leader>spc :Grep sp.*case *.in *.mac *.out <CR>
 	"}}}
 
 "}}}
@@ -1230,7 +1230,7 @@ nnoremap gl ''
 "repeat last : command
 nnoremap <F12> @q
 
-"searcha and replace :///, ask for confirmation
+"search and replace :///, ask for confirmation
 nnoremap <leader>cfn :%s/:\/\/\/\.\\/: /gc<cr>
 
 "nnoremap u <nop>
@@ -1243,10 +1243,12 @@ nnoremap <C-R> <nop>
 noremap <C-h> ]c
 noremap <C-g> [c
 
+"Show Highlight Group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+"recursive folding and opening folds
 nnoremap zs zO
 nnoremap zd zC
 
@@ -1282,8 +1284,8 @@ function! s:DiffWithSaved()
 endfunction
 com! Dsave call s:DiffWithSaved()
 
-set splitbelow
-set splitright
+"set splitbelow
+"set splitright
 set nohidden
 
 "Set up the gui cursor to look nice
@@ -1291,4 +1293,11 @@ set nohidden
 
 let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
 "autocmd BufEnter * :syntax sync fromstart
+
+nnoremap <leader>fa [z
+nnoremap <leader>fe ]z
+
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
+
 

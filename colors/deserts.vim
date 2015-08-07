@@ -50,6 +50,9 @@ hi WarningMsg	guifg=salmon
 "hi Menu
 "hi Scrollbar
 "hi Tooltip
+:hi TabLineFill guifg=LightGreen guibg=DarkGreen
+:hi TabLine guifg=Blue guibg=grey50
+:hi TabLineSel guifg=Red guibg=Yellow
 
 "syntax highlighting groups
 "hi Comment	guifg=SkyBlue cterm=italic gui=italic
