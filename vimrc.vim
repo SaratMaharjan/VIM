@@ -102,6 +102,7 @@
 			Plugin 'https://github.com/yegappan/grep.git'
 			"Plugin 'https://github.com/vim-scripts/TabLineSet.vim.git'
 			Plugin 'https://github.com/tpope/vim-fugitive.git'
+			Plugin 'https://github.com/rosenfeld/rgrep.vim.git'
 
 			"git repos on your local machine (i.e. when working on your own plugin)
 			"Plugin 'file:///home/gmarik/path/to/plugin'
@@ -967,7 +968,9 @@ let NERD_macro_alt_style=1
 		let Egrep_Path=expand(pathGrep).'\egrep.exe'
 		let Agrep_Path=expand(pathGrep).'\agrep.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
-		let Grep_Default_Options = '-i' 
+		let Grep_Default_Options = '-ri' 
+		"let Grep_Find_Use_Xargs = 0
+		"let Grep_Xargs_Options = '--null'
 		nnoremap <leader>spc :Grep sp.*case *.in *.mac *.out <CR>
 	"}}}
 
@@ -1294,16 +1297,17 @@ set nohidden
 let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
 "autocmd BufEnter * :syntax sync fromstart
 
-nnoremap <leader>fa [z
-nnoremap <leader>fe ]z
-
 "autocmd BufWinLeave *.* mkview!
 "autocmd BufWinEnter *.* silent loadview
 
 let username=$USERNAME
 noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 
-
+"move to start/end of fold
+	nnoremap <leader>fa zk
+	nnoremap <leader>fe zj
+	nnoremap fa [z
+	nnoremap fe ]z
 
 
 
