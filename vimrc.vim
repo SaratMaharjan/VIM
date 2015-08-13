@@ -1309,10 +1309,9 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap fa [z
 	nnoremap fe ]z
 
-
-
-
-
+"map Ctrl-F to search (recursive mapping) and replace Ctrl F by Alt b
+nnoremap <A-b> <C-f>
+map <C-f> <space>s
 
 
 "}}}

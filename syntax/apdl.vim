@@ -1554,7 +1554,7 @@ syn match apdlm display "essh\>" contained
 syn match apdlm display "EST\>" contained
 syn match apdlm display "ESU\>" contained
 syn match apdlm display "ESUC\>" contained
-syn match apdlm display "1ESUM\>" contained
+syn match apdlm display "ESUM\>" contained
 syn match apdlm display "esvo\>" contained
 syn match apdlm display "eush\>" contained
 syn match apdlm display "euvo\>" contained
