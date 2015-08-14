@@ -57,7 +57,7 @@ hi WarningMsg	guifg=salmon
 "syntax highlighting groups
 "hi Comment	guifg=SkyBlue cterm=italic gui=italic
 hi Comment	guifg=#C8C8BA cterm=italic gui=italic
-hi NotImp	guifg=#abcdef cterm=italic gui=italic
+hi NotImp	guifg=#abcdef guibg=#123456 cterm=italic gui=italic
 hi ApdlComment	guifg=#A37A00 cterm=italic gui=italic
 
 hi ApdlFocus	guifg=#ccff11 cterm=italic gui=italic

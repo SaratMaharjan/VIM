@@ -72,6 +72,7 @@ syn case match
 	syntax match potionOperator "\v\+\="
 	syntax match potionOperator "\v\="
 	syntax match potionOperator "\v\%"
+	syntax match potionOperator "\v\$"
 
 	highlight link potionOperator Operator
 
@@ -1437,9 +1438,9 @@ syn match apdlm display "ANX71\>" contained
 syn match apdlm display "anx77\>" contained
 syn match apdlm display "ANX7t\>" contained
 syn match apdlm display "ANX7_ALT\>" contained
-syn match apdlm display "4anx8\>" contained
-syn match apdlm display "0ANXalt\>" contained
-syn match apdlm display "3ANY\>" contained
+syn match apdlm display "anx8\>" contained
+syn match apdlm display "ANXalt\>" contained
+syn match apdlm display "ANY\>" contained
 syn match apdlm display "ANY7\>" contained
 syn match apdlm display "any77\>" contained
 syn match apdlm display "ANY7t\>" contained
@@ -1456,15 +1457,15 @@ syn match apdlm display "ASA\>" contained
 syn match apdlm display "ASLE-alt\>" contained
 syn match apdlm display "ASM\>" contained
 syn match apdlm display "ASN\>" contained
-syn match apdlm display "4ASPS\>" contained
+syn match apdlm display "ASPS\>" contained
 syn match apdlm display "ASR\>" contained
 syn match apdlm display "ASS\>" contained
 syn match apdlm display "ASU\>" contained
-syn match apdlm display "5atx7\>" contained
+syn match apdlm display "atx7\>" contained
 syn match apdlm display "AVATT\>" contained
 syn match apdlm display "bea188\>" contained
 syn match apdlm display "bea4\>" contained
-syn match apdlm display "7BEM1\>" contained
+syn match apdlm display "BEM1\>" contained
 syn match apdlm display "Beul_UR_Mod\>" contained
 syn match apdlm display "\(7\)\?blast\>" contained
 syn match apdlm display "bnod\>" contained
@@ -1510,11 +1511,12 @@ syn match apdlm display "eact\>" contained
 syn match apdlm display "EAD\>" contained
 syn match apdlm display "EAM\>" contained
 syn match apdlm display "ec175\>" contained
-syn match apdlm display "5ECR\>" contained
+syn match apdlm display "ECR\>" contained
 syn match apdlm display "EDNS\>" contained
 syn match apdlm display "edreh\>" contained
 syn match apdlm display "eg\>" contained
-syn match apdlm display "EINFO\>" contained
+"syn match apdlm display "EINFO\>" contained
+syn match apdlm display "eaus\>" contained
 syn match apdlm display "elemp\>" contained
 syn match apdlm display "emma\>" contained
 syn match apdlm display "emmr\>" contained
@@ -1532,7 +1534,7 @@ syn match apdlm display "eplo77\>" contained
 syn match apdlm display "epps\>" contained
 syn match apdlm display "ERDLAST\>" contained
 syn match apdlm display "ERDLAST1\>" contained
-syn match apdlm display "7ERDU\>" contained
+syn match apdlm display "ERDU\>" contained
 syn match apdlm display "ERM\>" contained
 syn match apdlm display "ESA\>" contained
 syn match apdlm display "ESbt\>" contained
@@ -1564,7 +1566,7 @@ syn match apdlm display "fil4\>" contained
 syn match apdlm display "fil4_alt\>" contained
 syn match apdlm display "FNEG\>" contained
 syn match apdlm display "FNEG2\>" contained
-syn match apdlm display "8fnl\>" contained
+syn match apdlm display "fnl\>" contained
 syn match apdlm display "FPOS\>" contained
 syn match apdlm display "FPOS2\>" contained
 syn match apdlm display "FRES\>" contained
@@ -1572,7 +1574,7 @@ syn match apdlm display "FW\>" contained
 syn match apdlm display "FW0\>" contained
 syn match apdlm display "FWSUM\>" contained
 syn match apdlm display "1FWzul\>" contained
-syn match apdlm display "4fy18800\>" contained
+syn match apdlm display "fy18800\>" contained
 syn match apdlm display "gam\>" contained
 syn match apdlm display "gamd\>" contained
 syn match apdlm display "gem\>" contained
@@ -1599,7 +1601,7 @@ syn match apdlm display "KOOFS\>" contained
 syn match apdlm display "KOS\>" contained
 syn match apdlm display "KOS2\>" contained
 syn match apdlm display "KOS3\>" contained
-syn match apdlm display "3KOS4\>" contained
+syn match apdlm display "KOS4\>" contained
 syn match apdlm display "KOS5\>" contained
 syn match apdlm display "KOSC\>" contained
 syn match apdlm display "ksl\>" contained
@@ -1714,7 +1716,7 @@ syn match apdlm display "sk\>" contained
 syn match apdlm display "spp\>" contained
 syn match apdlm display "spp_alt\>" contained
 syn match apdlm display "SSA\>" contained
-syn match apdlm display "6ssenks\>" contained
+syn match apdlm display "ssenks\>" contained
 syn match apdlm display "SSR\>" contained
 syn match apdlm display "SSS\>" contained
 syn match apdlm display "SSU\>" contained
@@ -1791,8 +1793,8 @@ syn match apdlm display "viiplusy\>" contained
 syn match apdlm display "viiz\>" contained
 syn match apdlm display "viiz2\>" contained
 syn match apdlm display "VSA\>" contained
-syn match apdlm display "7VSKT\>" contained
-syn match apdlm display "5VSKT_ALT\>" contained
+syn match apdlm display "VSKT\>" contained
+syn match apdlm display "VSKT_ALT\>" contained
 syn match apdlm display "VSN\>" contained
 syn match apdlm display "VSR\>" contained
 syn match apdlm display "VSS\>" contained
@@ -1860,7 +1862,7 @@ syn match	apdlRepeat	display "\*go\>" contained
 
 "{{{ exceptional commands:
 
-"syn match	apdlUnused	display "/eof\>" contained
+syn match	apdlUnused	display "/eof\>" contained
 syn match	apdlSpecial	display "/show\>" contained
 syn match	apdlSpecial	display "/exit\>" contained
 syn match	apdlSpecial	display "/quit\>" contained
@@ -1899,7 +1901,8 @@ syn keyword apdlHigh converged warning error
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
 
 syn match apdlSpecial2		display "<--.*-->" contained
-syn match apdlUnused		display "eof\(.*\_..*\)*\%$"
+syn match apdlSpecial2		display "<<<.*>>>" contained
+"syn match apdlUnused		display "eof\(.*\_..*\)*\%$"
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained

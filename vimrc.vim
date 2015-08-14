@@ -103,6 +103,7 @@
 			"Plugin 'https://github.com/vim-scripts/TabLineSet.vim.git'
 			Plugin 'https://github.com/tpope/vim-fugitive.git'
 			Plugin 'https://github.com/rosenfeld/rgrep.vim.git'
+			"Plugin 'https://github.com/chrisbra/BackgroundColor.vim.git'
 
 			"git repos on your local machine (i.e. when working on your own plugin)
 			"Plugin 'file:///home/gmarik/path/to/plugin'
@@ -849,17 +850,21 @@
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
 	au BufNewFile,BufRead *.inp	setf apdl
+	au BufNewFile,BufRead *.csv	setf apdl
 	au BufNewFile,BufRead *.s01	setf apdl
 	au BufNewFile,BufRead *.s02	setf apdl
 	au BufNewFile,BufRead *.s03	setf apdl
+	au BufNewFile,BufRead *.s04	setf apdl
 	au BufReadPost *.mac set syntax=apdl
 	au BufReadPost *.mac setf apdl
 	au BufReadPost *.in setf apdl
 	au BufReadPost *.out setf apdl
 	au BufReadPost *.inp setf apdl
+	au BufReadPost *.csv setf apdl
 	au BufReadPost *.s01 setf apdl
 	au BufReadPost *.s02 setf apdl
 	au BufReadPost *.s03 setf apdl
+	au BufReadPost *.s04 setf apdl
 
 "}}}
 
@@ -1312,7 +1317,6 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 "map Ctrl-F to search (recursive mapping) and replace Ctrl F by Alt b
 nnoremap <A-b> <C-f>
 map <C-f> <space>s
-
 
 "}}}
 
