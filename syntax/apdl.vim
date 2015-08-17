@@ -1650,7 +1650,7 @@ syn match apdlm display "nLSort4\>" contained
 syn match apdlm display "nLSort_x\>" contained
 syn match apdlm display "nLSort_y\>" contained
 syn match apdlm display "nLSort_z\>" contained
-"syn match apdlm display "nsl\>" contained
+syn match apdlm display "nsl[m]\?\>" contained
 syn match apdlm display "nUMPLO\>" contained
 syn match apdlm display "nver\>" contained
 syn match apdlm display "pb\>" contained
@@ -1810,6 +1810,26 @@ syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
 syn match apdlm display "co2real\>" contained
 syn match apdlm display "sset\>" contained
+
+"}}}
+
+"{{{ ELEMENTS
+syn case ignore
+
+"syn match apdlElem display "combin14\>" contained
+syn match apdlElem display "combin14\>"
+syn match apdlElem display "surf154\>"
+syn match apdlElem display "targe170\>"
+syn match apdlElem display "conta174\>"
+syn match apdlElem display "conta175\>"
+syn match apdlElem display "prets179\>"
+syn match apdlElem display "link180\>"
+syn match apdlElem display "shell181\>"
+syn match apdlElem display "solid185\>"
+syn match apdlElem display "solid186\>"
+syn match apdlElem display "solid187\>"
+syn match apdlElem display "beam188\>"
+
 
 "}}}
 
@@ -2113,7 +2133,7 @@ syn case match
 				\ start="\*if\>"
 				\ end="\*endif\>=\@!"
 				\ keepend extend
-				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken,vimEofFold
+				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken
 				\ contains=NONE
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldIf
@@ -2171,6 +2191,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 	HiLink apdlm	Macro
 	HiLink apdlLabel	PreProc
 	HiLink apdlSpecial	PreProc
+	HiLink apdlElem	ApdlElem
 
 	HiLink apdlError	Error
 	HiLink apdlWarning	Todo

@@ -62,6 +62,8 @@ hi ApdlComment	guifg=#A37A00 cterm=italic gui=italic
 
 hi ApdlFocus	guifg=#ccff11 cterm=italic gui=italic
 hi ApdlArgs	cterm=italic gui=italic
+"hi ApdlElem	cterm=italic gui=italic,bold guifg=#bbbfff
+hi ApdlElem	cterm=italic gui=italic guifg=#bbbfff
 
 "hi Comment	guifg=#474719
 "hi Underlined
