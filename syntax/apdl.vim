@@ -1810,6 +1810,8 @@ syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
 syn match apdlm display "co2real\>" contained
 syn match apdlm display "sset\>" contained
+syn match apdlm display "cValues\>" contained
+syn match apdlm display "rlot\>" contained
 
 "}}}
 
@@ -2012,6 +2014,7 @@ syn match apdlm display "ac1\>" contained
 syn match apdlm display "estt\>" contained
 syn match apdlm display "esn\>" contained
 syn match apdlm display "esna\>" contained
+syn match apdlm display "cdir\>" contained
 syn match apdlm display "cg\>" contained
 syn match apdlm display "bnode\>" contained
 syn match apdlm display "dp\>" contained
@@ -2033,8 +2036,12 @@ syn match apdlm display "matPlot\>" contained
 syn match apdlm display "solFy\>" contained
 syn match apdlm display "plotFy\>" contained
 syn match apdlm display "bdPlot\>" contained
+syn match apdlm display "baPlot\>" contained
+syn match apdlm display "laPlot\>" contained
 syn match apdlm display "ano3d\>" contained
 syn match apdlm display "chPath\>" contained
+syn match apdlm display "chr2sec\>" contained
+syn match apdlm display "r2sec\>" contained
 syn match apdlm display "abbr\>" contained
 syn match apdlm display "r2sec\>" contained
 syn match apdlm display "smisc1\>" contained

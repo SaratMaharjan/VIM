@@ -19,6 +19,7 @@
 
 	"Zoom Functions
 	exe 'so ' .expand(pathZoom)
+	exe 'so ' .expand(pathRTP)."/highlights.vim"
 	exe 'set undodir=' .expand(pathWork)
 "}}} Sources
 
@@ -487,6 +488,7 @@
 			"To make Backups with Date
 				":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
 				:au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
+				noremap <leader>ba :au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")<CR>
 "}}} Backup Settings
 
 "{{{ FOLD settings
@@ -555,8 +557,11 @@
 			%s/\s\+$//ge
 			exe "normal `z"
 		endfunc
-		autocmd BufWrite *.py :call DeleteTrailingWS()
-		autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+		"autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+				"\:call <SID>StripTrailingWhitespaces()
+		"autocmd BufWrite *.py :call DeleteTrailingWS()
+		"autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 	"}}} strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
 
@@ -743,8 +748,6 @@
 		augroup configgroup
 			autocmd!
 			autocmd VimEnter * highlight clear SignColumn
-			autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-				\:call <SID>StripTrailingWhitespaces()
 			autocmd FileType java setlocal noexpandtab
 			autocmd FileType java setlocal list
 			autocmd FileType java setlocal listchars=tab:+\ ,eol:-
@@ -1315,8 +1318,18 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap fe ]z
 
 "map Ctrl-F to search (recursive mapping) and replace Ctrl F by Alt b
-nnoremap <A-b> <C-f>
-map <C-f> <space>s
+	nnoremap <A-b> <C-f>
+	map <C-f> <space>s
+
+"Highlight line,word,column, or clear highlights
+	nnoremap <silent> <leader>hil :exe "let m = matchadd('WildMenu','\\%" . line('.') . "l')"<CR>
+	nnoremap <silent> <Leader>hiw :exe "let m=matchadd('WildMenu','\\<\\w*\\%" . line(".") . "l\\%" . col(".") . "c\\w*\\>')"<CR>
+	nnoremap <silent> <leader>hic :exe "let m=matchadd('WildMenu','\\<\\w*\\%" . virtcol(".") . "v\\w*\\>')"<CR>
+	nnoremap <silent> <leader><CR> :call clearmatches()<CR>
+
+
+
+
 
 "}}}
 

@@ -5,6 +5,9 @@
 !*.snippets
 !*.md
 !*.in
+!*.csv
+!*.mac
+!*.xla
 !plugin/
 GREP/
 bundle/
