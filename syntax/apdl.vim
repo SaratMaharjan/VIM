@@ -2140,8 +2140,8 @@ syn case match
 				\ start="\*if\>"
 				\ end="\*endif\>=\@!"
 				\ keepend extend
-				\ containedin=ALLBUT,@vimNoFold,vimEofFold,@apdlToken
-				\ contains=NONE
+				\ containedin=ALLBUT,@vimNoFold,@apdlToken
+				\ contains=TOP
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 		syn region vimFoldIf
 				\ start="\*if\>"

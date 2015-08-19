@@ -1,5 +1,14 @@
 "VIMRC FILE "Sarat Maharjan "sarat.maharjan@gmail.com "2015.07.03
 
+"{{{ Initial Setting - need to be at start
+	let mapleader=","	"leader is comma
+	let g:mapleader = ","
+
+	if has('mouse')		"Enable Mouse
+		set mouse=a
+	endif
+"}}}
+
 "{{{ OTHER SOURCES
 
 	let user = substitute(system('whoami'),'\n','','')
@@ -13,24 +22,17 @@
 
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
+	source $VIMRUNTIME/macros/matchit.vim
 	behave mswin
 	"exe 'source ' .expand(pathColor)
 	exe 'set rtp+=' .expand(pathRTP)
 
 	"Zoom Functions
-	exe 'so ' .expand(pathZoom)
+	exe 'so ' .expand(pathRTP)."/zoom.vim"
 	exe 'so ' .expand(pathRTP)."/highlights.vim"
 	exe 'set undodir=' .expand(pathWork)
+
 "}}} Sources
-
-"{{{ Initial Setting - need to be at start
-	let mapleader=","	"leader is comma
-	let g:mapleader = ","
-
-	if has('mouse')		"Enable Mouse
-		set mouse=a
-	endif
-"}}}
 
 "{{{ Language and Encoding
 	"set langmenu=en_US
@@ -160,13 +162,13 @@
 	nnoremap <S-Enter> O<Esc>j
 	nnoremap <CR> o<Esc>k
 
-	noremap <leader>q :e ~/buffer<cr>			"Quickly open a buffer for scribble
-	noremap <leader>x :e ~/buffer.md<cr>		"Quickly open a markdown buffer for scribble
-	noremap <leader>pp :setlocal paste!<cr>		"Toggle paste mode on and off
-	noremap <silent> <leader><cr> :noh<cr>		"Disable highlight when <leader><cr> is pressed
+	"noremap <leader>q :e ~/buffer<cr>			"Quickly open a buffer for scribble
+	"noremap <leader>x :e ~/buffer.md<cr>		"Quickly open a markdown buffer for scribble
+	"noremap <leader>pp :setlocal paste!<cr>		"Toggle paste mode on and off
+	"noremap <silent> <leader><cr> :noh<cr>		"Disable highlight when <leader><cr> is pressed
 	"noremap <leader>bd :Bclose<cr>		"Close the current buffer
 	"noremap <leader>ba :1,1000 bd!<cr>		"Close all the buffers
-	noremap <leader>cd :cd %:p:h<cr>:pwd<cr>		"Switch CWD to the directory of the open buffer
+	"noremap <leader>cd :cd %:p:h<cr>:pwd<cr>		"Switch CWD to the directory of the open buffer
 
 	"Opens a new tab with the current buffer's path : Super useful when editing files in the same directory
 	"noremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
@@ -182,8 +184,8 @@
 		"noremap <leader>t<leader> :tabnext
 
 	"F7 to check if file is changed outside VIM
-		:noremap <F7> :checktime<CR>
-		:noremap! <F7> <C-O>:checktime<CR>
+		noremap <F7> :checktime<CR>
+		noremap! <F7> <C-O>:checktime<CR>
 
 	"Visual mode pressing * or # searches for the current selection, Super useful! From an idea by Michael Naumann
 		vnoremap <silent> * :call VisualSelection('f', '')<CR>
@@ -242,6 +244,7 @@
 					"set guitablabel=%M\ %t
 				endif
 		"}}}
+
 		"{{{ Status Bar
 				"Always show the status line
 				set laststatus=2
@@ -249,16 +252,19 @@
 				"Format the status line
 				set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ WD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 		"}}}
+
 		"{{{Tabs Setting
 				set tabstop=4 "number of visual spaces per TAB
 				"set softtabstop=4 "number of spaces in tab when editing
 				"set smarttab		"Be smart when using tabs ;)
 				set shiftwidth=4		"1 tab == 4 spaces
 		"}}}
+
 		"{{{Line Numbers
 				set number	"show line numbers
 				set relativenumber
 		"}}}
+
 "}}} GUI OPTIONS
 
 "{{{ Working Directory Setting
@@ -1327,8 +1333,8 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap <silent> <leader>hic :exe "let m=matchadd('WildMenu','\\<\\w*\\%" . virtcol(".") . "v\\w*\\>')"<CR>
 	nnoremap <silent> <leader><CR> :call clearmatches()<CR>
 
-
-
+"% to go to closing tag - Defining Tags for matchit
+	let b:match_words = '\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
 
 
 "}}}
