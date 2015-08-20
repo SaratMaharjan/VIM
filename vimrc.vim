@@ -61,10 +61,10 @@
 			filetype off		"required
 
 		"set the runtime path to include Vundle and initialize
-		exe 'set rtp+=' .expand(path)
+		exe 'set rtp+=' .expand(pathRTP) . '/bundle/Vundle.vim'
 
 		"pass a path where Vundle should install plugins
-		call vundle#begin(pathInstall)
+		call vundle#begin(expand(pathRTP) . '/bundle')
 
 		"let Vundle manage Vundle, required
 			Plugin 'gmarik/Vundle.vim'
@@ -895,14 +895,14 @@ let NERD_macro_alt_style=1
 "}}}
 
 "{{{ Open Important Files
-	noremap <leader>vrc :exe 'tabedit ' . expand(pathvrc)<CR>
-	noremap <leader>apd :exe 'tabedit ' . expand(pathapdl)<CR>
-	noremap <leader>bat :exe 'tabedit ' . expand(pathbat)<CR>
-	noremap <leader>baat :exe 'tabedit ' . expand(pathbat2)<CR>
-	noremap <leader>cp :exe 'tabedit ' . expand(pathcp)<CR>
-	noremap <leader>sm :exe 'tabedit ' . expand(pathsm)<CR>
-	noremap <leader>app :exe 'tabedit ' . expand(pathColor)<CR>
-	noremap <leader>ab :exe 'tabedit ' . expand(pathAbbr)<CR>
+	noremap <leader>vrc :exe 'tabedit ' . expand(pathRTP) . '/vimrc.vim'<CR>
+	noremap <leader>apd :exe 'tabedit ' . expand(pathRTP) . '/syntax/apdl.vim'<CR>
+	noremap <leader>bat :exe 'tabedit ' . expand(pathbat) . '/SM.bat'<CR>
+	noremap <leader>baat :exe 'tabedit ' . expand(pathbat) . '/SM2.bat'<CR>
+	noremap <leader>cp :exe 'tabedit ' . expand(pathsm) . '/cp7.mac'<CR>
+	noremap <leader>sm :exe 'tabedit ' . expand(pathsm) . '/sm.mac'<CR>
+	noremap <leader>app :exe 'tabedit ' . expand(pathRTP) . '/colors/deserts.vim'<CR>
+	noremap <leader>ab :exe 'tabedit ' . expand(pathsm). '/absm.mac'<CR>
 "}}}
 
 "{{{ UltiSnips Settings
@@ -910,7 +910,7 @@ let NERD_macro_alt_style=1
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 	let g:UltiSnipsSnippetDirectories=["UltiSnips","snips"]
-	let g:UltiSnipsSnippetsDir=pathSnips
+	let g:UltiSnipsSnippetsDir=expand(pathRTP) . '/snips' 
 "}}}
 
 "{{{ BOOKMARKS Settings
@@ -977,10 +977,10 @@ let NERD_macro_alt_style=1
 		command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 
 	"{{{GREP settings
-		let Grep_Path=expand(pathGrep).'\grep.exe'
-		let Fgrep_Path=expand(pathGrep).'\fgrep.exe'
-		let Egrep_Path=expand(pathGrep).'\egrep.exe'
-		let Agrep_Path=expand(pathGrep).'\agrep.exe'
+		let Grep_Path=expand(pathRTP).'/GREP/bin/grep.exe'
+		let Fgrep_Path=expand(pathRTP).'/GREP/bin/fgrep.exe'
+		let Egrep_Path=expand(pathRTP).'/GREP/bin/egrep.exe'
+		let Agrep_Path=expand(pathRTP). '/GREP/bin/agrep.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
 		let Grep_Default_Options = '-ri' 
 		"let Grep_Find_Use_Xargs = 0
@@ -993,7 +993,7 @@ let NERD_macro_alt_style=1
 "{{{ Session Settings
 	let SessionLoad=1
 	"set ssop=buffers,tabpages,winsize,curdir
-	set ssop=tabpages,winsize,curdir
+	set ssop=tabpages,winsize,curdir,folds
 "}}}
 
 "{{{ Switching Between TABS
@@ -1167,7 +1167,7 @@ let NERD_macro_alt_style=1
 "{{{ Still TO MANAGE
 
 "Update VIMRC
-noremap <leader>sv :exe 'source ' .expand(pathvrc)<CR>
+noremap <leader>sv :exe 'source ' .expand(pathRTP) . '/vimrc.vim'<CR>
 
 "Set working Directory
 exe ':set dir=' . expand(pathWork)
@@ -1334,7 +1334,12 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap <silent> <leader><CR> :call clearmatches()<CR>
 
 "% to go to closing tag - Defining Tags for matchit
-	let b:match_words = '\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
+let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
+au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
+
+
+
+
 
 
 "}}}
