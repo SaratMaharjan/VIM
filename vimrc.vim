@@ -86,7 +86,7 @@
 			Plugin 'https://github.com/sjl/badwolf.git'
 			Plugin 'https://github.com/sjl/gundo.vim.git'
 			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
-			Plugin 'https://github.com/rking/ag.vim.git'
+			"Plugin 'https://github.com/rking/ag.vim.git'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
 			"Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 			"Plugin 'https://github.com/scrooloose/syntastic.git'

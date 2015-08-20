@@ -1812,6 +1812,7 @@ syn match apdlm display "co2real\>" contained
 syn match apdlm display "sset\>" contained
 syn match apdlm display "cValues\>" contained
 syn match apdlm display "rlot\>" contained
+syn match apdlm display "tlot\>" contained
 
 "}}}
 
