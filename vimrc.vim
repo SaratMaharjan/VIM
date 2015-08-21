@@ -1188,7 +1188,8 @@ nnoremap <leader>llt $
 nnoremap <leader>lls ^
 
 "REFRESH file : reload + go to end
-nnoremap <F5> :e!<CR>G
+nnoremap <F5> :e<CR>G
+nnoremap <S-F5> :e!<CR>G
 
 noremap <leader>ntr :NERDTreeFind<cr>
 noremap <leader>gm `
@@ -1334,11 +1335,12 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap <silent> <leader><CR> :call clearmatches()<CR>
 
 "% to go to closing tag - Defining Tags for matchit
-let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
-au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>'
+let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
+au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
+nnoremap <leader><tab> :let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'<CR>
 
 
-
+map <tab> %
 
 
 
