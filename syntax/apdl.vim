@@ -1813,6 +1813,9 @@ syn match apdlm display "sset\>" contained
 syn match apdlm display "cValues\>" contained
 syn match apdlm display "rlot\>" contained
 syn match apdlm display "tlot\>" contained
+syn match apdlm display "ctlot\>" contained
+syn match apdlm display "autop\>" contained
+syn match apdlm display "sub2t\>" contained
 
 "}}}
 

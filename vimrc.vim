@@ -977,10 +977,12 @@ let NERD_macro_alt_style=1
 		command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 
 	"{{{GREP settings
-		let Grep_Path=expand(pathRTP).'/GREP/bin/grep.exe'
-		let Fgrep_Path=expand(pathRTP).'/GREP/bin/fgrep.exe'
-		let Egrep_Path=expand(pathRTP).'/GREP/bin/egrep.exe'
-		let Agrep_Path=expand(pathRTP). '/GREP/bin/agrep.exe'
+		let Grep_Path=expand(pathRTP).'\GREP\bin\grep.exe'
+		let Fgrep_Path=expand(pathRTP).'\GREP\bin\fgrep.exe'
+		let Egrep_Path=expand(pathRTP).'\GREP\bin\egrep.exe'
+		let Agrep_Path=expand(pathRTP).'\GREP\bin\agrep.exe'
+		let Grep_Xargs_Path=expand(pathRTP).'\GREP\bin\xargs.exe'
+		let Grep_Find_Path=expand(pathRTP).'\GREP\bin\find.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
 		let Grep_Default_Options = '-ri' 
 		"let Grep_Find_Use_Xargs = 0
@@ -1319,10 +1321,10 @@ let username=$USERNAME
 noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 
 "move to start/end of fold
-	nnoremap <leader>fa zk
-	nnoremap <leader>fe zj
-	nnoremap fa [z
-	nnoremap fe ]z
+	noremap <leader>fa zk
+	noremap <leader>fe zj
+	noremap fa [z
+	noremap fe ]z
 
 "map Ctrl-F to search (recursive mapping) and replace Ctrl F by Alt b
 	nnoremap <A-b> <C-f>
@@ -1342,7 +1344,8 @@ nnoremap <leader><tab> :let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,
 
 map <tab> %
 
-
+"set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
+"let Grep_Shell_Quote_Char = "\""
 
 "}}}
 
