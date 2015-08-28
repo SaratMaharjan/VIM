@@ -478,7 +478,7 @@ syn match apdlFunction display "fileaux3\>" contained
 syn match apdlFunction display "filedisp\>" contained
 syn match apdlFunction display "fill\>" contained
 syn match apdlFunction display "filldata\>" contained
-syn match apdlFunction display "/filname\>" contained
+syn match apdlFunction display "/fil\(name\)\?\>" contained
 syn match apdlFunction display "fitem\>" contained
 syn match apdlFunction display "fk\>" contained
 syn match apdlFunction display "fkdele\>" contained
@@ -1094,7 +1094,7 @@ syn match apdlFunction display "rescontrol\>" contained
 syn match apdlFunction display "/reset\>" contained
 syn match apdlFunction display "reset\>" contained
 syn match apdlFunction display "resp\>" contained
-syn match apdlFunction display "resume\>" contained
+syn match apdlFunction display "resu\(me\)\?\>" contained
 syn match apdlFunction display "rexport\>" contained
 syn match apdlFunction display "rfilsz\>" contained
 syn match apdlFunction display "rforce\>" contained
@@ -1814,7 +1814,7 @@ syn match apdlm display "cValues\>" contained
 syn match apdlm display "rlot\>" contained
 syn match apdlm display "tlot\>" contained
 syn match apdlm display "ctlot\>" contained
-syn match apdlm display "autop\>" contained
+syn match apdlm display "auan\>" contained
 syn match apdlm display "sub2t\>" contained
 
 "}}}
