@@ -15,7 +15,7 @@
 	if user == "sarat-hp\\sarat"
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
 	elseif user == "anakon\\maharjan"
-		source E:/Cloud/Dropbox/VIM/pathANDfontAnakon.vim
+		source E:/SM/VIM/pathANDfontAnakon.vim
 	else
 		echo "Invalid user"
 	endif
@@ -874,6 +874,8 @@
 	au BufReadPost *.s02 setf apdl
 	au BufReadPost *.s03 setf apdl
 	au BufReadPost *.s04 setf apdl
+
+	au WinEnter *.mac setf apdl
 
 "}}}
 

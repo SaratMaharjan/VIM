@@ -1808,6 +1808,7 @@ syn match apdlm display "XX\>" contained
 syn match apdlm display "xxx\>" contained
 syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
+
 syn match apdlm display "co2real\>" contained
 syn match apdlm display "sset\>" contained
 syn match apdlm display "cValues\>" contained
@@ -1816,6 +1817,7 @@ syn match apdlm display "tlot\>" contained
 syn match apdlm display "ctlot\>" contained
 syn match apdlm display "auan\>" contained
 syn match apdlm display "sub2t\>" contained
+syn match apdlm display "no0\>" contained
 
 "}}}
 
