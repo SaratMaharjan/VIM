@@ -107,6 +107,7 @@
 			Plugin 'https://github.com/tpope/vim-fugitive.git'
 			Plugin 'https://github.com/rosenfeld/rgrep.vim.git'
 			"Plugin 'https://github.com/chrisbra/BackgroundColor.vim.git'
+			Plugin 'https://github.com/elzr/vim-json.git'
 
 			"git repos on your local machine (i.e. when working on your own plugin)
 			"Plugin 'file:///home/gmarik/path/to/plugin'
@@ -1343,7 +1344,6 @@ let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfan
 au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
 nnoremap <leader><tab> :let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'<CR>
 
-
 map <tab> %
 
 "set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
@@ -1351,6 +1351,7 @@ map <tab> %
 
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
 
 "}}}
 

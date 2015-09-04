@@ -1941,6 +1941,7 @@ syn match apdlSpecial3 display "!ende" contained
 syn match	batchArgs	"joblk\d"
 syn match	batchArgs	"jobset"
 syn match	batchArgs	"jstg\d"
+syn match	batchArgs	"arg\d"
 
 "}}}
 
