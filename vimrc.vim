@@ -520,6 +520,7 @@
 	autocmd FileType dosbatch setlocal foldmarker=anfang,ende
 	autocmd FileType asm setlocal foldmethod=marker
 	autocmd FileType asm setlocal foldmarker=!anfang,!ende
+	autocmd FileType c setlocal foldmarker=anfang,ende
 
 	"let g:FoldMethod = 0		"Defining Global Variable
 

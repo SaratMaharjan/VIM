@@ -7,7 +7,11 @@
 
 "{{{ GUI font
 	":set guifont=Segoe_UI_Mono:h10:cANSI
-	:set guifont=Courier_New:h12:cANSI
+	":set guifont=Monospace:h10:cANSI
+	":set guifont=Tahoma_Regular:h10:cANSI
+	":set guifont=Calibri\ Regular:h10:cANSI
+	":set guifont=Courier_New:h9:cANSI
+	:set guifont=Consolas:h10:cANSI
 	":set guifont=PrimaSansMono_BT:h10:cANSI
 "}}} GUI Font
 
