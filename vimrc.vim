@@ -41,6 +41,7 @@
 	source $VIMRUNTIME/delmenu.vim
 	source $VIMRUNTIME/menu.vim
 	set encoding=utf-8
+	set fileencoding=utf-8
 	:scriptencoding utf-8
 	"set encoding=latin1
 	"set keymap=german
@@ -1183,8 +1184,8 @@ noremap <leader>wd :exe 'cd ' . expand(pathWork)<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-":verbose nnoremap ö <C-]>
-":verbose nnoremap ä <C-O>
+":verbose nnoremap Ã¶ <C-]>
+":verbose nnoremap Ã¤ <C-O>
 	"exe 'noremap <Char-196> }'	| "LATIN CAPITAL A WITH DIAERESIS
 	"exe 'noremap <Char-214> {'	| "LATIN CAPITAL O WITH DIAERESIS
 	"exe 'noremap <Char-228> ]'	| "LATIN SMALL A WITH DIAERESIS
@@ -1233,9 +1234,9 @@ set statusline+=%*
 ":SyntasticInfo
 
 "set list
-"set listchars=tab:»·,trail:·
+"set listchars=tab:Â»Â·,trail:Â·
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
-"set list listchars=tab:>-,eol:¶
+"set list listchars=tab:>-,eol:Â¶
 "Alternative to intent-guides Plugin
 	":set list lcs=tab:\|\
 
@@ -1341,17 +1342,21 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 	nnoremap <silent> <leader><CR> :call clearmatches()<CR>
 
 "% to go to closing tag - Defining Tags for matchit
-let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
-au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
-nnoremap <leader><tab> :let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'<CR>
-
-map <tab> %
+	let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
+	au SessionLoadPost * let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'
+	nnoremap <leader><tab> :let b:match_words='\<if\>:\<elseif\>:\<else\>:\<endif\>,\<do\>:\<enddo\>,\<anfang\>:\<ende\>,{{{:}}}'<CR>
+	"use tab or Ã¤ as key instead of %
+	nnoremap Ã¤ %
+	map <tab> %
 
 "set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
 "let Grep_Shell_Quote_Char = "\""
 
+"move tabs witl ALT -> or ALT <-
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+
 
 "}}}
 
