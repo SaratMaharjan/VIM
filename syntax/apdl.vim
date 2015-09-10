@@ -1819,6 +1819,7 @@ syn match apdlm display "auan\>" contained
 syn match apdlm display "sub2t\>" contained
 syn match apdlm display "no0\>" contained
 syn match apdlm display "ifExists\>" contained
+syn match apdlm display "isBatch\>" contained
 
 "}}}
 
