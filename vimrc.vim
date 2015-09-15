@@ -15,7 +15,12 @@
 	if user == "sarat-hp\\sarat"
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
 	elseif user == "anakon\\maharjan"
-		source E:/SM/VIM/pathANDfontAnakon.vim
+		let hostname = substitute(system('hostname'), '\n', '', '')
+		if hostname == "ansys2"
+			source D:/maharjan/VIM/pathANDfontAnsys2.vim
+		else
+			source E:/SM/VIM/pathANDfontAnakon.vim
+		endif
 	else
 		echo "Invalid user"
 	endif
