@@ -1212,7 +1212,8 @@ set guitablabel=\[%N\]\ %t\ %M
 "Map g- as an alias for g;
 nnoremap g- g;
 
-set nowrap		"don't wrap lines
+set wrap		"wrap lines
+"set nowrap		"don't wrap lines
 set visualbell		"don't beep
 set noerrorbells		"don't beep
 
@@ -1361,6 +1362,14 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
+noremap <C-w> :call WrapToggle()<CR>
+function! WrapToggle()
+	if &wrap
+		set nowrap
+	else
+		set nolist wrap linebreak breakat&vim
+	endif
+endfunction
 
 
 "}}}
