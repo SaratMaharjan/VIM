@@ -793,6 +793,9 @@
 	"Running current file in BATCH or CMD
 	"noremap <C-y> :!%:p<CR>
 	noremap <leader>run :!%:p<CR>
+	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat & pause'<CR>
+	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat'<CR>
+	noremap <leader>bun :exe '!start cmd /c' . expand(pathbat) . '/SM.bat'<CR>
 
 "}}} Other Settings
 
