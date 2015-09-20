@@ -12,6 +12,7 @@
 	":set guifont=Calibri\ Regular:h10:cANSI
 	":set guifont=Courier_New:h9:cANSI
 	:set guifont=Consolas:h10:cANSI
+	:set printfont=Consolas:h10:cANSI
 	":set guifont=PrimaSansMono_BT:h10:cANSI
 "}}} GUI Font
 

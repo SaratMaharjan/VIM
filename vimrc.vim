@@ -15,7 +15,12 @@
 	if user == "sarat-hp\\sarat"
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
 	elseif user == "anakon\\maharjan"
-		source E:/SM/VIM/pathANDfontAnakon.vim
+		let hostname = substitute(system('hostname'), '\n', '', '')
+		if hostname == "ansys2"
+			source D:/maharjan/VIM/pathANDfontAnsys2.vim
+		else
+			source E:/SM/VIM/pathANDfontAnakon.vim
+		endif
 	else
 		echo "Invalid user"
 	endif
@@ -789,6 +794,9 @@
 	"Running current file in BATCH or CMD
 	"noremap <C-y> :!%:p<CR>
 	noremap <leader>run :!%:p<CR>
+	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat & pause'<CR>
+	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat'<CR>
+	noremap <leader>bun :exe '!start cmd /c' . expand(pathbat) . '/SM.bat'<CR>
 
 "}}} Other Settings
 
@@ -1208,7 +1216,8 @@ set guitablabel=\[%N\]\ %t\ %M
 "Map g- as an alias for g;
 nnoremap g- g;
 
-set nowrap		"don't wrap lines
+set wrap		"wrap lines
+"set nowrap		"don't wrap lines
 set visualbell		"don't beep
 set noerrorbells		"don't beep
 
@@ -1357,6 +1366,14 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
+noremap <C-w> :call WrapToggle()<CR>
+function! WrapToggle()
+	if &wrap
+		set nowrap
+	else
+		set nolist wrap linebreak breakat&vim
+	endif
+endfunction
 
 
 "}}}
