@@ -4,6 +4,7 @@
 !*.ans
 !*.arg
 !*.bat
+!*.config
 !*.csv
 !*.cuix
 !*.dotm
@@ -22,5 +23,4 @@
 !plugin/
 GREP/
 bundle/
-
 

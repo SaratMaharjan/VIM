@@ -1140,6 +1140,10 @@ let NERD_macro_alt_style=1
 		"23	:scriptnames  -shows all loaded scripts
 		 
 		"24. Ctrl-W s and Ctrl-W v to split the current window horizontally and vertically. You can also use :split and :vertical split (:sp and :vs)
+		"25. Vap to select Paragraph
+		"26. ,m to activate highlights.vim - then numbers in Number Pads to assign highlight group to selection
+		"
+		"
 
 	"}}}
 
@@ -1415,6 +1419,9 @@ endfunction
 		"command! -nargs=1 Bs :call BufSel("<args>")
 		"command! Bs :call BufSel()
 		noremap <C-F12> :call BufSel()<CR>
+
+set textwidth=0 
+set wrapmargin=0
 
 "}}}
 

@@ -78,6 +78,7 @@ hi Apdlmcs	guifg=#ffff80 gui=italic
 hi BatchArgs	guifg=#fedcba gui=italic
 hi Ignore	guifg=grey40
 hi Todo		guifg=orangered guibg=yellow
+hi Todoo		guifg=yellow guibg=darkgreen
 hi PreProc	guifg=darkgrey
 hi ExtraWhite guifg=yellow2 guibg=darkgreen
 
