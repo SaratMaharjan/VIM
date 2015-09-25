@@ -1,6 +1,7 @@
 #ignore files except following
 *
 !*.abt
+!*.ahk
 !*.ans
 !*.arg
 !*.bat

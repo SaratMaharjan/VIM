@@ -1365,10 +1365,6 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 "set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
 "let Grep_Shell_Quote_Char = "\""
 
-"move tabs witl ALT -> or ALT <-
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
-
 noremap <C-w> :call WrapToggle()<CR>
 function! WrapToggle()
 	if &wrap
@@ -1422,6 +1418,18 @@ endfunction
 
 set textwidth=0 
 set wrapmargin=0
+
+"move tabs with ALT -> or ALT <-
+	nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+	nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+""move within windows with ALT shift -> or ALT shift <-
+	"nnoremap <silent> <A-S-Left> :wincmd h<CR>
+	"nnoremap <silent> <A-S-Right> :wincmd l<CR>
+	"nnoremap <silent> <A-S-Up> :wincmd k<CR>
+	"nnoremap <silent> <A-S-Down> :wincmd j<CR>
+"move windows with ALT shift up or ALT shift down
+	nnoremap <silent> <A-S-Up> <c-w>r
+	nnoremap <silent> <A-S-Down> <c-w>R
 
 "}}}
 
