@@ -1921,9 +1921,10 @@ syn match	apdlSpecial	display "\*end\>" contained
 "{{{ Not general : Added Later
 
 syn keyword	apdlWarning	contained edited
-syn keyword	apdlWarning	contained update
 syn keyword	apdlWarning	contained verify
+syn keyword	apdlWarning	contained note
 
+syn match	apdlspc	display "update"
 syn match	apdlspc display "sp\(.*\)\?case"
 
 syn keyword apdlHigh converged warning error
@@ -2211,7 +2212,7 @@ if version >= 508 || !exists("did_apdl_syntax_inits")
 
 	HiLink apdlError	Error
 	HiLink apdlWarning	Todo
-	HiLink apdlspc	Todo
+	HiLink apdlspc	Todoo
 
 	HiLink apdlHigh	ApdlFocus
 	HiLink vArgs	ApdlArgs

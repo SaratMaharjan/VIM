@@ -1,9 +1,11 @@
 #ignore files except following
 *
 !*.abt
+!*.ahk
 !*.ans
 !*.arg
 !*.bat
+!*.config
 !*.csv
 !*.cuix
 !*.dotm
@@ -22,5 +24,4 @@
 !plugin/
 GREP/
 bundle/
-
 
