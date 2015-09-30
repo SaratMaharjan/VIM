@@ -1820,6 +1820,14 @@ syn match apdlm display "sub2t\>" contained
 syn match apdlm display "no0\>" contained
 syn match apdlm display "ifExists\>" contained
 syn match apdlm display "isBatch\>" contained
+syn match apdlm display "sread\>" contained
+syn match apdlm display "di74sm\>" contained
+syn match apdlm display "sens\>" contained
+syn match apdlm display "sena\>" contained
+syn match apdlm display "senr\>" contained
+syn match apdlm display "senu\>" contained
+syn match apdlm display "Xep\>" contained
+syn match apdlm display "nslm\>" contained
 
 "}}}
 
