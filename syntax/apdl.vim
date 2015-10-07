@@ -1986,6 +1986,7 @@ syn match apdlm display "plotMat\>" contained
 syn match apdlm display "plotsm\>" contained
 syn match apdlm display "r2sec\>" contained
 syn match apdlm display "rlot\>" contained
+syn match apdlm display "selGeneral\>" contained
 syn match apdlm display "sena\>" contained
 syn match apdlm display "senr\>" contained
 syn match apdlm display "sens\>" contained
