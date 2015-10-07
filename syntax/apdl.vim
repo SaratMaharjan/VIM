@@ -1991,7 +1991,7 @@ syn match apdlm display "sena\>" contained
 syn match apdlm display "senr\>" contained
 syn match apdlm display "sens\>" contained
 syn match apdlm display "senu\>" contained
-syn match apdlm display "shells\>" contained
+syn match apdlm display "sshell\>" contained
 syn match apdlm display "smisc1\>" contained
 syn match apdlm display "solids\>" contained
 syn match apdlm display "solFy\>" contained

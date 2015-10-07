@@ -914,7 +914,7 @@ let NERD_macro_alt_style=1
 	noremap <leader>apd :exe 'tabedit ' . expand(pathRTP) . '/syntax/apdl.vim'<CR>
 	noremap <leader>bat :exe 'tabedit ' . expand(pathbat) . '/SM.bat'<CR>
 	noremap <leader>baat :exe 'tabedit ' . expand(pathbat) . '/SM2.bat'<CR>
-	noremap <leader>cp :exe 'tabedit ' . expand(pathsm) . '/cp7.mac'<CR>
+	noremap <leader>cp :exe 'tabedit ' . expand(pathsm) . '/macros/cp7.mac'<CR>
 	noremap <leader>sm :exe 'tabedit ' . expand(pathsm) . '/sm.mac'<CR>
 	noremap <leader>app :exe 'tabedit ' . expand(pathRTP) . '/colors/deserts.vim'<CR>
 	noremap <leader>ab :exe 'tabedit ' . expand(pathsm). '/absm.mac'<CR>
