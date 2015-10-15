@@ -1448,5 +1448,9 @@ set wrapmargin=0
 	nnoremap <silent> <A-Up> <c-w>r
 	nnoremap <silent> <A-Down> <c-w>R
 
+set viminfo='1000,f1
+
+
+
 "}}}
 
