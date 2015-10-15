@@ -528,6 +528,7 @@
 	autocmd FileType asm setlocal foldmarker=!anfang,!ende
 	autocmd FileType c setlocal foldmarker=anfang,ende
 	autocmd FileType html setlocal foldmarker=anfang,ende
+	autocmd FileType autohotkey setlocal foldmarker=anfang,ende
 
 	"let g:FoldMethod = 0		"Defining Global Variable
 
@@ -886,6 +887,7 @@
 	au BufReadPost *.s02 setf apdl
 	au BufReadPost *.s03 setf apdl
 	au BufReadPost *.s04 setf apdl
+	au BufReadPost *.ans setf apdl
 
 	au WinEnter *.mac setf apdl
 
@@ -913,7 +915,7 @@ let NERD_macro_alt_style=1
 	noremap <leader>apd :exe 'tabedit ' . expand(pathRTP) . '/syntax/apdl.vim'<CR>
 	noremap <leader>bat :exe 'tabedit ' . expand(pathbat) . '/SM.bat'<CR>
 	noremap <leader>baat :exe 'tabedit ' . expand(pathbat) . '/SM2.bat'<CR>
-	noremap <leader>cp :exe 'tabedit ' . expand(pathsm) . '/cp7.mac'<CR>
+	noremap <leader>cp :exe 'tabedit ' . expand(pathsm) . '/macros/cp7.mac'<CR>
 	noremap <leader>sm :exe 'tabedit ' . expand(pathsm) . '/sm.mac'<CR>
 	noremap <leader>app :exe 'tabedit ' . expand(pathRTP) . '/colors/deserts.vim'<CR>
 	noremap <leader>ab :exe 'tabedit ' . expand(pathsm). '/absm.mac'<CR>
@@ -1172,12 +1174,27 @@ let NERD_macro_alt_style=1
 				"Handling names with white spaces
 				"forfiles /M *.jpg /C "cmd /c rename @file \"@fname - pic.jpg\""
 
-		"5. IMAGEFRAME command in AUTOCAD
-
-		"6. Add suffix to File Name
+		"5. Add suffix to File Name
 				"for %a in (*.txt) do ren "%~a" "%~naThingsToAdd%~xa"
 
-
+		"6. AutoCAD
+				"IMAGEFRAME command in AUTOCAD
+					"rtdisplay -> 0
+				"Show open/show dialog boxes
+					"filedia : 1
+				"Use only one window for multiple drawing
+					"taskbar -> 0
+				"Hide IMAGE FRAME
+					"imageframe = 0
+				"Back to AutoCAD classic View
+					"_-TOOLBAR Draw _Show
+					"_-TOOLBAR Modify _Show
+					"_-TOOLBAR Properties _Show
+					"_-TOOLBAR Layers _Show
+					"_-TOOLBAR Styles _Show
+					"_-TOOLBAR Standard _Show
+					"_RIBBONCLOSE
+					"MENUBAR 1
 
 
 	"}}}
@@ -1204,12 +1221,12 @@ vnoremap > >gv
 	"exe 'noremap <Char-228> ]'	| "LATIN SMALL A WITH DIAERESIS
 	"exe 'noremap <Char-246> ['	| "LATIN SMALL O WITH DIAERESIS
 
-nnoremap <leader>llt $
-nnoremap <leader>lls ^
+noremap <leader>llt $
+noremap <leader>lls ^
 
 "REFRESH file : reload + go to end
-nnoremap <F5> :e<CR>G
-nnoremap <S-F5> :e!<CR>G
+noremap <F5> :e<CR>G
+noremap <S-F5> :e!<CR>G
 
 noremap <leader>ntr :NERDTreeFind<cr>
 noremap <leader>gm `
@@ -1428,9 +1445,13 @@ set wrapmargin=0
 	"nnoremap <silent> <A-S-Right> :wincmd l<CR>
 	"nnoremap <silent> <A-S-Up> :wincmd k<CR>
 	"nnoremap <silent> <A-S-Down> :wincmd j<CR>
-"move windows with ALT shift up or ALT shift down
-	nnoremap <silent> <A-S-Up> <c-w>r
-	nnoremap <silent> <A-S-Down> <c-w>R
+"move windows with ALT up or ALT down
+	nnoremap <silent> <A-Up> <c-w>r
+	nnoremap <silent> <A-Down> <c-w>R
+
+set viminfo='1000,f1
+
+
 
 "}}}
 

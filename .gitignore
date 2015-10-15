@@ -8,6 +8,7 @@
 !*.config
 !*.csv
 !*.cuix
+!*.dll
 !*.dotm
 !*.dvb
 !*.gitignore
