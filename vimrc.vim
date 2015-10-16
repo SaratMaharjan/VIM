@@ -1150,6 +1150,27 @@ let NERD_macro_alt_style=1
 
 	"}}}
 
+	"{{{ GIT
+
+		"git config --global user.name "saratmaharjan"
+		"git config --global user.email sarat.maharjan@gmail.com"
+		"git config --global color.ui true
+
+		"git config remote.origin.url https://saratmaharjan:password@github.com/saratmaharjan/vim.git
+		"git config remote.origin.url https://saratmaharjan:password@github.com/saratmaharjan/APDL_Batch.git
+
+		"git init NAME
+		"git clone URL !To get repository to LOCAL directory
+		"git status !to check changes
+		"git add/rm !to add or remove files
+		"git commit !to commit for push
+		"git pusht !to update the repository
+		"git pull origin master !to Update from repository
+
+
+
+	"}}}
+
 	"{{{OTHERS
 
 		"17. Autocad Command: IMAGEFRAME
