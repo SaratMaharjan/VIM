@@ -1422,6 +1422,14 @@ function! FileLoad()
 	endif
 endfunction
 
+command! -nargs=1 Tt :call Dtab("<args>")
+function! Dtab(fName)
+	let path = a:fName.".in"
+	if(filereadable(path)) 
+		exe "tab drop " . path
+	endif
+endfunction
+
 		"function! BufSel(pattern)
 		function! BufSel()
 			let bufcount = bufnr("$")
@@ -1470,7 +1478,7 @@ set wrapmargin=0
 	nnoremap <silent> <A-Up> <c-w>r
 	nnoremap <silent> <A-Down> <c-w>R
 
-set viminfo='1000,f1
+"set viminfo='1000,f1
 
 
 
