@@ -105,7 +105,7 @@
 			"Plugin 'https://github.com/mkitt/tabline.vim.git'
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
-			"Plugin 'https://github.com/SirVer/ultisnips.git'
+			Plugin 'https://github.com/SirVer/ultisnips.git'
 			Plugin 'https://github.com/bling/vim-airline.git'
 			"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 			Plugin 'https://github.com/yegappan/grep.git'
