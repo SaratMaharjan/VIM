@@ -1,4 +1,5 @@
-"VIMRC FILE "Sarat Maharjan "sarat.maharjan@gmail.com "2015.07.03
+﻿"VIMRC FILE "Sarat Maharjan "sarat.maharjan@gmail.com "2015.07.03
+"For Ultisnips: Python 2.7.9
 
 "{{{ Initial Setting - need to be at start
 	let mapleader=","	"leader is comma
@@ -1427,6 +1428,8 @@ function! Dtab(fName)
 	let path = a:fName.".in"
 	if(filereadable(path)) 
 		exe "tab drop " . path
+	else
+		echo "File Not Available."
 	endif
 endfunction
 

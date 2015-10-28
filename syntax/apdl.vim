@@ -1389,6 +1389,7 @@ syn match apdlFunction display "xvar\>" contained
 syn match apdlFunction display "xvaropt\>" contained
 syn match apdlFunction display "/yrange\>" contained
 syn match apdlFunction display "/zoom\>" contained
+syn match apdlFunction display "shpp\>" contained
 "}}}
 
 "{{{ Undocumented Commands

@@ -3,6 +3,7 @@
 		let pathWork='D:/VIM'
 		let pathbat='D:/zCore'
 		let pathsm='D:/zzCore'
+
 "}}} Path
 
 "{{{ GUI font
