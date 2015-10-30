@@ -1974,7 +1974,7 @@ syn match apdlm display "federn\>" contained
 syn match apdlm display "isBatch\>" contained
 syn match apdlm display "ifExists\>" contained
 syn match apdlm display "laPlot\>" contained
-syn match apdlm display "lines\>" contained
+syn match apdlm display "lini\>" contained
 syn match apdlm display "matPlot\>" contained
 syn match apdlm display "nmisc1\>" contained
 syn match apdlm display "no0\>" contained
