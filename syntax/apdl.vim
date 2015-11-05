@@ -2000,6 +2000,7 @@ syn match apdlm display "surfs\>" contained
 syn match apdlm display "sread\>" contained
 syn match apdlm display "sset\>" contained
 syn match apdlm display "sub2t\>" contained
+syn match apdlm display "targe\>" contained
 syn match apdlm display "tlot\>" contained
 syn match apdlm display "wpn\>" contained
 syn match apdlm display "wpy\>" contained
