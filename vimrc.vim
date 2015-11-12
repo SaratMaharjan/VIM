@@ -1362,10 +1362,6 @@ function! s:DiffWithSaved()
 endfunction
 com! Dsave call s:DiffWithSaved()
 
-"set splitbelow
-"set splitright
-set nohidden
-
 "Set up the gui cursor to look nice
 "set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
@@ -1482,6 +1478,10 @@ set wrapmargin=0
 	nnoremap <silent> <A-Down> <c-w>R
 
 "set viminfo='1000,f1
+
+set splitbelow
+set splitright
+set nohidden
 
 
 
