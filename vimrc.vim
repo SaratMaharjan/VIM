@@ -1483,7 +1483,14 @@ set splitbelow
 set splitright
 set nohidden
 
-
+"set printoptions=number:y
+set printoptions=number:n
+set printoptions+=wrap:n
+set printoptions+=left:2
+"printing Time
+	set pheader=%<%f%h%m%40{strftime(\"%I:%M:%S\ \%p,\ %a\ %b\ %d,\ %Y\")}%=Page\ %N
+"last modification Time
+	"set pheader=%<%f%h%m\ %40{strftime(\"%c\",getftime(expand(\"%%\")))}%=Page\ %N
 
 "}}}
 
