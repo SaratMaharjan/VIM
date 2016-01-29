@@ -1146,8 +1146,9 @@ let NERD_macro_alt_style=1
 		"24. Ctrl-W s and Ctrl-W v to split the current window horizontally and vertically. You can also use :split and :vertical split (:sp and :vs)
 		"25. Vap to select Paragraph
 		"26. ,m to activate highlights.vim - then numbers in Number Pads to assign highlight group to selection
-		"
-		"
+		"27. Toggle case 'HellO' to 'hELLo' with g~ then a movement.
+				"Uppercase 'HellO' to 'HELLO' with gU then a movement.
+				"Lowercase 'HellO' to 'hello' with gu then a movement.
 
 	"}}}
 
@@ -1491,6 +1492,41 @@ set printoptions+=left:2
 	set pheader=%<%f%h%m%40{strftime(\"%I:%M:%S\ \%p,\ %a\ %b\ %d,\ %Y\")}%=Page\ %N
 "last modification Time
 	"set pheader=%<%f%h%m\ %40{strftime(\"%c\",getftime(expand(\"%%\")))}%=Page\ %N
+
+"F3 mapped to all-kaps-on or off and change color accordingly
+"	" let the case be toggled in normal mode
+	map <expr> <F3> ToggleInsertCase()
+	" let the case be toggled in insert mode
+	imap <expr> <F3> ToggleInsertCase()
+
+	let toUpper = 0
+	func! ToggleInsertCase() 
+		let g:toUpper = 1 - g:toUpper
+		if (g:toUpper == 1)
+			highlight Normal ctermbg=Blue " the background color you want when uppercased
+			" convert all the letters to uppercase in insert mode
+			let i = char2nr('a')
+			while i <= char2nr('z')
+				let c = nr2char(i)
+				exe 'inoremap' c toupper(c)
+				let i = i + 1
+			endwhile
+		else
+			highlight Normal ctermbg=Black " the background color you want normally
+			" let letters be as normal in insert mode
+			let i = char2nr('a')
+			while i <= char2nr('z')
+				let c = nr2char(i)
+				exe 'iunmap' c 
+				let i = i + 1
+			endwhile
+		endif
+		" don't insert anything when this function is called in normal mode
+		return ""
+	endfunc
+
+map ff :tabfirst<CR>
+
 
 "}}}
 
