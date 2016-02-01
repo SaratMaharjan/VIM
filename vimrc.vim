@@ -18,7 +18,7 @@
 	elseif user == "anakon\\maharjan"
 		let hostname = substitute(system('hostname'), '\n', '', '')
 		if hostname == "ansys2"
-			source D:/maharjan/VIM/pathANDfontAnsys2.vim
+			source E:/maharjan/VIM/pathANDfontAnsys2.vim
 		else
 			source E:/SM/VIM/pathANDfontAnakon.vim
 		endif
@@ -106,7 +106,11 @@
 			"Plugin 'https://github.com/mkitt/tabline.vim.git'
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
-			Plugin 'https://github.com/SirVer/ultisnips.git'
+
+			if hostname != "ansys2"
+				Plugin 'https://github.com/SirVer/ultisnips.git'
+			endif
+
 			Plugin 'https://github.com/bling/vim-airline.git'
 			"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 			Plugin 'https://github.com/yegappan/grep.git'
@@ -1012,7 +1016,8 @@ let NERD_macro_alt_style=1
 "{{{ Session Settings
 	let SessionLoad=1
 	"set ssop=buffers,tabpages,winsize,curdir
-	set ssop=tabpages,winsize,curdir,folds
+	"set ssop=tabpages,winsize,curdir,folds
+	set ssop=tabpages,winsize,curdir
 "}}}
 
 "{{{ Switching Between TABS

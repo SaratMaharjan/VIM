@@ -1,8 +1,8 @@
 "{{{ DEFINE VIM FILES PATH
-		let pathRTP='D:/maharjan/VIM'
-		let pathWork='D:/maharjan/VIM'
-		let pathbat='D:/maharjan'
-		let pathsm='D:/zzCore'
+		let pathRTP='E:/maharjan/VIM'
+		let pathWork='E:/maharjan/VIM'
+		let pathbat='E:/maharjan'
+		let pathsm='E:/zzCore'
 "}}} Path
 
 "{{{ GUI font
