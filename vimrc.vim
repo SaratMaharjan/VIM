@@ -12,11 +12,11 @@
 
 "{{{ OTHER SOURCES
 
+	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
 	if user == "sarat-hp\\sarat"
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
 	elseif user == "anakon\\maharjan"
-		let hostname = substitute(system('hostname'), '\n', '', '')
 		if hostname == "ansys2"
 			source E:/maharjan/VIM/pathANDfontAnsys2.vim
 		else
