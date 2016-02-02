@@ -94,6 +94,7 @@
 			Plugin 'https://github.com/sjl/gundo.vim.git'
 			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
 			"Plugin 'https://github.com/rking/ag.vim.git'
+			"Plugin 'mileszs/ack.vim'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
 			"Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 			"Plugin 'https://github.com/scrooloose/syntastic.git'
@@ -799,7 +800,8 @@
 
 	"Running current file in BATCH or CMD
 	"noremap <C-y> :!%:p<CR>
-	noremap <leader>run :!%:p<CR>
+	"noremap <leader>run :!%:p<CR>
+	nnoremap <leader>run :!start %:p<CR>
 	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat & pause'<CR>
 	"noremap <leader>brun :exe '!start cmd /k' . expand(pathbat) . '/SM.bat'<CR>
 	noremap <leader>bun :exe '!start cmd /c' . expand(pathbat) . '/SM.bat'<CR>
@@ -993,8 +995,7 @@ let NERD_macro_alt_style=1
 	"same as above but for some extension Only...
 		map <F4> :execute "vimgrep /". expand("<cword>") . "/gj *.in"<Bar> cw<CR>
 
-	"Search for word under cursor in same file.... Same as / searching....(* or #)
-	"is preferred
+	"Search for word under cursor in same file.... Same as / searching....(* or #) is preferred
 		command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 
 	"{{{GREP settings
@@ -1006,7 +1007,7 @@ let NERD_macro_alt_style=1
 		let Grep_Find_Path=expand(pathRTP).'\GREP\bin\find.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
 		let Grep_Default_Options = '-ri' 
-		"let Grep_Find_Use_Xargs = 0
+		let Grep_Find_Use_Xargs = 0
 		"let Grep_Xargs_Options = '--null'
 		nnoremap <leader>spc :Grep sp.*case *.in *.mac *.out <CR>
 	"}}}
@@ -1090,7 +1091,7 @@ let NERD_macro_alt_style=1
 		"							- &\r means Match and New Line
 		"15. zj - move down to top of next fold
 						"zk	- move up to bottom of previous fold
-		"16. :vimgrep patter **/*.ext - to search recursively in folder
+		"16. :vimgrep pattern **/*.ext - to search recursively in folder
 		"18. to open all *.in Files
 				":args *.in
 				":tab all
@@ -1336,9 +1337,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 nnoremap zs zO
 nnoremap zd zC
 
-"execute current file in cmd
-nnoremap ,run :!start %:p<CR>
-
 "Select word under Cursor
 nnoremap <space> viw
 
@@ -1498,40 +1496,13 @@ set printoptions+=left:2
 "last modification Time
 	"set pheader=%<%f%h%m\ %40{strftime(\"%c\",getftime(expand(\"%%\")))}%=Page\ %N
 
-"F3 mapped to all-kaps-on or off and change color accordingly
-"	" let the case be toggled in normal mode
-	map <expr> <F3> ToggleInsertCase()
-	" let the case be toggled in insert mode
-	imap <expr> <F3> ToggleInsertCase()
-
-	let toUpper = 0
-	func! ToggleInsertCase() 
-		let g:toUpper = 1 - g:toUpper
-		if (g:toUpper == 1)
-			highlight Normal ctermbg=Blue " the background color you want when uppercased
-			" convert all the letters to uppercase in insert mode
-			let i = char2nr('a')
-			while i <= char2nr('z')
-				let c = nr2char(i)
-				exe 'inoremap' c toupper(c)
-				let i = i + 1
-			endwhile
-		else
-			highlight Normal ctermbg=Black " the background color you want normally
-			" let letters be as normal in insert mode
-			let i = char2nr('a')
-			while i <= char2nr('z')
-				let c = nr2char(i)
-				exe 'iunmap' c 
-				let i = i + 1
-			endwhile
-		endif
-		" don't insert anything when this function is called in normal mode
-		return ""
-	endfunc
-
 map ff :tabfirst<CR>
 
+"recursive Search arg1 using Vimgrep
+command! -nargs=1 Grepr :vimgrep <q-args> **/*.in | copen
+
+"execute Draftsight
+nnoremap <leader>cad :!start "E:\SM\Dassault Systemes\DraftSight\bin\DraftSight.exe"<CR>
 
 "}}}
 
