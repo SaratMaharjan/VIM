@@ -1504,5 +1504,9 @@ command! -nargs=1 Grepr :vimgrep <q-args> **/*.in | copen
 "execute Draftsight
 nnoremap <leader>cad :!start "E:\SM\Dassault Systemes\DraftSight\bin\DraftSight.exe"<CR>
 
+"network Addresses
+	nnoremap <leader>mr :!start explorer "\\mkumer"<CR>
+	nnoremap <leader>mz :!start explorer "\\mkurz1"<CR>
+	nnoremap <leader>tr :!start explorer "\\twacker"<CR>
 "}}}
 
