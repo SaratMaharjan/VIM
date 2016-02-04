@@ -1155,6 +1155,8 @@ let NERD_macro_alt_style=1
 		"27. Toggle case 'HellO' to 'hELLo' with g~ then a movement.
 				"Uppercase 'HellO' to 'HELLO' with gU then a movement.
 				"Lowercase 'HellO' to 'hello' with gu then a movement.
+		"28. Use [Num]gt to go to tab Number
+
 
 	"}}}
 
@@ -1261,7 +1263,6 @@ noremap <leader>ntr :NERDTreeFind<cr>
 noremap <leader>gm `
 
 set guitablabel=\[%N\]\ %t\ %M
-"Use [Num]gt to go to tab Number
 
 "Map g- as an alias for g;
 nnoremap g- g;
@@ -1492,7 +1493,8 @@ set printoptions=number:n
 set printoptions+=wrap:n
 set printoptions+=left:2
 "printing Time
-	set pheader=%<%f%h%m%40{strftime(\"%I:%M:%S\ \%p,\ %a\ %b\ %d,\ %Y\")}%=Page\ %N
+	"set pheader=%<%f%h%m%40{strftime(\"%I:%M:%S\ \%p,\ %a\ %b\ %d,\ %Y\")}%=Page\ %N
+	set pheader=%<%f%h%m%40{strftime(\"%I:%M:%S\ \%p,\ %b\.%d.%Y\")}%=Page\ %N
 "last modification Time
 	"set pheader=%<%f%h%m\ %40{strftime(\"%c\",getftime(expand(\"%%\")))}%=Page\ %N
 
@@ -1508,5 +1510,7 @@ nnoremap <leader>cad :!start "E:\SM\Dassault Systemes\DraftSight\bin\DraftSight.
 	nnoremap <leader>mr :!start explorer "\\mkumer"<CR>
 	nnoremap <leader>mz :!start explorer "\\mkurz1"<CR>
 	nnoremap <leader>tr :!start explorer "\\twacker"<CR>
+
+
 "}}}
 
