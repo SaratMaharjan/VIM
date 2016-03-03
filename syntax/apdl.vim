@@ -1682,6 +1682,7 @@ syn match apdlm display "PL7_V4\>" contained
 syn match apdlm display "PL7_V5\>" contained
 syn match apdlm display "PL7_v6\>" contained
 syn match apdlm display "pl7_v7\>" contained
+syn match apdlm display "pldefa\>" contained
 syn match apdlm display "plmat\>" contained
 syn match apdlm display "plmat1\>" contained
 syn match apdlm display "plreal\>" contained
