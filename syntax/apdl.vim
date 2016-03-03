@@ -1213,6 +1213,7 @@ syn match apdlFunction display "/sscale\>" contained
 syn match apdlFunction display "ssln\>" contained
 syn match apdlFunction display "sstif\>" contained
 syn match apdlFunction display "ssum\>" contained
+syn match apdlFunction display "stabilize\>" contained
 syn match apdlFunction display "stat\>" contained
 syn match apdlFunction display "/stat\(us\)\?\>" contained
 syn match apdlFunction display "\*stat\(us\)\?\>" contained

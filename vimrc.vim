@@ -93,7 +93,7 @@
 			Plugin 'https://github.com/sjl/badwolf.git'
 			Plugin 'https://github.com/sjl/gundo.vim.git'
 			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
-			"Plugin 'https://github.com/rking/ag.vim.git'
+			Plugin 'https://github.com/rking/ag.vim.git'
 			"Plugin 'mileszs/ack.vim'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
 			"Plugin 'https://github.com/kchmck/vim-coffee-script.git'
@@ -988,7 +988,7 @@ let NERD_macro_alt_style=1
 
 "{{{ SEARCH OPTIONS
 	"bind K to vimgrep word under cursor
-		nnoremap K :vimgrep! /<C-R><C-W>/gj *.in<CR>:cw<CR>
+		nnoremap <leader>gw :vimgrep! /<C-R><C-W>/gj *.in<CR>:cw<CR>
 	"Search in Dir and sub directories for word under Cursor in ALL FILES
 		"map <F4> :execute "vimgrep /". expand("<cword>") . "/gj **"<Bar> cw<CR>
 
@@ -1510,6 +1510,59 @@ nnoremap <leader>cad :!start "E:\SM\Dassault Systemes\DraftSight\bin\DraftSight.
 	nnoremap <leader>mr :!start explorer "\\mkumer"<CR>
 	nnoremap <leader>mz :!start explorer "\\mkurz1"<CR>
 	nnoremap <leader>tr :!start explorer "\\twacker"<CR>
+
+"let g:ag_prg="E:/SM/VIM/ag/ag.exe --vimgrep"
+set shortmess=at
+
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
+
+											"press Esc (to leave editing or other mode)
+											"hit ctrl+v (visual block mode)
+											"use the up/down arrow keys to select lines you want (it won't highlight everything - it's OK!)
+											"Shift+i (capital I)
+											"insert the text you want, i.e. '% '
+											"press Esc
+											"Give it a second to work.
+
+											"To uncomment blocks in vim:
+											"press Esc (to leave editing or other mode)
+											"hit ctrl+v (visual block mode)
+											"use the up/down arrow keys to select the lines to uncomment.
+											"If you want to select multiple characters, use one or combine these methods:
+
+											"use the left/right arrow keys to select more text
+											"to select chunks of text use shift + left/right arrow key
+											"you can repeatedly push the delete keys below, like a regular delete button
+											"press d or x to delete characters, repeatedly if necessary
+
+											"press Esc
+
+											"Give it a second to work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 "}}}
