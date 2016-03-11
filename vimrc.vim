@@ -1543,14 +1543,12 @@ nnoremap <A-x> <C-x>
 
 
 "wrap <b></b> around visually selected text
-:vmap sb "zdi<b><C-R>z</b><Esc> 
- "wrap <?= ?> around visually selected text
-:vmap st "zdi<?= <C-R>z ?><Esc>
-:vmap fb do!anfang <Esc>o!ende<Esc>bhPkA
-:vmap db do*do,<Esc>o*enddo<Esc>bhPkA
-:vmap ifb do*if,<Esc>o*endif<Esc>bhPkA
-
-
+vmap sb "zdi<b><C-R>z</b><Esc> 
+"wrap <?= ?> around visually selected text
+vmap st "zdi<?= <C-R>z ?><Esc>
+vmap fb do<Esc>ki!anfang <Esc>o!ende<Esc>bhPkA
+vmap db do<Esc>ki*do,<Esc>o*enddo<Esc>bhPkA
+vmap ifb do<Esc>ki*if,<Esc>o*endif<Esc>bhPkA
 
 
 
