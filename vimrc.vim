@@ -157,7 +157,7 @@
 	nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 	nnoremap <space>nh :nohlsearch<CR>	"Key. ,Space	"turn off search highlight
 	"nnoremap <space> za		"space open/closes folds
-	nnoremap <leader>u :GundoToggle<CR>		"toggle gundo
+	"nnoremap <leader>u :GundoToggle<CR>		"toggle gundo
 	nnoremap <leader>q :mksession<CR>		"save session
 
 	"nnoremap <leader>a :Ag		"open ag.vim
