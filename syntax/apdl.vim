@@ -1485,6 +1485,7 @@ syn match apdlm display "csym\>" contained
 syn match apdlm display "csym2\>" contained
 syn match apdlm display "cv\>" contained
 syn match apdlm display "cvep\>" contained
+syn match apdlm display "date\>" contained
 syn match apdlm display "dfy73-v1\>" contained
 syn match apdlm display "dfy73\>" contained
 syn match apdlm display "dfy74-v1\>" contained
@@ -1899,6 +1900,7 @@ syn match	apdlSpecial	display "/prep7\>" contained
 syn match	apdlSpecial	display "/solu\>" contained
 syn match	apdlSpecial	display "/post1\>" contained
 syn match	apdlSpecial	display "/post26\>" contained
+syn match	apdlSpecial	display "/inquire\>" contained
 syn match	apdlSpecial	display "/opt\>" contained
 syn match	apdlSpecial	display "/runst\>" contained
 syn match	apdlSpecial	display "/aux2\>" contained
