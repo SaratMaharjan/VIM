@@ -11,7 +11,6 @@
 "}}}
 
 "{{{ OTHER SOURCES
-
 	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
 	if user == "sarat-hp\\sarat"
@@ -37,7 +36,6 @@
 	exe 'so ' .expand(pathRTP)."/zoom.vim"
 	exe 'so ' .expand(pathRTP)."/highlights.vim"
 	exe 'set undodir=' .expand(pathWork)
-
 "}}} Sources
 
 "{{{ Language and Encoding
@@ -879,6 +877,7 @@
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
 	au BufNewFile,BufRead *.inp	setf apdl
+	au BufNewFile,BufRead *.solc	setf apdl
 	au BufNewFile,BufRead *.csv	setf apdl
 	au BufNewFile,BufRead *.s01	setf apdl
 	au BufNewFile,BufRead *.s02	setf apdl
@@ -889,6 +888,7 @@
 	au BufReadPost *.in setf apdl
 	au BufReadPost *.out setf apdl
 	au BufReadPost *.inp setf apdl
+	au BufReadPost *.solc setf apdl
 	au BufReadPost *.csv setf apdl
 	au BufReadPost *.s01 setf apdl
 	au BufReadPost *.s02 setf apdl
@@ -1192,7 +1192,6 @@ let NERD_macro_alt_style=1
 		"3. ren ???????????.jpg	????????1??.jpg :::replaces anything to 1 and third last position.
 
 		"4. forfiles /m *.jpg /c "cmd /c ren @file prefix@file" 		:: adding prefix to file Name
-				
 				"Recursively rename file extensions
 				"forfiles /S /M *.ext1 /C "cmd /c rename @file @fname.ext2"
 
@@ -1540,8 +1539,6 @@ nnoremap <A-x> <C-x>
 
 											"Give it a second to work.
 
-
-
 "wrap <b></b> around visually selected text
 vmap sb "zdi<b><C-R>z</b><Esc> 
 "wrap <?= ?> around visually selected text
@@ -1550,8 +1547,20 @@ vmap fb do<Esc>ki!anfang <Esc>o!ende<Esc>bhPkA
 vmap db do<Esc>ki*do,<Esc>o*enddo<Esc>bhPkA
 vmap ifb do<Esc>ki*if,<Esc>o*endif<Esc>bhPkA
 
-
-
+" If buffer modified, update any 'Last modified: ' in the first 20 lines.
+" 'Last modified: ' can have up to 10 characters before (they are retained).
+" Restores cursor and window position using save_cursor variable.
+function! LastModified()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last modified: \).*#\1' .
+          \ strftime('%a %b %d, %Y  %I:%M%p') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+autocmd BufWritePre * call LastModified()
 
 
 

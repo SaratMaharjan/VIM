@@ -1397,6 +1397,8 @@ syn match apdlFunction display "shpp\>" contained
 
 syn match apdlFunction display "outs\>" contained
 syn match apdlFunction display "keymod\>" contained
+syn match apdlFunction display "vsle\>" contained
+syn match apdlFunction display "asle\>" contained
 
 "}}}
 
@@ -1530,6 +1532,7 @@ syn match apdlm display "en10025-p355\>" contained
 syn match apdlm display "en10025-s235\>" contained
 syn match apdlm display "en10025\>" contained
 syn match apdlm display "en10025china\>" contained
+syn match apdlm display "en10025secn\>" contained
 syn match apdlm display "ep77-1\>" contained
 syn match apdlm display "ep77\>" contained
 syn match apdlm display "epelem\>" contained
