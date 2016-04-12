@@ -1992,6 +1992,7 @@ syn match apdlm display "plotFKN\>" contained
 syn match apdlm display "plotFy\>" contained
 syn match apdlm display "plotMat\>" contained
 syn match apdlm display "plotsm\>" contained
+syn match apdlm display "pret\>" contained
 syn match apdlm display "r2sec\>" contained
 syn match apdlm display "rlot\>" contained
 syn match apdlm display "selGeneral\>" contained
