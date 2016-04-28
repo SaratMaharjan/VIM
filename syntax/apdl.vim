@@ -2013,8 +2013,11 @@ syn match apdlm display "tlot\>" contained
 syn match apdlm display "wpn\>" contained
 syn match apdlm display "wpy\>" contained
 syn match apdlm display "Xep\>" contained
+syn match apdlm display "Xplo\>" contained
 syn match apdlm display "prEtyp\>" contained
 syn match apdlm display "cpEtyp\>" contained
+syn match apdlm display "nMid\>" contained
+syn match apdlm display "nAvg\>" contained
 
 "}}} my macros
 
