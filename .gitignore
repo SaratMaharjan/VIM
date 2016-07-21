@@ -22,6 +22,8 @@
 !*.vim
 !*.xla
 !*.xml
+!*.png
+
 !plugin/
 GREP/
 bundle/

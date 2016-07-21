@@ -126,6 +126,7 @@
 			"Pass the path to set the runtimepath properly.
 			Plugin 'rstacruz/sparkup', {'rtp': 'vim'}
 
+			Plugin 'https://github.com/godlygeek/tabular.git'
 			"Avoid a name conflict with L9
 			"Plugin 'saratmaharjan/L9', {'name': 'saratmaharjan'}
 
