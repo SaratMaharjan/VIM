@@ -1227,6 +1227,7 @@ let NERD_macro_alt_style=1
 					"_RIBBONCLOSE
 					"MENUBAR 1
 
+		"7. Word template location : %appdata%\Microsoft\Templates\
 
 	"}}}
 
