@@ -927,6 +927,7 @@ let NERD_macro_alt_style=1
 	noremap <leader>sm :exe 'tabedit ' . expand(pathsm) . '/sm.mac'<CR>
 	noremap <leader>app :exe 'tabedit ' . expand(pathRTP) . '/colors/deserts.vim'<CR>
 	noremap <leader>ab :exe 'tabedit ' . expand(pathsm). '/absm.mac'<CR>
+	noremap <leader>snip :exe 'tabedit ' . expand(pathRTP) . '/snips/apdl.snippets'<CR>
 "}}}
 
 "{{{ UltiSnips Settings
