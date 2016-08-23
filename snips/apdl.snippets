@@ -6,6 +6,10 @@ snippet todo
 	!<--TODO:$1	; `!v strftime("%c")`; SM -->
 endsnippet
 
+snippet author
+	!<--Last Edit: `!v strftime("%c")`; SM; Comment:$1	 -->
+endsnippet
+
 snippet testSnip
 ---
 title: ${1:Meet UltiSnips}
@@ -15,3 +19,4 @@ tags: $3
 # $1
 $0
 endsnippet
+
