@@ -1508,6 +1508,10 @@ command! -nargs=1 Grepr :vimgrep <q-args> **/*.in | copen
 "execute Draftsight
 nnoremap <leader>cad :!start "E:\SM\Dassault Systemes\DraftSight\bin\DraftSight.exe"<CR>
 
+"word template Loacation
+"nnoremap <leader>wt :!start explorer "%appdata%\Microsoft\Templates\"<CR>
+nnoremap <leader>wt :!start explorer "C:\Users\Maharjan\AppData\Roaming\Microsoft\Templates"<CR>
+
 "network Addresses
 	nnoremap <leader>mr :!start explorer "\\mkumer"<CR>
 	nnoremap <leader>mz :!start explorer "\\mkurz1"<CR>
@@ -1565,7 +1569,15 @@ function! LastModified()
 endfun
 autocmd BufWritePre * call LastModified()
 
-
+"Disable Middle Mouse Button
+nnoremap <MiddleMouse> <Nop>
+nnoremap <2-MiddleMouse> <Nop>
+nnoremap <3-MiddleMouse> <Nop>
+nnoremap <4-MiddleMouse> <Nop>
+inoremap <MiddleMouse> <Nop>
+inoremap <2-MiddleMouse> <Nop>
+inoremap <3-MiddleMouse> <Nop>
+inoremap <4-MiddleMouse> <Nop>
 
 
 
