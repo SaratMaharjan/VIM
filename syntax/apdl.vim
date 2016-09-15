@@ -1630,6 +1630,7 @@ syn match apdlm display "ls1\>" contained
 syn match apdlm display "ls2\>" contained
 syn match apdlm display "ls2_ALT\>" contained
 syn match apdlm display "ls3\>" contained
+syn match apdlm display "ls99\>" contained
 syn match apdlm display "lsu\>" contained
 syn match apdlm display "LSU1\>" contained
 syn match apdlm display "LSU4\>" contained
@@ -1641,6 +1642,7 @@ syn match apdlm display "lx\>" contained
 syn match apdlm display "ly\>" contained
 syn match apdlm display "lz\>" contained
 syn match apdlm display "Mat_Aus\>" contained
+syn match apdlm display "maxSnum\>" contained
 syn match apdlm display "MEIGS\>" contained
 syn match apdlm display "MXX\>" contained
 syn match apdlm display "MXX181\>" contained
@@ -1878,6 +1880,7 @@ syn match	apdlConditional	display	"\*elseif\>" contained
 syn match	apdlConditional	display	"\*else\>" contained
 syn match	apdlConditional	display	"\*endif\>" contained
 syn match	apdlRepeat	display "\*do\>" contained
+syn match	apdlRepeat	display "\*dowhile\>" contained
 syn match	apdlRepeat	display "\*cycle\>" contained
 syn match	apdlRepeat	display "\*exit\>" contained
 syn match	apdlRepeat	display "\*enddo\>" contained
@@ -2004,6 +2007,7 @@ syn match apdlm display "sshell\>" contained
 syn match apdlm display "smisc1\>" contained
 syn match apdlm display "solids\>" contained
 syn match apdlm display "solFy\>" contained
+syn match apdlm display "sosh\>" contained
 syn match apdlm display "surfs\>" contained
 syn match apdlm display "sread\>" contained
 syn match apdlm display "sset\>" contained
@@ -2161,6 +2165,14 @@ syn case match
 	"fold do loops
 		syn region vimFoldDoLoop
 			\ start="\*do\>"
+			\ end="\*enddo\>"
+			\ fold
+			\ containedin=ALLBUT,@vimNoFold,@apdlToken,vimEofFold
+			\ contains=TOP
+
+	"fold dowhile loops
+		syn region vimFoldDoLoop
+			\ start="\*dowhile\>"
 			\ end="\*enddo\>"
 			\ fold
 			\ containedin=ALLBUT,@vimNoFold,@apdlToken,vimEofFold

@@ -1232,6 +1232,8 @@ let NERD_macro_alt_style=1
 
 	"}}}
 
+	 "Right click on "My Computer" and go to Properties > Advanced System Settings > Environment Variables and create a new System Variable called SPACECLAIM_STARTUP_TRACE and set the value to 1.
+
 "}}}
 
 "{{{ Still TO MANAGE
@@ -1579,8 +1581,11 @@ inoremap <2-MiddleMouse> <Nop>
 inoremap <3-MiddleMouse> <Nop>
 inoremap <4-MiddleMouse> <Nop>
 
+"Open command prompt by running :Cp
+command Cp :!start cmd /k cd %:p:h<CR>
 
-
+"Open windows explorer by running :We
+command We :!start Explorer /select,%:p<CR>
 
 
 
