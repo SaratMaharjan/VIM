@@ -526,11 +526,11 @@
 	"autocmd FileType vim setlocal foldmethod=indent
 	"autocmd FileType apdl setlocal foldmethod=syntax
 	autocmd FileType apdl setlocal foldmethod=marker
-	autocmd FileType apdl setlocal foldmarker=!anfang,!ende
+	autocmd FileType apdl setlocal foldmarker=anfang,ende
 	autocmd FileType dosbatch setlocal foldmethod=marker
 	autocmd FileType dosbatch setlocal foldmarker=anfang,ende
 	autocmd FileType asm setlocal foldmethod=marker
-	autocmd FileType asm setlocal foldmarker=!anfang,!ende
+	autocmd FileType asm setlocal foldmarker=anfang,ende
 	autocmd FileType c setlocal foldmarker=anfang,ende
 	autocmd FileType html setlocal foldmarker=anfang,ende
 	autocmd FileType autohotkey setlocal foldmarker=anfang,ende
@@ -906,10 +906,10 @@
 let g:NERDCustomDelimiters = {
 	\ 'ruby': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
 	\ 'grondle': { 'left': '{{', 'right': '}}' },
-	\ 'apdl': { 'left': '!', 'right': '' },
-	\ 'mac': { 'left': '!', 'right': '' },
-	\ 'macro': { 'left': '!', 'right': '' },
-	\ 'asm': { 'left': '!', 'right': '' }
+	\ 'apdl': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+	\ 'mac': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+	\ 'macro': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+	\ 'asm': { 'left': '! ', 'leftAlt': '!', 'right': '' },
 \ }
 
 let NERD_apdl_alt_style=1
@@ -1141,7 +1141,7 @@ let NERD_macro_alt_style=1
 				"To save work in all tabs and quit:
 					":wqa
 
-		"22. :ls   for list of open buffers
+		"22. :ls	for list of open buffers
 				":bp previous buffer
 				":bn next buffer
 				":bn (n a number) move to n'th buffer
@@ -1149,7 +1149,7 @@ let NERD_macro_alt_style=1
 				":b fileName : to switch to file
 				":b# go to last visited file.... so switching easy
 
-		"23	:scriptnames  -shows all loaded scripts
+		"23	:scriptnames -shows all loaded scripts
 		 
 		"24. Ctrl-W s and Ctrl-W v to split the current window horizontally and vertically. You can also use :split and :vertical split (:sp and :vs)
 		"25. Vap to select Paragraph
@@ -1363,18 +1363,18 @@ set shortmess=a
 
 "Compare with last saved FILE
 function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! Dsave call s:DiffWithSaved()
 
 "Set up the gui cursor to look nice
 "set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
-let g:bufExplorerSortBy='name'       " Sort by the buffer's name.
+let g:bufExplorerSortBy='name'	" Sort by the buffer's name.
 "autocmd BufEnter * :syntax sync fromstart
 
 "autocmd BufWinLeave *.* mkview!
@@ -1560,14 +1560,14 @@ vmap ifb do<Esc>ki*if,<Esc>o*endif<Esc>bhPkA
 " 'Last modified: ' can have up to 10 characters before (they are retained).
 " Restores cursor and window position using save_cursor variable.
 function! LastModified()
-  if &modified
-    let save_cursor = getpos(".")
-    let n = min([20, line("$")])
-    keepjumps exe '1,' . n . 's#^\(.\{,10}Last modified: \).*#\1' .
-          \ strftime('%a %b %d, %Y  %I:%M%p') . '#e'
-    call histdel('search', -1)
-    call setpos('.', save_cursor)
-  endif
+	if &modified
+		let save_cursor = getpos(".")
+		let n = min([20, line("$")])
+		keepjumps exe '1,' . n . 's#^\(.\{,10}Last modified: \).*#\1' .
+			\ strftime('%a %b %d, %Y (%I:%M%p)') . '#e'
+		call histdel('search', -1)
+		call setpos('.', save_cursor)
+	endif
 endfun
 autocmd BufWritePre * call LastModified()
 
@@ -1582,13 +1582,22 @@ inoremap <3-MiddleMouse> <Nop>
 inoremap <4-MiddleMouse> <Nop>
 
 "Open command prompt by running :Cp
-command Cp :!start cmd /k cd %:p:h<CR>
+command! Cmd :!start cmd /k cd %:p:h<CR>
 
 "Open windows explorer by running :We
-command We :!start Explorer /select,%:p<CR>
+command! We :!start Explorer /select,%:p<CR>
 
-
-
+function! CleanFormat()
+	silent %s/,/, /ge
+	silent %s/=/ = /ge
+	silent %s/!/! /ge
+	silent %s/  / /ge
+	silent %s/  / /ge
+	silent %s/  / /ge
+	silent %s/  / /ge
+	silent %s/  / /ge
+endfun
+nnoremap <leader>cft :call CleanFormat()<CR>
 
 
 

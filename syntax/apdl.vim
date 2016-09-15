@@ -1936,7 +1936,9 @@ syn match apdlSpecial2		display "<<<.*>>>" contained
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
+syn match apdlSpecial3 display "! anfang" contained
 syn match apdlSpecial3 display "!ende" contained
+syn match apdlSpecial3 display "! ende" contained
 "syn match extraWhite display " \s"
 "syn match extraWhite display "\s "
 
