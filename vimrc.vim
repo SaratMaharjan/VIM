@@ -1596,6 +1596,8 @@ function! CleanFormat()
 	silent %s/  / /ge
 	silent %s/  / /ge
 	silent %s/  / /ge
+	silent %s/< =/<=/ge
+	silent %s/> =/>=/ge
 endfun
 nnoremap <leader>cft :call CleanFormat()<CR>
 
