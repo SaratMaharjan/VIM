@@ -281,7 +281,7 @@
 
 "{{{ Working Directory Setting
 	exe 'cd ' . expand(pathWork)
-	set autochdir		"Make file director Working
+	set autochdir		"Set file directory as Working Directory
 "}}} Working Directory Setting
 
 "{{{ file TABS and or Buffer setting
