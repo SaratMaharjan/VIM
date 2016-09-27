@@ -1552,9 +1552,9 @@ nnoremap <A-x> <C-x>
 vmap sb "zdi<b><C-R>z</b><Esc> 
 "wrap <?= ?> around visually selected text
 vmap st "zdi<?= <C-R>z ?><Esc>
-vmap fb do<Esc>ki!anfang <Esc>o!ende<Esc>bhPkA
-vmap db do<Esc>ki*do,<Esc>o*enddo<Esc>bhPkA
-vmap ifb do<Esc>ki*if,<Esc>o*endif<Esc>bhPkA
+vmap fb do<Esc>ki! anfang <Esc>o! ende<Esc>bhPkA
+vmap db do<Esc>ki*do, <Esc>o*enddo<Esc>bhPkA
+vmap ifb do<Esc>ki*if, <Esc>o*endif<Esc>bhPkA
 
 " If buffer modified, update any 'Last modified: ' in the first 20 lines.
 " 'Last modified: ' can have up to 10 characters before (they are retained).
