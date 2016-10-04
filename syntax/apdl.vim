@@ -3,10 +3,8 @@
 "credits:	Manfred Spraul <manfred@colorfullife.com>
 "Last Change:	2003 Jan 24 (Manfred Spraul)
 "Version:	0.02
-"
+
 "note: The support for abreviated commands is intentionally missing.
-"		Typical file names are *.ans and *.mac.
-"
 "TODO:
 " *Further parameter tests for bad params
 " *line continuations for multiline commands: *msg, *vwrite, etc.
@@ -287,7 +285,10 @@ syn match apdlFunction display "curr2d\>" contained
 syn match apdlFunction display "cutcontrol\>" contained
 syn match apdlFunction display "/cval\>" contained
 syn match apdlFunction display "cvar\>" contained
+syn match apdlFunction display "/cwd\>" contained
 syn match apdlFunction display "cycgen\>" contained
+syn match apdlFunction display "/cycexpand\>" contained
+syn match apdlFunction display "cyclic\>" contained
 syn match apdlFunction display "cycphase\>" contained
 syn match apdlFunction display "cycsol\>" contained
 syn match apdlFunction display "cyl4\>" contained
@@ -449,6 +450,7 @@ syn match apdlFunction display "etable\>" contained
 syn match apdlFunction display "etchg\>" contained
 syn match apdlFunction display "etdele\>" contained
 syn match apdlFunction display "etlist\>" contained
+syn match apdlFunction display "etwrite\>" contained
 syn match apdlFunction display "etype\>" contained
 syn match apdlFunction display "eusort\>" contained
 syn match apdlFunction display "\*eval\>" contained
@@ -1122,6 +1124,7 @@ syn match apdlFunction display "rthick\>" contained
 syn match apdlFunction display "rtimst\>" contained
 syn match apdlFunction display "run\>" contained
 syn match apdlFunction display "rwfrnt\>" contained
+syn match apdlFunction display "\~satin\>" contained
 syn match apdlFunction display "sabs\>" contained
 syn match apdlFunction display "sadd\>" contained
 syn match apdlFunction display "sallow\>" contained
@@ -1817,35 +1820,150 @@ syn match apdlm display "XX\>" contained
 syn match apdlm display "xxx\>" contained
 syn match apdlm display "XYZ\>" contained
 syn match apdlm display "zur\>" contained
-
 "}}}
 
 "{{{ ELEMENTS
 syn case ignore
 
-"syn match apdlElem display "combin14\>" contained
+syn match apdlElem display "solid5\>"
+syn match apdlElem display "link11\>"
+syn match apdlElem display "plane13\>"
 syn match apdlElem display "combin14\>"
+syn match apdlElem display "mass21\>"
+syn match apdlElem display "plane25\>"
+syn match apdlElem display "matrix27\>"
+syn match apdlElem display "fluid29\>"
+syn match apdlElem display "fluid30\>"
+syn match apdlElem display "link31\>"
+syn match apdlElem display "link33\>"
+syn match apdlElem display "link34\>"
+syn match apdlElem display "plane35\>"
+syn match apdlElem display "sourc36\>"
+syn match apdlElem display "combin37\>"
+syn match apdlElem display "fluid38\>"
+syn match apdlElem display "combin39\>"
+syn match apdlElem display "combin40\>"
+syn match apdlElem display "infin47\>"
+syn match apdlElem display "matrix50\>"
+syn match apdlElem display "plane55\>"
+syn match apdlElem display "shell61\>"
+syn match apdlElem display "solid65\>"
+syn match apdlElem display "link68\>"
+syn match apdlElem display "solid70\>"
+syn match apdlElem display "mass71\>"
+syn match apdlElem display "plane75\>"
+syn match apdlElem display "plane77\>"
+syn match apdlElem display "plane78\>"
+syn match apdlElem display "plane83\>"
+syn match apdlElem display "solid87\>"
+syn match apdlElem display "solid90\>"
+syn match apdlElem display "circu94\>"
+syn match apdlElem display "solid96\>"
+syn match apdlElem display "solid98\>"
+syn match apdlElem display "infin110\>"
+syn match apdlElem display "infin111\>"
+syn match apdlElem display "fluid116\>"
+syn match apdlElem display "plane121\>"
+syn match apdlElem display "solid122\>"
+syn match apdlElem display "solid123\>"
+syn match apdlElem display "circu124\>"
+syn match apdlElem display "circu125\>"
+syn match apdlElem display "trans126\>"
+syn match apdlElem display "fluid129\>"
+syn match apdlElem display "fluid130\>"
+syn match apdlElem display "shell131\>"
+syn match apdlElem display "shell132\>"
+syn match apdlElem display "fluid136\>"
+syn match apdlElem display "fluid138\>"
+syn match apdlElem display "fluid139\>"
+syn match apdlElem display "rom144\>"
+syn match apdlElem display "surf151\>"
+syn match apdlElem display "surf152\>"
+syn match apdlElem display "surf153\>"
 syn match apdlElem display "surf154\>"
+syn match apdlElem display "surf155\>"
+syn match apdlElem display "surf156\>"
+syn match apdlElem display "surf157\>"
+syn match apdlElem display "surf159\>"
+syn match apdlElem display "link160\>"
+syn match apdlElem display "beam161\>"
+syn match apdlElem display "plane162\>"
+syn match apdlElem display "shell163\>"
+syn match apdlElem display "solid164\>"
+syn match apdlElem display "combi165\>"
+syn match apdlElem display "mass166\>"
+syn match apdlElem display "link167\>"
+syn match apdlElem display "solid168\>"
+syn match apdlElem display "targe169\>"
 syn match apdlElem display "targe170\>"
+syn match apdlElem display "targe171\>"
+syn match apdlElem display "targe172\>"
+syn match apdlElem display "targe173\>"
 syn match apdlElem display "conta174\>"
 syn match apdlElem display "conta175\>"
+syn match apdlElem display "conta176\>"
+syn match apdlElem display "conta177\>"
+syn match apdlElem display "conta178\>"
 syn match apdlElem display "prets179\>"
 syn match apdlElem display "link180\>"
 syn match apdlElem display "shell181\>"
+syn match apdlElem display "plane182\>"
+syn match apdlElem display "plane183\>"
+syn match apdlElem display "mpc184\>"
 syn match apdlElem display "solid185\>"
 syn match apdlElem display "solid186\>"
 syn match apdlElem display "solid187\>"
 syn match apdlElem display "beam188\>"
-
-
+syn match apdlElem display "beam189\>"
+syn match apdlElem display "solsh190\>"
+syn match apdlElem display "inter192\>"
+syn match apdlElem display "inter193\>"
+syn match apdlElem display "inter194\>"
+syn match apdlElem display "inter195\>"
+syn match apdlElem display "mesh200\>"
+syn match apdlElem display "follw201\>"
+syn match apdlElem display "inter202\>"
+syn match apdlElem display "inter203\>"
+syn match apdlElem display "inter204\>"
+syn match apdlElem display "inter205\>"
+syn match apdlElem display "shell208\>"
+syn match apdlElem display "shell209\>"
+syn match apdlElem display "cpt212\>"
+syn match apdlElem display "cpt213\>"
+syn match apdlElem display "combi214\>"
+syn match apdlElem display "cpt215\>"
+syn match apdlElem display "cpt216\>"
+syn match apdlElem display "cpt217\>"
+syn match apdlElem display "fluid218\>"
+syn match apdlElem display "fluid220\>"
+syn match apdlElem display "fluid221\>"
+syn match apdlElem display "plane223\>"
+syn match apdlElem display "solid236\>"
+syn match apdlElem display "solid237\>"
+syn match apdlElem display "plane238\>"
+syn match apdlElem display "solid239\>"
+syn match apdlElem display "solid240\>"
+syn match apdlElem display "hsfld241\>"
+syn match apdlElem display "hsfld242\>"
+syn match apdlElem display "surf251\>"
+syn match apdlElem display "surf252\>"
+syn match apdlElem display "infin257\>"
+syn match apdlElem display "reinf264\>"
+syn match apdlElem display "reinf265\>"
+syn match apdlElem display "solid272\>"
+syn match apdlElem display "solid273\>"
+syn match apdlElem display "solid278\>"
+syn match apdlElem display "solid279\>"
+syn match apdlElem display "shell281\>"
+syn match apdlElem display "solid285\>"
+syn match apdlElem display "pipe288\>"
+syn match apdlElem display "pipe289\>"
+syn match apdlElem display "elbow290\>"
+syn match apdlElem display "user300\>"
 "}}}
 
 "magic condition for Error display, must be first.
 syn match apdlError display ".*$" contained
-
-" commands that are missing in autoextracted file:
-syn match apdlFunction display "/cwd\>" contained
-syn match apdlFunction display "/show\>" contained
 
 "{{{ multiline commands
 syn match apdlStringLine ".*$" contained
@@ -1889,13 +2007,11 @@ syn match	apdlRepeat	display "\*go\>" contained
 "}}}
 
 "{{{ exceptional commands:
-
 syn match	apdlUnused	display "/eof\>" contained
 syn match	apdlSpecial	display "/show\>" contained
 syn match	apdlSpecial	display "/exit\>" contained
 syn match	apdlSpecial	display "/quit\>" contained
 syn match	apdlSpecial	display "debug\>" contained
-
 "}}}
 
 "labels
@@ -1917,8 +2033,7 @@ syn match	apdlSpecial	display "\*create\>" contained
 syn match	apdlSpecial	display "\*end\>" contained
 "}}}
 
-"{{{ Not general : Added Later
-
+"{{{ Not general : Custom Highlighters
 syn keyword	apdlWarning	contained edited
 syn keyword	apdlWarning	contained verify
 syn keyword	apdlWarning	contained note
@@ -1946,7 +2061,6 @@ syn match	batchArgs	"joblk\d"
 syn match	batchArgs	"jobset"
 syn match	batchArgs	"jstg\d"
 syn match	batchArgs	"arg\d"
-
 "}}}
 
 "{{{ My MACROS
@@ -2024,11 +2138,9 @@ syn match apdlm display "prEtyp\>" contained
 syn match apdlm display "cpEtyp\>" contained
 syn match apdlm display "nMid\>" contained
 syn match apdlm display "nAvg\>" contained
-
 "}}} my macros
 
 "{{{ Abbreviations
-
 syn match apdlm display "w32\>" contained
 syn match apdlm display "pw\>" contained
 syn match apdlm display "fu\>" contained
@@ -2094,12 +2206,10 @@ syn match apdlm display "epeq\>" contained
 syn match apdlm display "epx\>" contained
 syn match apdlm display "epy\>" contained
 syn match apdlm display "epxy\>" contained
-syn match apdlm display "Display\>" contained
-
+syn match apdlm display "display\>" contained
 "}}}
 
 "{{{ Valid Arguments for Commands
-
 syn match vArgs display "\<elem\>"
 syn match vArgs display "\<node\>"
 syn match vArgs display "\<ename\>"
@@ -2120,7 +2230,6 @@ syn match vArgs display "\<pres\>"
 syn match vArgs display "\<forc\>"
 
 syn match vArgs display "\<defa\>"
-
 "}}}
 
 "commands must be the first entry in a line or behind an $
