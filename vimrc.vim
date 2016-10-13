@@ -1013,7 +1013,6 @@ let NERD_macro_alt_style=1
 		"let Grep_Xargs_Options = '--null'
 		nnoremap <leader>spc :Grep sp.*case *.in *.mac *.out <CR>
 	"}}}
-
 "}}}
 
 "{{{ Session Settings
@@ -1024,7 +1023,6 @@ let NERD_macro_alt_style=1
 "}}}
 
 "{{{ Switching Between TABS
-
 	"let g:lasttab = 1
 	"nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
 	"au TabLeave * let g:lasttab = tabpagenr()
@@ -1046,11 +1044,9 @@ let NERD_macro_alt_style=1
 			let g:editTab2=g:editTab
 		endif
 	endfunction
-
 "}}}
 
 "{{{ Windows Settings
-
 	"window Naviations
 		nnoremap ,hor <C-w>t<C-w>K
 		nnoremap ,ver <C-w>t<C-w>H
@@ -1071,7 +1067,6 @@ let NERD_macro_alt_style=1
 "}}}
 
 "{{{ IMPORTANT NOTES
-
 	"{{{VIM
 		"1. :changes - to view changes
 		"2. :gv - reselect last selection
@@ -1163,7 +1158,6 @@ let NERD_macro_alt_style=1
 	"}}}
 
 	"{{{ GIT
-
 		"git config --global user.name "saratmaharjan"
 		"git config --global user.email sarat.maharjan@gmail.com"
 		"git config --global color.ui true
@@ -1178,13 +1172,9 @@ let NERD_macro_alt_style=1
 		"git commit !to commit for push
 		"git pusht !to update the repository
 		"git pull origin master !to Update from repository
-
-
-
 	"}}}
 
 	"{{{OTHERS
-
 		"17. Autocad Command: IMAGEFRAME
 
 		"1. To use macros.xla: In excel: start-add-ins and add macros.xla
@@ -1229,15 +1219,12 @@ let NERD_macro_alt_style=1
 					"MENUBAR 1
 
 		"7. Word template location : %appdata%\Microsoft\Templates\
-
 	"}}}
 
 	 "Right click on "My Computer" and go to Properties > Advanced System Settings > Environment Variables and create a new System Variable called SPACECLAIM_STARTUP_TRACE and set the value to 1.
-
 "}}}
 
 "{{{ Still TO MANAGE
-
 "Update VIMRC
 noremap <leader>sv :exe 'source ' .expand(pathRTP) . '/vimrc.vim'<CR>
 
