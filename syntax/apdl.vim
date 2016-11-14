@@ -2265,15 +2265,23 @@ syn case match
 						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 					"EOF fold
-					"syn region vimEofFold
-						"\ start="\<eof\%[f]\>"
-						"\ end="\%$"
-						"\ fold contains=NONE
-						"\ keepend extend
-						"\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
-						"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+					syn region vimEofFold
+						\ start="\<eof\%[f]\>"
+						\ end="\%$"
+						\ fold contains=NONE
+						\ keepend extend
+						\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
+						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-	"fold do loops
+					"fold in out file
+					syn region vimOutFold
+						\ start="TECHNOLOGIES"
+						\ end="ENGINEERING"
+						\ fold contains=TOP
+						\ keepend extend
+						\ containedin=ALLBUT,@vimNoFold,vimEofFold
+
+		"fold do loops
 		syn region vimFoldDoLoop
 			\ start="\*do\>"
 			\ end="\*enddo\>"
@@ -2281,7 +2289,7 @@ syn case match
 			\ containedin=ALLBUT,@vimNoFold,@apdlToken,vimEofFold
 			\ contains=TOP
 
-	"fold dowhile loops
+		"fold dowhile loops
 		syn region vimFoldDoLoop
 			\ start="\*dowhile\>"
 			\ end="\*enddo\>"
@@ -2290,7 +2298,6 @@ syn case match
 			\ contains=TOP
 
 	"fold if...else...endif constructs
-	"
 	" note that 'endif' has a shorthand which can also match many other end patterns
 	"if we did not include the word boundary \> pattern, and also it may match
 	"syntax end=/pattern/ elements, so we must explicitly exclude these
@@ -2301,32 +2308,32 @@ syn case match
 				\ containedin=ALLBUT,@vimNoFold,@apdlToken
 				\ contains=TOP
 				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
-		syn region vimFoldIf
-				\ start="\*if\>"
-				\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
-				\ fold
-				\ keepend
-				\ contained containedin=vimFoldIfContainer
-				\ nextgroup=vimFoldElseIf,vimFoldElse
-				\ contains=TOP
-				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
-		syn region vimFoldElseIf
-				\ start="\*else\%[if]\>"
-				\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
-				\ fold
-				\ keepend
-				\ contained containedin=vimFoldIfContainer
-				\ nextgroup=vimFoldElseIf,vimFoldElse
-				\ contains=TOP
-				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
-		syn region vimFoldElse
-				\ start="\*el\%[se]\>"
-				\ end="\*end\%[if]\>=\@!"
-				\ fold
-				\ keepend
-				\ contained containedin=vimFoldIfContainer
-				\ contains=TOP
-				\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldIf
+				"\ start="\*if\>"
+				"\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ nextgroup=vimFoldElseIf,vimFoldElse
+				"\ contains=TOP
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldElseIf
+				"\ start="\*else\%[if]\>"
+				"\ end="^\s*\*else\%[if]\>"ms=s-1,me=s-1
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ nextgroup=vimFoldElseIf,vimFoldElse
+				"\ contains=TOP
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+		"syn region vimFoldElse
+				"\ start="\*el\%[se]\>"
+				"\ end="\*end\%[if]\>=\@!"
+				"\ fold
+				"\ keepend
+				"\ contained containedin=vimFoldIfContainer
+				"\ contains=TOP
+				"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 	"}}}ende Syntax Folding
 
