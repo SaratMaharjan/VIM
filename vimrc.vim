@@ -1588,7 +1588,7 @@ function! CleanFormat()
 endfun
 nnoremap <leader>cft :call CleanFormat()<CR>
 
-
+set commentstring=!\ %s
 
 
 
