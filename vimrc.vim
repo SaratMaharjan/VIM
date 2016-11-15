@@ -1060,10 +1060,10 @@ let NERD_macro_alt_style=1
 
 	"resize Window
 		nnoremap ++ :vertical resize +5<cr>
-		nnoremap -- :vertical resize -5<cr>
-		nnoremap +-+ <C-w>o
-		nnoremap +- <C-w>=
-		nnoremap -+ <C-w>c
+		nnoremap +- :vertical resize -5<cr>
+		"nnoremap +-+ <C-w>o
+		"nnoremap +-- <C-w>=
+		"nnoremap ++- <C-w>c
 "}}}
 
 "{{{ IMPORTANT NOTES
