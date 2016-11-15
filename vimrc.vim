@@ -1590,6 +1590,7 @@ nnoremap <leader>cft :call CleanFormat()<CR>
 
 set commentstring=!\ %s
 
+nnoremap <leader>ck /tech<CR>zf/engineering<CR>
 
 
 
