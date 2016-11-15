@@ -78,6 +78,7 @@
 
 			"plugin on GitHub repo
 			"Plugin 'tpope/vim-fugitive'
+			"Plugin 'mileszs/ack.vim'
 
 			"plugin from http://vim-scripts.org/vim/scripts.html
 			Plugin 'L9'
@@ -85,17 +86,15 @@
 			"Git plugin not hosted on GitHub
 			"Plugin 'git://git.wincent.com/command-t.git'
 			Plugin 'https://github.com/scrooloose/nerdtree.git'
-			""Plugin 'https://github.com/amix/vimrc.git'
-			""Plugin 'https://github.com/tpope/vim-pathogen.git'
+			"Plugin 'https://github.com/amix/vimrc.git'
+			"Plugin 'https://github.com/tpope/vim-pathogen.git'
 			Plugin 'https://github.com/vim-scripts/peaksea.git'
 			Plugin 'https://github.com/sjl/badwolf.git'
 			Plugin 'https://github.com/sjl/gundo.vim.git'
 			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
 			Plugin 'https://github.com/rking/ag.vim.git'
-			"Plugin 'mileszs/ack.vim'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
 			"Plugin 'https://github.com/kchmck/vim-coffee-script.git'
-			"Plugin 'https://github.com/scrooloose/syntastic.git'
 			"Plugin 'https://github.com/tpope/vim-commentary.git'
 			Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 			Plugin 'https://github.com/jlanzarotta/bufexplorer.git'
@@ -105,7 +104,8 @@
 			"Plugin 'https://github.com/mkitt/tabline.vim.git'
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
-
+			"Plugin 'https://github.com/scrooloose/syntastic.git'
+			"Plugin 'https://github.com/vim-syntastic/syntastic.git'
 			"if hostname != "ansys2"
 				"Plugin 'https://github.com/SirVer/ultisnips.git'
 			"endif
