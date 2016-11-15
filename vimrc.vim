@@ -106,9 +106,9 @@
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
 
-			if hostname != "ansys2"
-				Plugin 'https://github.com/SirVer/ultisnips.git'
-			endif
+			"if hostname != "ansys2"
+				"Plugin 'https://github.com/SirVer/ultisnips.git'
+			"endif
 
 			Plugin 'https://github.com/bling/vim-airline.git'
 			"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
