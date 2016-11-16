@@ -2264,14 +2264,14 @@ syn case match
 						\ containedin=apdlComment,apdlLineComment,@apdlToken
 						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-					"EOF fold
-					syn region vimEofFold
-						\ start="\<eof\%[f]\>"
-						\ end="\%$"
-						\ fold contains=NONE
-						\ keepend extend
-						\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
-						\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
+					""EOF fold
+					"syn region vimEofFold
+						"\ start="\<eof\%[f]\>"
+						"\ end="\%$"
+						"\ fold contains=NONE
+						"\ keepend extend
+						"\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
+						"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
 					"fold in out file
 					syn region vimOutFold
