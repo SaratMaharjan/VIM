@@ -1590,7 +1590,12 @@ nnoremap <leader>cft :call CleanFormat()<CR>
 
 set commentstring=!\ %s
 
-nnoremap <leader>ck /tech<CR>zf/engineering<CR>
+"Fold apdl Import Block
+nnoremap <leader>fi gg/assembly<CR>zf/wallbsol<CR>:nohlsearch<CR>
+"Fold apdl Shell kp Block
+nnoremap <leader>fs gg/tech<CR>zf/engineering<CR>:nohlsearch<CR>
+"Fold apdl Pretensions maintains Block
+nnoremap <leader>fp gg/maintains<CR>zf/\*\*\*\*<CR>:nohlsearch<CR>
 
 
 
