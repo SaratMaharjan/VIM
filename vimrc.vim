@@ -155,8 +155,6 @@
 	nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 	nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 	nnoremap <space>nh :nohlsearch<CR>	"Key. ,Space	"turn off search highlight
-	"nnoremap <space> za		"space open/closes folds
-	"nnoremap <leader>u :GundoToggle<CR>		"toggle gundo
 	nnoremap <leader>q :mksession<CR>		"save session
 
 	"nnoremap <leader>a :Ag		"open ag.vim
@@ -223,7 +221,6 @@
 	"Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 		noremap <space>s /
 		noremap <s-space> ?
-
 "}}} KEY MAPPINGS
 
 "{{{ GUI OPTIONS
@@ -237,46 +234,45 @@
 		au GUIEnter * simalt ~x
 
 		"{{{Setting Color Scheme and Appearance
-				set background=dark
+			set background=dark
 
-				"colorscheme peaksea
-				"colorscheme desert
-				colorscheme deserts
-				"colorscheme badwolf	"awesome colorscheme
-				"colorscheme apprentice
+			"colorscheme peaksea
+			"colorscheme desert
+			colorscheme deserts
+			"colorscheme badwolf	"awesome colorscheme
+			"colorscheme apprentice
 
-				"Enable syntax highlighting
-				syntax enable
+			"Enable syntax highlighting
+			syntax enable
 
-				"Set extra options when running in GUI mode
-				if has("gui_running")
-					set guioptions-=T
-					set guioptions-=e
-					set t_Co=256
-					"set guitablabel=%M\ %t
-				endif
+			"Set extra options when running in GUI mode
+			if has("gui_running")
+				set guioptions-=T
+				set guioptions-=e
+				set t_Co=256
+				"set guitablabel=%M\ %t
+			endif
 		"}}}
 
-		"{{{ Status Bar
-				"Always show the status line
-				set laststatus=2
+	"{{{ Status Bar
+		"Always show the status line
+		set laststatus=2
 
-				"Format the status line
-				set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ WD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-		"}}}
+		"Format the status line
+		set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ WD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+	"}}}
 
-		"{{{Tabs Setting
-				set tabstop=4 "number of visual spaces per TAB
-				"set softtabstop=4 "number of spaces in tab when editing
-				"set smarttab		"Be smart when using tabs ;)
-				set shiftwidth=4		"1 tab == 4 spaces
-		"}}}
+	"{{{Tabs Setting
+		set tabstop=4 "number of visual spaces per TAB
+		"set softtabstop=4 "number of spaces in tab when editing
+		"set smarttab		"Be smart when using tabs ;)
+		set shiftwidth=4		"1 tab == 4 spaces
+	"}}}
 
-		"{{{Line Numbers
-				set number	"show line numbers
-				set relativenumber
-		"}}}
-
+	"{{{Line Numbers
+		set number	"show line numbers
+		set relativenumber
+	"}}}
 "}}} GUI OPTIONS
 
 "{{{ Working Directory Setting
@@ -285,29 +281,26 @@
 "}}} Working Directory Setting
 
 "{{{ file TABS and or Buffer setting
-
 	":tab all			"open all files as tab
 	":bufdo tab split	"Change all files to TABS
 	"map ,bt :bufdo tab split<CR>
 	set tabpagemax=50
 
 	"{{{if TABS used
+		"CTRL-Tab is next tab
+			noremap <C-Tab> :<C-U>tabnext<CR>
+			inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
+			cnoremap <C-Tab> <C-C>:tabnext<CR>
 
-	"CTRL-Tab is next tab
-		noremap <C-Tab> :<C-U>tabnext<CR>
-		inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-		cnoremap <C-Tab> <C-C>:tabnext<CR>
+		"CTRL-SHIFT-Tab is previous tab
+			noremap <C-S-Tab> :<C-U>tabprevious<CR>
+			inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
+			cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
 
-	"CTRL-SHIFT-Tab is previous tab
-		noremap <C-S-Tab> :<C-U>tabprevious<CR>
-		inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-		cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
-
-	"Let 'tl' toggle between this and the last accessed tab
-		let g:lasttab = 1
-		nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-		au TabLeave * let g:lasttab = tabpagenr()
-
+		"Let 'tl' toggle between this and the last accessed tab
+			let g:lasttab = 1
+			nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+			au TabLeave * let g:lasttab = tabpagenr()
 	"}}}
 
 "{{{ option 1 - not working
@@ -492,21 +485,20 @@
 		"nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 		"au TabLeave * let g:lasttab = tabpagenr()
 	""}}}
-
 "}}} file TABS setting
 
 "{{{ Backup Settings
-			"set backup
-			"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-			"set backupskip=/tmp/*,/private/tmp/*
-			"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-			"set directory=.,$TEMP
-			"set writebackup
-			:set nobackup
-			"To make Backups with Date
-				":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
-				:au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
-				noremap <leader>ba :au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")<CR>
+	"set backup
+	"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+	"set backupskip=/tmp/*,/private/tmp/*
+	"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+	"set directory=.,$TEMP
+	"set writebackup
+	:set nobackup
+	"To make Backups with Date
+		":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
+		:au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
+		noremap <leader>ba :au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")<CR>
 "}}} Backup Settings
 
 "{{{ FOLD settings
@@ -542,13 +534,11 @@
 	"let g:vimsyn_folding='af'
 
 	"Section Name {{{ ---3 brackets are markers
-			"set number "This will be folded
+		"set number "This will be folded
 	"}}}
-
 "}}} FOLD Settings
 
 "{{{ FUNCTIONS
-
 	"noremap <leader>m :call ToggleNumber()<cr>
 	"{{{ toggle between number and relativenumber
 		"fun! ToggleNumber()
@@ -690,7 +680,6 @@
 "}}} FUNCTIONS
 
 "{{{ Other Settings
-
 	"Return to last edit position when opening files (You want this!)
 		autocmd BufReadPost *
 			\ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -871,9 +860,7 @@
 "}}}
 
 "{{{ File Type Association
-
 "APDL filetye association
-
 	au BufNewFile,BufRead *.in	setf apdl
 	au BufNewFile,BufRead *.mac	setf apdl
 	au BufNewFile,BufRead *.out	setf apdl
@@ -898,24 +885,21 @@
 	au BufReadPost *.ans setf apdl
 
 	au WinEnter *.mac setf apdl
-
 "}}}
 
 "{{{ Nerd Commentator Settings
+	let g:NERDCustomDelimiters = {
+		\ 'ruby': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
+		\ 'grondle': { 'left': '{{', 'right': '}}' },
+		\ 'apdl': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+		\ 'mac': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+		\ 'macro': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+		\ 'asm': { 'left': '! ', 'leftAlt': '!', 'right': '' },
+	\ }
 
-let g:NERDCustomDelimiters = {
-	\ 'ruby': { 'left': '#', 'leftAlt': 'FOO', 'rightAlt': 'BAR' },
-	\ 'grondle': { 'left': '{{', 'right': '}}' },
-	\ 'apdl': { 'left': '! ', 'leftAlt': '!', 'right': '' },
-	\ 'mac': { 'left': '! ', 'leftAlt': '!', 'right': '' },
-	\ 'macro': { 'left': '! ', 'leftAlt': '!', 'right': '' },
-	\ 'asm': { 'left': '! ', 'leftAlt': '!', 'right': '' },
-\ }
-
-let NERD_apdl_alt_style=1
-let NERD_mac_alt_style=1
-let NERD_macro_alt_style=1
-
+	let NERD_apdl_alt_style=1
+	let NERD_mac_alt_style=1
+	let NERD_macro_alt_style=1
 "}}}
 
 "{{{ Open Important Files
@@ -1060,7 +1044,7 @@ let NERD_macro_alt_style=1
 
 	"resize Window
 		nnoremap ++ :vertical resize +5<cr>
-		nnoremap +- :vertical resize -5<cr>
+		nnoremap -- :vertical resize -5<cr>
 		"nnoremap +-+ <C-w>o
 		"nnoremap +-- <C-w>=
 		"nnoremap ++- <C-w>c
@@ -1297,7 +1281,7 @@ let NERDTreeIgnore = ['\(\.in\)\@<!$[[file]]']
 
 set printfont=Courier:h12
 
-nnoremap <F6> :GundoToggle<CR>
+"nnoremap <F6> :GundoToggle<CR>
 
 "Open File under cursor in new TAB
 noremap <F11> <c-w>gf<CR>
@@ -1425,38 +1409,38 @@ function! Dtab(fName)
 	endif
 endfunction
 
-		"function! BufSel(pattern)
-		function! BufSel()
-			let bufcount = bufnr("$")
-			let currbufnr = 1
-			let nummatches = 0
-			let firstmatchingbufnr = 0
-			while currbufnr <= bufcount
-				if(bufexists(currbufnr))
-					let currbufname = bufname(currbufnr)
-					if(match(currbufname, expand("<cword>")) > -1)
-						echo currbufnr . ": ". bufname(currbufnr)
-						let nummatches += 1
-						let firstmatchingbufnr = currbufnr
-					endif
-				endif
-				let currbufnr = currbufnr + 1
-			endwhile
-			if(nummatches == 1)
-				execute ":buffer ". firstmatchingbufnr
-			elseif(nummatches > 1)
-				let desiredbufnr = input("Enter buffer number: ")
-				if(strlen(desiredbufnr) != 0)
-					execute ":buffer ". desiredbufnr
-				endif
-			else
-				echo "No matching buffers"
+"function! BufSel(pattern)
+function! BufSel()
+	let bufcount = bufnr("$")
+	let currbufnr = 1
+	let nummatches = 0
+	let firstmatchingbufnr = 0
+	while currbufnr <= bufcount
+		if(bufexists(currbufnr))
+			let currbufname = bufname(currbufnr)
+			if(match(currbufname, expand("<cword>")) > -1)
+				echo currbufnr . ": ". bufname(currbufnr)
+				let nummatches += 1
+				let firstmatchingbufnr = currbufnr
 			endif
-		endfunction
-		"Bind the BufSel() function to a user-command
-		"command! -nargs=1 Bs :call BufSel("<args>")
-		"command! Bs :call BufSel()
-		noremap <C-F12> :call BufSel()<CR>
+		endif
+		let currbufnr = currbufnr + 1
+	endwhile
+	if(nummatches == 1)
+		execute ":buffer ". firstmatchingbufnr
+	elseif(nummatches > 1)
+		let desiredbufnr = input("Enter buffer number: ")
+		if(strlen(desiredbufnr) != 0)
+			execute ":buffer ". desiredbufnr
+		endif
+	else
+		echo "No matching buffers"
+	endif
+endfunction
+"Bind the BufSel() function to a user-command
+"command! -nargs=1 Bs :call BufSel("<args>")
+"command! Bs :call BufSel()
+noremap <C-F12> :call BufSel()<CR>
 
 set textwidth=0 
 set wrapmargin=0
@@ -1588,7 +1572,7 @@ function! CleanFormat()
 endfun
 nnoremap <leader>cft :call CleanFormat()<CR>
 
-set commentstring=!\ %s
+set commentstring=\ !\ %s
 
 "Fold apdl Import Block
 nnoremap <leader>fi gg/assembly<CR>zf/wallbsol<CR>:nohlsearch<CR>
