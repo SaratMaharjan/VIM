@@ -90,7 +90,7 @@
 			"Plugin 'https://github.com/tpope/vim-pathogen.git'
 			Plugin 'https://github.com/vim-scripts/peaksea.git'
 			Plugin 'https://github.com/sjl/badwolf.git'
-			Plugin 'https://github.com/sjl/gundo.vim.git'
+			"Plugin 'https://github.com/sjl/gundo.vim.git'
 			"Plugin 'https://github.com/ggreer/the_silver_searcher.git'
 			Plugin 'https://github.com/rking/ag.vim.git'
 			Plugin 'https://github.com/kien/ctrlp.vim.git'
