@@ -8,23 +8,31 @@
 !*.config
 !*.csv
 !*.cuix
+!*.dat
 !*.dll
 !*.dotm
 !*.dvb
+!*.exe
 !*.gitignore
+!*.html
+!*.ico
 !*.in
+!*.ini
 !*.js
+!*.jpg
 !*.md
-!*.snippets
 !*.mac
+!*.png
+!*.snippets
 !*.solc
 !*.txt
 !*.vim
+!*.wav
 !*.xla
 !*.xml
-!*.png
+!*.zip
 
-!plugin/
-GREP/
+!*/
 bundle/
+ag/
 
