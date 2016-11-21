@@ -2273,13 +2273,13 @@ syn case match
 						"\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
 						"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-					"fold in out file
-					syn region vimOutFold
-						\ start="TECHNOLOGIES"
-						\ end="ENGINEERING"
-						\ fold contains=TOP
-						\ keepend extend
-						\ containedin=ALLBUT,@vimNoFold,vimEofFold
+					""fold in out file
+					"syn region vimOutFold
+						"\ start="TECHNOLOGIES"
+						"\ end="ENGINEERING"
+						"\ fold contains=TOP
+						"\ keepend extend
+						"\ containedin=ALLBUT,@vimNoFold,vimEofFold
 
 		"fold do loops
 		syn region vimFoldDoLoop
