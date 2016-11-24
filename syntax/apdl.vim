@@ -1513,6 +1513,7 @@ syn match apdlm display "ist\>" contained
 syn match apdlm display "dmat\>" contained
 syn match apdlm display "dsv\>" contained
 syn match apdlm display "dur\>" contained
+syn match apdlm display "dur-halb\>" contained
 syn match apdlm display "e171\>" contained
 syn match apdlm display "e188\>" contained
 syn match apdlm display "eact\>" contained
