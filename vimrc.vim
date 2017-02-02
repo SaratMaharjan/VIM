@@ -104,8 +104,7 @@
 			"Plugin 'https://github.com/mkitt/tabline.vim.git'
 			"Plugin 'https://github.com/msanders/snipmate.vim.git'
 			Plugin 'https://github.com/MattesGroeger/vim-bookmarks.git'
-			"Plugin 'https://github.com/scrooloose/syntastic.git'
-			"Plugin 'https://github.com/vim-syntastic/syntastic.git'
+			Plugin 'https://github.com/vim-syntastic/syntastic.git'
 			"if hostname != "ansys2"
 				"Plugin 'https://github.com/SirVer/ultisnips.git'
 			"endif
