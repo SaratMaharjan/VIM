@@ -23,6 +23,7 @@
 !*.md
 !*.mac
 !*.png
+!*.php
 !*.snippets
 !*.solc
 !*.txt
@@ -35,4 +36,5 @@
 !*/
 bundle/
 ag/
+phpMyAdmin/
 

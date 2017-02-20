@@ -1513,6 +1513,7 @@ syn match apdlm display "ist\>" contained
 syn match apdlm display "dmat\>" contained
 syn match apdlm display "dsv\>" contained
 syn match apdlm display "dur\>" contained
+syn match apdlm display "dur-halb\>" contained
 syn match apdlm display "e171\>" contained
 syn match apdlm display "e188\>" contained
 syn match apdlm display "eact\>" contained
@@ -2015,7 +2016,7 @@ syn match	apdlSpecial	display "debug\>" contained
 "}}}
 
 "labels
-syn match	apdlLabel	display ":\s*[a-zA-Z_][a-zA-Z0-9_]*" contained
+syn match apdlLabel display ":\s*[a-zA-Z_][a-zA-Z0-9_]*" contained
 
 "{{{ apdl command groups
 syn match	apdlSpecial	display "/prep7\>" contained
@@ -2038,16 +2039,17 @@ syn keyword	apdlWarning	contained edited
 syn keyword	apdlWarning	contained verify
 syn keyword	apdlWarning	contained note
 
-syn match	apdlspc	display "update"
-syn match	apdlspc display "sp\(.*\)\?case"
+syn match apdlspc display "update"
+syn match apdlspc display "sp\(.*\)\?case"
 
 syn keyword apdlHigh converged warning error
 
 syn keyword	apdlWarning	contained *do *enddo *if *elseif *endif
 
-syn match apdlSpecial2		display "<--.*-->" contained
-syn match apdlSpecial2		display "<<<.*>>>" contained
-"syn match apdlUnused		display "eof\(.*\_..*\)*\%$"
+syn match apdlSpecial2 display "<--.*-->" contained
+syn match apdlSpecial2 display "<<<.*>>>" contained
+syn match apdlSpecial2 display "use.*macro.*" contained
+"syn match apdlUnused display "eof\(.*\_..*\)*\%$"
 syn match apdlFunction display "/inp\>" contained
 "syn match apdlFunction display "let\([ae]\)\?" contained
 syn match apdlSpecial3 display "!anfang" contained
@@ -2057,10 +2059,10 @@ syn match apdlSpecial3 display "! ende" contained
 "syn match extraWhite display " \s"
 "syn match extraWhite display "\s "
 
-syn match	batchArgs	"joblk\d"
-syn match	batchArgs	"jobset"
-syn match	batchArgs	"jstg\d"
-syn match	batchArgs	"arg\d"
+syn match batchArgs "joblk\d"
+syn match batchArgs "jobset"
+syn match batchArgs "jstg\d"
+syn match batchArgs "arg\d"
 "}}}
 
 "{{{ My MACROS
@@ -2273,13 +2275,13 @@ syn case match
 						"\ containedin=ALLBUT,apdlComment,apdlLineComment,vimEofFold
 						"\ skip=+"\%(\\"\|[^"]\)\{-}\%("\|$\)\|'[^']\{-}'+ " comment to fix highlight on wiki'
 
-					"fold in out file
-					syn region vimOutFold
-						\ start="TECHNOLOGIES"
-						\ end="ENGINEERING"
-						\ fold contains=TOP
-						\ keepend extend
-						\ containedin=ALLBUT,@vimNoFold,vimEofFold
+					""fold in out file
+					"syn region vimOutFold
+						"\ start="TECHNOLOGIES"
+						"\ end="ENGINEERING"
+						"\ fold contains=TOP
+						"\ keepend extend
+						"\ containedin=ALLBUT,@vimNoFold,vimEofFold
 
 		"fold do loops
 		syn region vimFoldDoLoop
