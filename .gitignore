@@ -38,6 +38,7 @@
 !*.png
 !*.php
 !*.scscript
+!*.scss
 !*.snippets
 !*.solc
 !*.svg

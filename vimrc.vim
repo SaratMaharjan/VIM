@@ -528,6 +528,7 @@
 	autocmd FileType javascript setlocal foldmarker=anfang,ende
 	autocmd FileType html setlocal foldmarker=anfang,ende
 	autocmd FileType css setlocal foldmarker=anfang,ende
+	autocmd FileType scss setlocal foldmarker=anfang,ende
 
 	"let g:FoldMethod = 0		"Defining Global Variable
 
