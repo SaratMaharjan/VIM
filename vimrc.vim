@@ -1584,6 +1584,7 @@ nnoremap <leader>fs gg/tech<CR>zf/engineering<CR>:nohlsearch<CR>
 "Fold apdl Pretensions maintains Block
 nnoremap <leader>fp gg/maintains<CR>zf/\*\*\*\*<CR>:nohlsearch<CR>
 
+nnoremap gc f!
 
 
 
