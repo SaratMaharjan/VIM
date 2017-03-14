@@ -15,6 +15,7 @@
 !*.docx
 !*.dotm
 !*.dvb
+!*.ejs
 !*.eot
 !*.exe
 !*.exportedUI
@@ -61,4 +62,5 @@ bundle/
 ag/
 phpMyAdmin/
 angularQS/node_modules/*
-
+node_modules/
+.history/
