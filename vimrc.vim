@@ -494,10 +494,10 @@
 	"set directory=.,$TEMP
 	"set writebackup
 	:set nobackup
-	"To make Backups with Date
-		":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
-		:au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
-		noremap <leader>ba :au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")<CR>
+	""To make Backups with Date
+		"":au! BufWrite * execute "w"expand("%") . strftime(".%y%m%d.%H%M%S")
+		":au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")
+		"noremap <leader>ba :au! BufWrite * execute "w!"expand("%") . strftime(".%y%m%d.")<CR>
 "}}} Backup Settings
 
 "{{{ FOLD settings
