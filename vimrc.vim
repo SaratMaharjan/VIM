@@ -17,7 +17,7 @@
 		source C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/pathANDfontHome.vim
 	elseif user == "anakon\\maharjan"
 		if hostname == "ansys2"
-			source E:/maharjan/VIM/pathANDfontAnsys2.vim
+			source D:/maharjan/VIM/pathANDfontAnsys2.vim
 		else
 			source E:/SM/VIM/pathANDfontAnakon.vim
 		endif
