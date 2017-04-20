@@ -13,16 +13,12 @@
 "{{{ OTHER SOURCES
 	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
-	if user == "laptop-q276id9d\\sarat"
-		source C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/pathANDfontHome.vim
-	elseif user == "anakon\\maharjan"
-		if hostname == "ansys2"
-			source D:/maharjan/VIM/pathANDfontAnsys2.vim
-		else
-			source E:/SM/VIM/pathANDfontAnakon.vim
-		endif
+	if hostname == "ansys2"
+		source D:/maharjan/VIM/pathANDfontAnsys2.vim
+	elseif hostname == "Smaharjan"
+		source E:/SM/VIM/pathANDfontAnakon.vim
 	else
-		echo "Invalid user"
+		source C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/pathANDfontHome.vim
 	endif
 
 	source $VIMRUNTIME/vimrc_example.vim
