@@ -6,7 +6,9 @@
 	let g:mapleader = ","
 
 	if has('mouse')		"Enable Mouse
+
 		set mouse=a
+
 	endif
 "}}}
 
@@ -14,11 +16,17 @@
 	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
 	if hostname == "ansys2"
+
 		source D:/maharjan/VIM/pathANDfontAnsys2.vim
+
 	elseif hostname == "Smaharjan"
+
 		source E:/SM/VIM/pathANDfontAnakon.vim
+
 	else
+
 		source C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/pathANDfontHome.vim
+
 	endif
 
 	source $VIMRUNTIME/vimrc_example.vim
@@ -258,10 +266,10 @@
 	"}}}
 
 	"{{{Tabs Setting
-		set tabstop=4 "number of visual spaces per TAB
+		set tabstop=2 "number of visual spaces per TAB
 		"set softtabstop=4 "number of spaces in tab when editing
 		"set smarttab		"Be smart when using tabs ;)
-		set shiftwidth=4		"1 tab == 4 spaces
+		set shiftwidth=2		"1 tab == 4 spaces
 	"}}}
 
 	"{{{Line Numbers
@@ -918,7 +926,7 @@
 	let g:UltiSnipsJumpForwardTrigger="<tab>"
 	let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 	let g:UltiSnipsSnippetDirectories=["UltiSnips","snips"]
-	let g:UltiSnipsSnippetsDir=expand(pathRTP) . '/snips' 
+	let g:UltiSnipsSnippetsDir=expand(pathRTP) . '/snips'
 "}}}
 
 "{{{ BOOKMARKS Settings
@@ -991,7 +999,7 @@
 		let Grep_Xargs_Path=expand(pathRTP).'\GREP\bin\xargs.exe'
 		let Grep_Find_Path=expand(pathRTP).'\GREP\bin\find.exe'
 		let Grep_Default_Filelist='*.in *.mac *.out'
-		let Grep_Default_Options = '-ri' 
+		let Grep_Default_Options = '-ri'
 		let Grep_Find_Use_Xargs = 0
 		"let Grep_Xargs_Options = '--null'
 		nnoremap <leader>spc :Grep sp.*case *.in *.mac *.out <CR>
@@ -1111,7 +1119,7 @@
 						"This may be wanted after using :set ignorecase to make searches case insensitive.
 
 		"20. :mksession ~/mysession.vim		OR :mks
-					":so{urce} ~/mysession.vim 
+					":so{urce} ~/mysession.vim
 
 		"21. To close all TABS
 				"Shortest/simplest/fastest way would be:
@@ -1128,7 +1136,7 @@
 				":b# go to last visited file.... so switching easy
 
 		"23	:scriptnames -shows all loaded scripts
-		 
+
 		"24. Ctrl-W s and Ctrl-W v to split the current window horizontally and vertically. You can also use :split and :vertical split (:sp and :vs)
 		"25. Vap to select Paragraph
 		"26. ,m to activate highlights.vim - then numbers in Number Pads to assign highlight group to selection
@@ -1393,7 +1401,7 @@ noremap 11 :execute "tab drop s.in"<CR>
 noremap # :call FileLoad()<CR>
 function! FileLoad()
 	let path = expand("<cword>").".in"
-	if(filereadable(path)) 
+	if(filereadable(path))
 		exe "tab drop " . path
 	endif
 endfunction
@@ -1401,7 +1409,7 @@ endfunction
 command! -nargs=1 Tt :call Dtab("<args>")
 function! Dtab(fName)
 	let path = a:fName.".in"
-	if(filereadable(path)) 
+	if(filereadable(path))
 		exe "tab drop " . path
 	else
 		echo "File Not Available."
@@ -1441,7 +1449,7 @@ endfunction
 "command! Bs :call BufSel()
 noremap <C-F12> :call BufSel()<CR>
 
-set textwidth=0 
+set textwidth=0
 set wrapmargin=0
 
 "move tabs with ALT -> or ALT <-
@@ -1519,7 +1527,7 @@ nnoremap <A-x> <C-x>
 											"Give it a second to work.
 
 "wrap <b></b> around visually selected text
-vmap sb "zdi<b><C-R>z</b><Esc> 
+vmap sb "zdi<b><C-R>z</b><Esc>
 "wrap <?= ?> around visually selected text
 vmap st "zdi<?= <C-R>z ?><Esc>
 vmap fb do<Esc>ki! anfang <Esc>o! ende<Esc>bhPkA
@@ -1589,4 +1597,3 @@ nnoremap gc f!
 
 
 "}}}
-
