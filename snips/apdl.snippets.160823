@@ -1,0 +1,26 @@
+snippet edit
+	!<--EDIT:$1	; `!v strftime("%c")`; SM -->
+endsnippet
+
+snippet todo
+	!<--TODO:$1	; `!v strftime("%c")`; SM -->
+endsnippet
+
+snippet author
+!<--Date: `!v strftime("%c")`; SM $1-->
+endsnippet
+
+snippet fedit
+!Last modified: Fr Aug 19, 2016  00:00
+endsnippet
+
+snippet testSnip
+---
+title: ${1:Meet UltiSnips}
+date: ${2:`date +%Y-%m-%d`}
+tags: $3
+---
+# $1
+$0
+endsnippet
+
