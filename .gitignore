@@ -44,4 +44,4 @@ jspm_packages
 bundle/
 ag/
 phpMyAdmin/
-angularQS/node_modules/*
+dist
