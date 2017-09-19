@@ -1,8 +1,8 @@
 "{{{ DEFINE VIM FILES PATH
-		let pathRTP='C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM'
-		let pathWork='C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/'
-		let pathbat='C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/zCore'
-		let pathsm='C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/zCore'
+		let pathRTP='C:/Users/Sarat/Dropbox/VIM'
+		let pathWork='C:/Users/Sarat/Dropbox/VIM/'
+		let pathbat='C:/Users/Sarat/Dropbox/zCore'
+		let pathsm='C:/Users/Sarat/Dropbox/VIM/zCore'
 "}}} Path
 
 "{{{ GUI font
