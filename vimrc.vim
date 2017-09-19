@@ -25,7 +25,7 @@
 
 	else
 
-		source C:/Users/Sarat.LAPTOP-Q276ID9D/Dropbox/VIM/pathANDfontHome.vim
+		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
 
 	endif
 
