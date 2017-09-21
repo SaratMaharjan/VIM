@@ -1230,7 +1230,9 @@ noremap <leader>desk :exe 'cd C:\Users\'.expand(username).'\Desktop'<CR>
 "set grepprg=grep\ -nrI\ --exclude-dir=target\ --exclude-dir=tmp\ --exclude-dir=log\ --exclude="*.min.js"\ --exclude="*.log"\ $*\ /dev/null
 "let Grep_Shell_Quote_Char = "\""
 
-noremap <C-w> :call WrapToggle()<CR>
+noremap <C-w> :bd<CR>
+
+noremap <C-t> :call WrapToggle()<CR>
 function! WrapToggle()
 	if &wrap
 		set nowrap
