@@ -4,11 +4,8 @@
 "{{{ Initial Setting - need to be at start
 	let mapleader=","	"leader is comma
 	let g:mapleader = ","
-
 	if has('mouse')		"Enable Mouse
-
 		set mouse=a
-
 	endif
 "}}}
 
@@ -16,17 +13,11 @@
 	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
 	if hostname == "ansys2"
-
 		source D:/maharjan/VIM/pathANDfontAnsys2.vim
-
 	elseif hostname == "Smaharjan"
-
 		source E:/SM/VIM/pathANDfontAnakon.vim
-
 	else
-
 		source C:/Users/Sarat/Dropbox/VIM/pathANDfontHome.vim
-
 	endif
 
 	source $VIMRUNTIME/vimrc_example.vim
@@ -150,7 +141,6 @@
 "}}} VUNDLE
 
 "{{{ KEY MAPPINGS
-
 	"map or remap is recursive and expanded, noremap is not expanded:::::: vmap and vnoremap for visual mode ....... nmap,
 	"nnoremap for normal mode and so on........................
 
