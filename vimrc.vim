@@ -13,7 +13,7 @@
 	let hostname = substitute(system('hostname'), '\n', '', '')
 	let user = substitute(system('whoami'),'\n','','')
 	if hostname == "ansys2"
-		source D:/maharjan/VIM/pathANDfontAnsys2.vim
+		source E:/SM/VIM/pathANDfontAnakon.vim
 	elseif hostname == "Smaharjan"
 		source E:/SM/VIM/pathANDfontAnakon.vim
 	else
