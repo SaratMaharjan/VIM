@@ -1,8 +1,8 @@
 "{{{ DEFINE VIM FILES PATH
-		let pathRTP='E:/SM/VIM'
-		let pathWork='D:/VIM'
-		let pathbat='D:/zCore'
-		let pathsm='D:/zzCore'
+		let pathRTP='C:\Users\maharjan\Dropbox\VIM'
+		let pathWork='D:\VIM'
+		let pathbat='C:\Users\maharjan\Dropbox\zCore'
+		let pathsm='C:\Users\maharjan\Dropbox\zzCore'
 
 "}}} Path
 
@@ -11,4 +11,3 @@
 	:set guifont=Courier_New:h12:cANSI
 	:set printfont=Courier_New:h8:cANSI
 "}}} GUI Font
-
